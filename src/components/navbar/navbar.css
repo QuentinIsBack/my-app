@@ -1,0 +1,35 @@
+.navbar {
+    height: 4rem;
+    max-height: 4rem;
+    width: 100%;
+    z-index: 50;
+    background-color: white;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.navbody {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.navleft {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.navcenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navright {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
