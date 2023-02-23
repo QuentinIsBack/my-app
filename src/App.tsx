@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthenticatedRoute from './routes/AuthenticatedRoute';
+import AgencyRoute from './routes/AgencyRoute';
 
 import Index from './pages/index'
 
@@ -11,7 +12,11 @@ function App() {
       <Routes>
           <Route path="/" element={<Index />} />
             <Route element={<AuthenticatedRoute />}>
-              <Route path="/agency" element={<AgencyIndex />} />
+
+            <Route element={<AgencyRoute />}>
+                <Route path="/agency" element={<AgencyIndex />} />
+            </Route>
+
             </Route>
       </Routes>
     </BrowserRouter>

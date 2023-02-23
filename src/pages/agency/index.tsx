@@ -5,11 +5,13 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TipsButton } from "../../components/button/tipsbutton";
 import { Icon } from "../../components/icon/icons";
+import { AgencyContext } from "../../contexts/AgencyContext";
 
 function App() {
     const { UserData } = useContext(UserContext)
+    const { AgencyData } = useContext(AgencyContext)
 
-    return (
+    return (  
         <PageBuilder title="Mon Espace Agence" show={true} navbar={<NavBar />} footer={undefined} >
             <>
                 <div className='bg-gradient-to-r from-indigo-800 to-pink-600 h-18rem py-16 px-60 space-y-6 w-full'>

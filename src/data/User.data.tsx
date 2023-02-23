@@ -8,7 +8,8 @@ export default class UserDatas {
 
     email: any | undefined;
 
-
+    agency: any | undefined
+    
     setUID = (newUID: any) => { this.uid = newUID }
     getUID = () => { return this.uid }
     
@@ -20,5 +21,8 @@ export default class UserDatas {
 
     setEmail = (newEmail: any) => { this.email = newEmail }
     getEmail = () => { return this.email }
+
+    setAgency = (newAgency: any) => { this.agency = newAgency }
+    getAgency = () => { return this.agency }
 
 }
