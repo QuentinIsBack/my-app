@@ -32,6 +32,7 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
             onSnapshot(doc(db, "agencies", UserData.agency), (doc) => {
 
                 AgencyData.setTitle(doc.data()?.title)
+                AgencyData.setDescription(doc.data()?.description)
                 
                 setLoadingData(false)
             });

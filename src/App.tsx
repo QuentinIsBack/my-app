@@ -4,7 +4,8 @@ import AgencyRoute from './routes/AgencyRoute';
 
 import Index from './pages/index'
 
-import AgencyIndex from './pages/agency'
+import AgencyIndex from './pages/agency/index'
+import AgencyTeam from './pages/agency/team'
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
             <Route element={<AuthenticatedRoute />}>
 
             <Route element={<AgencyRoute />}>
-                <Route path="/agency" element={<AgencyIndex />} />
+              <Route path="/agency" element={<AgencyIndex />} />
+              <Route path="/agency/team" element={<AgencyTeam />} />
             </Route>
 
             </Route>
