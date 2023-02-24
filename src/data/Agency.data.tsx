@@ -1,15 +1,28 @@
 import React, { useState } from "react";
 import AgencyDataServices from "../services/AgencyData.services";
+import UserDatas from "./User.data";
+
+interface IPerms {
+    basic: any[],
+    ads: any[],
+    guest: any[],
+    price: any[],
+    finance: any[],
+    team: any[],
+    
+}
 
 export default class AgencyDatas {  
 
-    uid: any | undefined;
+    uid: any;
 
     title: string | undefined;
     description: any | undefined;
 
-    members: string[] | undefined;
+    members: UserDatas[] | undefined;
+    owner: any | undefined;
 
+    permissions!: IPerms;
 
     setUID = (newUID: any) => { this.uid = newUID }
     getUID = () => { return this.uid }
@@ -25,5 +38,11 @@ export default class AgencyDatas {
 
     setMembers = (newMembecrs: any) => { this.members = newMembecrs }
     getMembers = () => { return this.members }
+
+    setOwner = (newOwner: any) => { this.owner = newOwner }
+    getOwner = () => { return this.owner }
+
+    setPermissions = (newPermissions: any) => { this.permissions = newPermissions }
+    getPermissions = () => { return this.permissions }
 
 }

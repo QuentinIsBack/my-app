@@ -34,7 +34,7 @@ export const NavBar = ({ padding }: CompType) => {
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0}>
                                 <button className="h-full">
-                                    <div className='inline-flex items-center rounded-2xl py-2 px-4 text-sm font-medium text-supergray hover:bg-gray-100'>
+                                    <div className='duration-150  inline-flex items-center rounded-2xl py-2 px-4 text-sm font-medium text-supergray hover:bg-gray-100'>
                                         Menu <IoChevronDown className='ml-1 mt-0.5' />
                                     </div>
                                 </button>

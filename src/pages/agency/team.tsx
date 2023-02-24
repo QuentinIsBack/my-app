@@ -1,15 +1,21 @@
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
 import { NavBar } from '../../components/navbar/navbar-agency'
-import { useContext } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TipsButton } from "../../components/button/tipsbutton";
 import { Icon } from "../../components/icon/icons";
 import { AgencyContext } from "../../contexts/AgencyContext";
+import UserDataServices from "../../services/UserData.services";
+import { where } from "firebase/firestore";
+import UserDatas from "../../data/User.data";
+
 
 function App() {
     const { UserData } = useContext(UserContext)
     const { AgencyData } = useContext(AgencyContext)
+
+    const [show, setShow] = useState(false)
 
     const permissions = [
         {
@@ -21,8 +27,8 @@ function App() {
             description: "Créer des annonces, définir la tarification initiale, modifier le contenu de l'annonce et modifier le statut de l'annonce"
         },
         {
-            title: "Gestion des invités",
-            description: "Modifier les réservations et le calendrier. Pré-approuver, contacter et évaluer l'invité. Envoyer des offres et déposer des réclamations"
+            title: "Gestion des candidatures",
+            description: "Modifier les réservations et le calendrier. Pré-approuver, contacter et évaluer les candidats."
         },
         {
             title: "Prix et disponibilité",
@@ -37,6 +43,7 @@ function App() {
             description: "Modifiez les autorisations des membres de l'équipe et gérez les invitations."
         }
     ]
+
     return (  
         <PageBuilder title="Équipe" show={true} navbar={<NavBar />} footer={undefined} >
             <>
@@ -74,6 +81,42 @@ function App() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="grid grid-cols-10 divide-x">
+                        {AgencyData.getMembers()?.map((os)=>(
+                            <>
+                                <div className="col-span-2 h-full border-b" >
+                                    <div className="px-4 py-3 h-4.5rem flex flex-row items-center space-x-4">
+                                        <div className="h-full">
+                                            <img alt='profile' className="h-full rounded-full" style={{
+                                            }} src={"https://upload.wikimedia.org/wikipedia/commons/4/45/Quentin_Truffy_Profile.png"} />
+                                        </div>
+                                        <div className="h-full flex flex-col items-start justify-between">
+                                            <div className="font-semibold text-supergray/80 text-lg items-center flex flex-row space-x-2">
+                                                <div>
+                                                    {os.getFirstname()+ " " + os.getLastname()}
+                                                </div>
+                                                {os.getUID() == UserData.getUID() && <div className="text-sm text-supergray/50">(Vous)</div>}
+                                            </div>
+                                            <div className="font-medium text-supergray/60 text-sm">
+                                                {AgencyData.getOwner() == os.getUID() && <span className="text-[#2292a4]">Gérant</span>}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-span-8 h-full border-b">
+                                    <div className="h-4.5rem grid grid-cols-6 divide-x">
+                                        <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().basic?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                        <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().ads?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                        <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().guest?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                        <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().price?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                        <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().finance?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                        <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().team?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                    </div>
+                                </div>
+                            </>
+                        ))}
                     </div>
                    
                 </div>
