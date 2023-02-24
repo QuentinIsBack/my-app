@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default class UserDatas { 
-    uid: any | undefined;
+    uid: string | undefined;
 
     firstname: any | undefined;
     lastname: any | undefined;
@@ -10,7 +10,7 @@ export default class UserDatas {
 
     agency: any | undefined
     
-    setUID = (newUID: any) => { this.uid = newUID }
+    setUID = (newUID: string) => { this.uid = newUID }
     getUID = () => { return this.uid }
     
     setFirstname = (newFirstname: any) => { this.firstname = newFirstname }

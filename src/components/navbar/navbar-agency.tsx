@@ -4,7 +4,7 @@ import { IoChevronDown } from 'react-icons/io5'
 import { NavButton } from '../button/navbutton';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 type CompType = {
     padding: string | undefined
@@ -18,7 +18,7 @@ export const NavBar = ({ padding }: CompType) => {
         <div className={`navbar`}>
             <div className={`navbody ${padding}`}>
                 <div className='navleft'>
-                    <button onClick={() => navigate("/agency")} className='flex flex-row items-center text-lg font-semibold text-[#2292a4] tracking-wider space-x-5'>
+                    <button onClick={() => navigate("/agency")} className='duration-150 ease-in-out flex flex-row items-center text-lg font-semibold text-superblue hover:text-cyan-600 tracking-wider space-x-5'>
                         <img width={25} alt={'logo'} src={LOGO} />
                         <div>Espace Agence</div>
                     </button>
@@ -44,9 +44,18 @@ export const NavBar = ({ padding }: CompType) => {
                                 <li><div className='font-medium text-sm'>Réservations</div></li>
                                 <li><div className='font-medium text-sm'>Créer une annonces</div></li>
                                 <div className='py-2'><div className='border-t'></div></div>
-                                <li><div className='font-normal text-sm'>Guides</div></li>
+                                <li>
+                                    <NavLink to={'/agency/team/'} className={({ isActive }) => isActive ? "font-medium text-sm bg-superblue" : "font-medium text-sm"}>
+                                        Équipe
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={'/agency/settings/'} className={({ isActive }) => isActive ? "font-medium text-sm bg-superblue" : "font-medium text-sm"}>
+                                        Paramètres
+                                    </NavLink>
+                                </li>
+                                <div className='py-2'><div className='border-t'></div></div>
                                 <li><div className='font-normal text-sm'>Historique des transactions</div></li>
-                                <li><div className='font-normal text-sm'>Forum de la communauté</div></li>
                             </ul>
                         </div>
                     </div>

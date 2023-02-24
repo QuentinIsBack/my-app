@@ -26,3 +26,6 @@ export const TipsButton = ({
         </button>
     )
 }
+TipsButton.defaultProps = {
+    onClick: undefined
+}

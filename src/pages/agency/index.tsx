@@ -19,10 +19,10 @@ function App() {
                         Bonjour {UserData.getFirstname()}
                     </div>
                     <div className='flex space-x-5'>
-                        <TipsButton iconN={"AiFillFolder"} onClick={""}>
+                        <TipsButton iconN={"AiFillFolder"}>
                             <>Avant de candidater à des logements, pensez à complété votre dossier locataire.</>
                         </TipsButton>
-                        <TipsButton iconN={"AiFillFolder"} onClick={""}>
+                        <TipsButton iconN={"AiFillFolder"}>
                             <>Vous vous êtes engagés à ce que vos informations soit correct et valide avant votre prochaine location</>
                         </TipsButton>
                     </div>

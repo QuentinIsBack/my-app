@@ -82,4 +82,5 @@ FloatingInput.defaultProps = {
     size: sizes.default,
     statut: "normal",
     defaultValue: "",
+    onChange: undefined
 }

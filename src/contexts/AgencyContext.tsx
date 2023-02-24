@@ -1,4 +1,4 @@
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot, where } from "firebase/firestore";
 import React, {
     useState,
     createContext,
@@ -11,7 +11,10 @@ import React, {
 // Import Authentificated
 
 import AgencyDatas from "../data/Agency.data";
+
 import { db } from "../firebase.config";
+import AgencyDataServices from "../services/AgencyData.services";
+import UserDataServices from "../services/UserData.services";
 import { UserContext } from "./UserContext";
 
 type AgencyId = {
@@ -29,13 +32,37 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
 
     useEffect(() => {
         if(UserData.getAgency()) {
-            onSnapshot(doc(db, "agencies", UserData.agency), (doc) => {
 
-                AgencyData.setTitle(doc.data()?.title)
-                AgencyData.setDescription(doc.data()?.description)
-                
-                setLoadingData(false)
-            });
+ 
+            const fetchData = async () => {
+
+                try {
+
+                    onSnapshot(doc(db, "agencies", UserData.getAgency()), async (doc) => {
+
+                        const newData = new AgencyDatas();
+
+                        newData.setUID(doc.id)
+                        newData.setTitle(doc.data()?.title);
+                        newData.setDescription(doc.data()?.description);
+
+                        await UserDataServices.getAll(where("agency", "==", doc.id)).then((querySnapshot) => {
+                            newData.setMembers(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+                        })
+                        
+                        setAgencyData(newData)
+                    }) 
+
+                    setLoadingData(false)
+
+                } catch (err) {
+                    console.log(err)
+                }
+
+            }
+            fetchData();
+
+
         } else {
             setLoadingData(false)
         }

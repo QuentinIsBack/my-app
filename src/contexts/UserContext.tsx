@@ -47,12 +47,16 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
             if (currentUser) {
                 onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
 
-                    UserData.setUID(doc.data()?.uid)
-                    UserData.setFirstname(doc.data()?.firstname)
-                    UserData.setLastname(doc.data()?.lastname)
-                    UserData.setEmail(doc.data()?.email)
-                    UserData.setAgency(doc.data()?.agency)
-                    
+                    const newData = new UserDatas();
+
+                    newData.setUID(doc.data()?.uid)
+                    newData.setFirstname(doc.data()?.firstname)
+                    newData.setLastname(doc.data()?.lastname)
+                    newData.setEmail(doc.data()?.email)
+                    newData.setAgency(doc.data()?.agency)
+
+                    setUserData(newData)
+
                     setLoadingData(false)
                 })
             } else {

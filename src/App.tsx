@@ -6,6 +6,7 @@ import Index from './pages/index'
 
 import AgencyIndex from './pages/agency/index'
 import AgencyTeam from './pages/agency/team'
+import AgencySettings from './pages/agency/settings'
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
 
             <Route element={<AgencyRoute />}>
               <Route path="/agency" element={<AgencyIndex />} />
-              <Route path="/agency/team" element={<AgencyTeam />} />
+            <Route path="/agency/team" element={<AgencyTeam />} />
+            <Route path="/agency/settings" element={<AgencySettings />} />
             </Route>
 
             </Route>
