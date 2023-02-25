@@ -42,7 +42,11 @@ export const NavBar = ({ padding }: CompType) => {
                             <ul tabIndex={0} className="p-2 mt-4 shadow-dropdown menu dropdown-content bg-base-100 rounded-box w-52 text-black">
                                 <li><div className='font-medium text-sm'>Annonces</div></li>
                                 <li><div className='font-medium text-sm'>Réservations</div></li>
-                                <li><div className='font-medium text-sm'>Créer une annonces</div></li>
+                                <li>
+                                    <NavLink to={'/agency/begin/'} className={({ isActive }) => isActive ? "font-medium text-sm bg-superblue" : "font-medium text-sm"}>
+                                        Créer une annonces
+                                    </NavLink>
+                                </li>
                                 <div className='py-2'><div className='border-t'></div></div>
                                 <li>
                                     <NavLink to={'/agency/team/'} className={({ isActive }) => isActive ? "font-medium text-sm bg-superblue" : "font-medium text-sm"}>

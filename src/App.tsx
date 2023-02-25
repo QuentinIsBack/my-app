@@ -8,6 +8,7 @@ import AgencyIndex from './pages/agency/index'
 import AgencyTeam from './pages/agency/team'
 import AgencySettings from './pages/agency/settings'
 import AgencyCalendar from './pages/agency/calendar'
+import AgencyBegin from './pages/agency/begin'
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
 
             <Route element={<AgencyRoute />}>
               <Route path="/agency" element={<AgencyIndex />} />
-            <Route path="/agency/team" element={<AgencyTeam />} />
-            <Route path="/agency/settings" element={<AgencySettings />} />
-            <Route path="/agency/calendar" element={<AgencyCalendar />} />
+              <Route path="/agency/team" element={<AgencyTeam />} />
+              <Route path="/agency/settings" element={<AgencySettings />} />
+              <Route path="/agency/calendar" element={<AgencyCalendar />} />
+              <Route path="/agency/begin" element={<AgencyBegin />} />
             </Route>
 
             </Route>

@@ -30,6 +30,7 @@ module.exports = {
         "28rem": "28rem",
         "30rem": "30rem",
         "35rem": "35rem",
+        "40rem": "40rem",
       },
       margin: {
         "7.5": "2rem",
@@ -63,7 +64,8 @@ module.exports = {
       },
       colors: {
         'supergray': '#242424',
-        'superblue': '#2292a4'
+        'superblue': '#2292a4',
+        'superred': '#FB4B4E'
       },
       screens: {
         'xs': '375px',

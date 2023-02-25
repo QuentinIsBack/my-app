@@ -7,6 +7,13 @@
     border-bottom: 1px solid #dfdfdf;
 }
 
+.navbarbig {
+    display: flex;
+    align-items: center;
+    min-height: 6rem;
+    width: 100%;
+}
+
 .navbody {
     position: relative;
     height: 100%;
