@@ -43,7 +43,7 @@ export const NavBar = ({ padding }: CompType) => {
                                 <li><div className='font-medium text-sm'>Annonces</div></li>
                                 <li><div className='font-medium text-sm'>Réservations</div></li>
                                 <li>
-                                    <NavLink to={'/agency/begin/'} className={({ isActive }) => isActive ? "font-medium text-sm bg-superblue" : "font-medium text-sm"}>
+                                    <NavLink to={'/agency/become-a-host/'} className={({ isActive }) => isActive ? "font-medium text-sm bg-superblue" : "font-medium text-sm"}>
                                         Créer une annonces
                                     </NavLink>
                                 </li>

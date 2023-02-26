@@ -10,8 +10,9 @@
 .navbarbig {
     display: flex;
     align-items: center;
-    min-height: 6rem;
+    min-height: var(--navbar--big);
     width: 100%;
+    position: absolute;
 }
 
 .navbody {

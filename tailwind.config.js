@@ -15,6 +15,7 @@ module.exports = {
         "5rem": "5rem",
         "6rem": "6rem",
         "7rem": "7rem",
+        "8rem": "8rem",
         "10rem": "10rem",
         "15rem": "15rem",
         "20rem": "20rem",
@@ -30,6 +31,7 @@ module.exports = {
         "28rem": "28rem",
         "30rem": "30rem",
         "35rem": "35rem",
+        "38rem": "38rem",
         "40rem": "40rem",
       },
       margin: {
@@ -46,6 +48,9 @@ module.exports = {
       },
       padding: {
         '50rem': '50rem'
+      },
+      opacity: {
+        '15': '.15',
       },
       scale: {
         '175': '1.75',
@@ -90,6 +95,8 @@ module.exports = {
       },
       maxHeight: {
         '7rem': '7rem',
+        '5rem': '5rem',
+        '6rem': '6rem',
         '20rem': '20rem'
       },
       maxWidth: {
@@ -108,6 +115,10 @@ module.exports = {
       animation: {
         showin: 'showin 1s',
         showout: 'showout 1s'
+      },
+      borderWidth: {
+        '6': '6px',
+        '8': '8px',
       },
       keyframes: {
         showin: {

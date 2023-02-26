@@ -9,6 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --navbar--big: 6rem;
+}
+
 @font-face {
   font-family: "Inter";
   src: local("Inter"),
@@ -70,4 +74,21 @@ body {
   src: local("Inter"),
     url("./font/Inter-Thin.ttf") format("truetype");
   font-weight: 100;
+}
+
+@layer base {
+  .superborder {
+    @apply duration-150;
+    @apply border;
+    @apply border-supergray/20;
+    @apply hover:border-supergray;
+    @apply hover:bg-gray-50
+  }
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }

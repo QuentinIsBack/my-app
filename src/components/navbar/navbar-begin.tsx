@@ -12,12 +12,12 @@ export const NavBar = () => {
                 </div>
                 <div className='navright flex flex-row space-x-6'>
                     <button className="h-full">
-                        <div className='duration-150 border inline-flex items-center text-supergray outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
+                        <div className='duration-150 inline-flex items-center text-supergray rounded-2xl py-2 px-4 text-sm font-medium superborder'>
                             Question?
                         </div>
                     </button>
                     <button className="h-full">
-                        <div className='duration-150 border inline-flex items-center text-superred outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
+                        <div className='duration-150 inline-flex items-center text-superred rounded-2xl py-2 px-4 text-sm font-medium superborder'>
                             Sortie
                         </div>
                     </button>

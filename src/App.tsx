@@ -8,7 +8,8 @@ import AgencyIndex from './pages/agency/index'
 import AgencyTeam from './pages/agency/team'
 import AgencySettings from './pages/agency/settings'
 import AgencyCalendar from './pages/agency/calendar'
-import AgencyBegin from './pages/agency/begin'
+import AgencyBecomeAHost from './pages/agency/become-a-host'
+import AgencyBecomeAHostOverView from './pages/agency/become-a-host/overview'
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
               <Route path="/agency/team" element={<AgencyTeam />} />
               <Route path="/agency/settings" element={<AgencySettings />} />
               <Route path="/agency/calendar" element={<AgencyCalendar />} />
-              <Route path="/agency/begin" element={<AgencyBegin />} />
+              <Route path="/agency/become-a-host" element={<AgencyBecomeAHost />} />
+            <Route path="/agency/become-a-host/overview" element={<AgencyBecomeAHostOverView />} />
             </Route>
 
             </Route>
