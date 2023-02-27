@@ -9,8 +9,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bodyca {
+  height: calc(100vh - var(--navbar--big) - var(--footer--big));
+}
+
 :root {
   --navbar--big: 6rem;
+  --footer--big: 5.5rem;
 }
 
 @font-face {

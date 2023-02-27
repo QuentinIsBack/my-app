@@ -23,7 +23,7 @@ export const themes = {
 
 interface IVsizes {
     normal: string | undefined,
-    floater: string | undefined,
+    floater: string | undefined, 
 }
 interface sizes {
     default: IVsizes,

@@ -13,6 +13,7 @@ module.exports = {
         "4rem": "4rem",
         "4.5rem": "4.5rem",
         "5rem": "5rem",
+        "5.5rem": "5.5rem",
         "6rem": "6rem",
         "7rem": "7rem",
         "8rem": "8rem",
@@ -31,6 +32,7 @@ module.exports = {
         "28rem": "28rem",
         "30rem": "30rem",
         "35rem": "35rem",
+        "36rem": "36rem",
         "38rem": "38rem",
         "40rem": "40rem",
       },
@@ -47,7 +49,8 @@ module.exports = {
         "90rem": "90rem",
       },
       padding: {
-        '50rem': '50rem'
+        '5.5rem': '5.5rem',
+        '50rem': '50rem',
       },
       opacity: {
         '15': '.15',
@@ -111,6 +114,10 @@ module.exports = {
         '4xl': '1640px',
 
         '14rem': '14rem',
+        '36rem': '36rem',
+      },
+      minWidth: {
+        '36rem': '36rem',
       },
       animation: {
         showin: 'showin 1s',

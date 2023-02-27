@@ -67,7 +67,7 @@ export const ModalSignIn = ({ show, close }: CompType) => {
             console.log(err)
         }
         
-    }
+    } 
 
     return (
         <>
