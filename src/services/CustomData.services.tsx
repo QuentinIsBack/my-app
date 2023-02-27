@@ -1,35 +1,40 @@
 import { db } from "../firebase.config";
 import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc, query, FieldValue } from "firebase/firestore";
 
-const table = "users"
 
-class UserDataServices {
+export const IStructure = {
+    Structure: "structure",
+    PropertyType: "property-type",
+    PrivacyType: "privacy-type",
+}
 
-    add = async (news: FieldValue) => {
+class CustomDataServices {
+
+    add = async (table: string, news: FieldValue) => {
         return await addDoc(collection(db, table), news);
     };
 
-    update = async (id: string, update: { [x: string]: any; }) => {
+    update = async (table: string, id: string, update: { [x: string]: any; }) => {
         return await updateDoc(doc(db, table, id), update);
     };
 
-    delete = async (id: string) => {
+    delete = async (table: string, id: string) => {
         return await deleteDoc(doc(db, table, id));
     };
 
-    getAll = async (...other: any[]) => {
+    getAll = async (table: string, ...other: any[]) => {
         return await getDocs(query(collection(db, table), ...other));
     };
 
-    get = async (id: string) => {
+    get = async (table: string, id: string) => {
         return await getDoc(doc(db, table, id))
     };
 
-    hasPermission = async (id: string, uid: string, permissions: string) => {
+    hasPermission = async (table: string, id: string, uid: string, permissions: string) => {
         const datas = await getDoc(doc(db, table, id))
         return datas.data()?.permissions.permissions.includes(uid)
     }
 }
 
 
-export default new UserDataServices();
+export default new CustomDataServices();

@@ -50,6 +50,11 @@ module.exports = {
       },
       padding: {
         '5.5rem': '5.5rem',
+        "20rem": "20rem",
+        "30rem": "30rem",
+        "32.5rem": "32.5rem",
+        "35rem": "35rem",
+        "40rem": "40rem",
         '50rem': '50rem',
       },
       opacity: {

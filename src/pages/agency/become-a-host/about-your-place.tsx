@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IButton } from "../../../components/footer/footer-begin";
 import { NavBar } from "../../../components/navbar/navbar-begin";
 import { Begin } from "../../../components/pagebuilder/begin";
@@ -9,11 +9,12 @@ import { UserContext } from "../../../contexts/UserContext";
 function App() {
     const { UserData } = useContext(UserContext)
     const navigate = useNavigate();
+    const { id } = useParams();
 
     return (
         <PageBuilder title="Annonces" show={true}>
             <>
-                <Begin nextClic={() => navigate('/agency/become-a-host/structure')} backBtn={true} nextBtn={IButton.next}>
+                <Begin nextClic={() => navigate(`/agency/become-a-host/${id}/structure`)} backBtn={true} nextBtn={IButton.next}>
                     <>
                         <div className='flex flex-row w-full h-full px-36'>
                             <div className="flex flex-col items-start justify-center space-y-4 w-36rem max-w-36rem min-w-36rem">

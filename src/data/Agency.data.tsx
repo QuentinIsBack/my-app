@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AgencyDataServices from "../services/AgencyData.services";
+import HostDataServices from "../services/HostData.services";
 import UserDatas from "./User.data";
 
 interface IPerms {
@@ -9,11 +10,9 @@ interface IPerms {
     price: any[],
     finance: any[],
     team: any[],
-    
 }
 
 export default class AgencyDatas {  
-
     uid: any;
 
     title: string | undefined;
@@ -44,5 +43,7 @@ export default class AgencyDatas {
 
     setPermissions = (newPermissions: any) => { this.permissions = newPermissions }
     getPermissions = () => { return this.permissions }
+
+    createHost = async (newDoc: any) => { return await HostDataServices.add(newDoc) }
 
 }

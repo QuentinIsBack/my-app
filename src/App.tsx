@@ -12,6 +12,8 @@ import AgencyBecomeAHost from './pages/agency/become-a-host'
 import AgencyBecomeAHostOverView from './pages/agency/become-a-host/overview'
 import AgencyBecomeAHostAbout from './pages/agency/become-a-host/about-your-place'
 import AgencyBecomeAHostStructure from './pages/agency/become-a-host/structure'
+import AgencyBecomeAHostPropertyType from './pages/agency/become-a-host/property-type'
+import AgencyBecomeAHostPrivacyType from './pages/agency/become-a-host/privacy-type'
 
 function App() {
   return (
@@ -27,8 +29,10 @@ function App() {
               <Route path="/agency/calendar" element={<AgencyCalendar />} />
               <Route path="/agency/become-a-host" element={<AgencyBecomeAHost />} />
               <Route path="/agency/become-a-host/overview" element={<AgencyBecomeAHostOverView />} />
-              <Route path="/agency/become-a-host/about-your-place" element={<AgencyBecomeAHostAbout />} />
-            <Route path="/agency/become-a-host/structure" element={<AgencyBecomeAHostStructure />} />
+              <Route path="/agency/become-a-host/:id/about-your-place" element={<AgencyBecomeAHostAbout />} />
+              <Route path="/agency/become-a-host/:id/structure" element={<AgencyBecomeAHostStructure />} />
+              <Route path="/agency/become-a-host/:id/property-type" element={<AgencyBecomeAHostPropertyType />} />
+              <Route path="/agency/become-a-host/:id/privacy-type" element={<AgencyBecomeAHostPrivacyType />} />
             </Route>
 
             </Route>

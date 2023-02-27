@@ -2,7 +2,7 @@ import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
 import LOGOWHITE from '../../assets/logo.svg';
 import { NavBar } from "../../components/navbar/navbar-begin";
-import { Icon } from "../../components/icon/icons";
+import Icon from "../../components/icon/icons";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";

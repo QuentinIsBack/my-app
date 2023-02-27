@@ -1,7 +1,7 @@
 import { db } from "../firebase.config";
 import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc, query, FieldValue } from "firebase/firestore";
 
-const table = "users"
+const table = "hosts"
 
 class UserDataServices {
 
@@ -29,6 +29,7 @@ class UserDataServices {
         const datas = await getDoc(doc(db, table, id))
         return datas.data()?.permissions.permissions.includes(uid)
     }
+
 }
 
 

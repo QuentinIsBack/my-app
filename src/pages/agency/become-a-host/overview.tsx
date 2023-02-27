@@ -1,19 +1,35 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IButton } from "../../../components/footer/footer-begin";
 import { NavBar } from "../../../components/navbar/navbar-begin";
 import { Begin } from "../../../components/pagebuilder/begin";
 import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
+import { AgencyContext } from "../../../contexts/AgencyContext";
 import { UserContext } from "../../../contexts/UserContext";
+import AgencyDatas from "../../../data/Agency.data";
+import HostDataServices from "../../../services/HostData.services";
 
 function App() {
-    const { UserData } = useContext(UserContext)
+    const { AgencyData } = useContext(AgencyContext)
     const navigate = useNavigate();
+    const [homeCreated, setHomeCreated] = useState({
+        agency: AgencyData.getUID(),
+        status: "draft"
+    })
+
+    const createHost = () => {
+        async function createData() {
+            await AgencyData.createHost(homeCreated).then((e)=>{
+                navigate(`/agency/become-a-host/${e.id}/about-your-place`)
+            })
+        }
+        createData()
+    }
 
     return (
         <PageBuilder title="Annonces" show={true}>
             <>
-                <Begin nextClic={() => navigate('/agency/become-a-host/about-your-place')} progressShow={false} backBtn={true} nextBtn={IButton.start}>
+                <Begin nextClic={createHost} progressShow={false} backBtn={true} nextBtn={IButton.start}>
                     <>
                         <div className='grid grid-cols-2 w-full h-full px-36'>
                             <div className="flex items-center justify-center">

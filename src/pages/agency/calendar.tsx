@@ -4,7 +4,6 @@ import { NavBar } from '../../components/navbar/navbar-agency'
 import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TipsButton } from "../../components/button/tipsbutton";
-import { Icon } from "../../components/icon/icons";
 import { AgencyContext } from "../../contexts/AgencyContext";
 import UserDataServices from "../../services/UserData.services";
 import { where } from "firebase/firestore";

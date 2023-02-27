@@ -4,7 +4,6 @@ import { NavBar } from '../../components/navbar/navbar-agency'
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TipsButton } from "../../components/button/tipsbutton";
-import { Icon } from "../../components/icon/icons";
 import { AgencyContext } from "../../contexts/AgencyContext";
 
 function App() {

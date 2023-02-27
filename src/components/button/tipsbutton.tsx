@@ -1,4 +1,4 @@
-import { Icon } from "../icon/icons"
+import Icon from "../icon/icons"
 
 type ComponentType = {
     onClick: any | undefined,
