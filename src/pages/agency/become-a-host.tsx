@@ -1,16 +1,15 @@
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
-import LOGOWHITE from '../../assets/logo.svg';
-import { NavBar } from "../../components/navbar/navbar-begin";
 import Icon from "../../components/icon/icons";
 import { UserContext } from "../../contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Begin } from "../../components/pagebuilder/begin";
-import { IButton } from "../../components/footer/footer-begin";
+import { AgencyContext } from "../../contexts/AgencyContext";
 
 function App() {
    const { UserData } = useContext(UserContext)
+   const { AgencyData } = useContext(AgencyContext)
    const navigate = useNavigate();
 
     return (  
@@ -23,20 +22,21 @@ function App() {
                       <div className="w-38rem">
                          <div className="text-4xl font-semibold text-supergray">Bon retour, {UserData.getFirstname()}</div>
                          <div className="pt-8 space-y-20">
-                            <div className="flex flex-col">
+                            {AgencyData.getHosts()?.length > 0 && <div className="flex flex-col">
                                <div className="text-xl font-semibold text-supergray">Terminer une annonce</div>
-                               <div className="pt-4 flex flex-col">
-                                  <button className="h-6rem superborder rounded-xl overflow-hidden flex flex-row items-center p-6 space-x-6">
-                                     <div className="aspect-square bg-gray-200/75 rounded-md h-full flex items-center justify-center">
-                                        <Icon size={20} name="IoHomeSharp" />
-                                     </div>
-                                     <div className="flex items-center justify-center font-semibold text-supergray text-base truncate">
-                                        Votre annonce commencé le 9 Février, 2023
-                                     </div>
-                                  </button>
+                               <div className="pt-4 flex flex-col space-y-4">
+                                 {AgencyData.getHosts()?.map((h)=>(
+                                    <button onClick={()=>h.getForgetInformations(navigate)} className="h-6rem superborder rounded-xl overflow-hidden flex flex-row items-center p-6 space-x-6">
+                                       <div className="aspect-square bg-gray-200/75 rounded-md h-full flex items-center justify-center">
+                                          <Icon size={20} name="IoHomeSharp" />
+                                       </div>
+                                       <div className="flex items-center justify-center font-semibold text-supergray text-base truncate">
+                                          {"Votre annonce commencé le " + h.getDate()?.toDate().getDate() + " " + h.getDate()?.toDate().toLocaleString('fr', { month: 'long' }) + ", " + h.getDate()?.toDate().getFullYear()}
+                                       </div>
+                                    </button>
+                                 ))}
                                </div>
-
-                            </div>
+                            </div>}
                             <div className="flex flex-col">
                                <div className="text-xl font-semibold text-supergray">Commencer une nouvelle annonce</div>
                                <div className="pt-4 flex flex-col">

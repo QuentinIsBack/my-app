@@ -8,13 +8,16 @@ import React, {
     ReactNode,
     useEffect
 } from "react";
+import { useNavigate } from "react-router-dom";
 // Import Authentificated
 
 import AgencyDatas from "../data/Agency.data";
+import HostDatas from "../data/Host.data";
 import UserDatas from "../data/User.data";
 
 import { db } from "../firebase.config";
 import AgencyDataServices from "../services/AgencyData.services";
+import HostDataServices from "../services/HostData.services";
 import UserDataServices from "../services/UserData.services";
 import { UserContext } from "./UserContext";
 
@@ -48,23 +51,42 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
                         newData.setDescription(doc.data()?.description);
 
 
-                        await UserDataServices.getAll(where("agency", "==", "1RwyWUmA4MucY6yeQ4FR"))
+                        // Get tous les utilisateurs
+                        await UserDataServices.getAll(where("agency", "==", doc.id))
                             .then((querySnapshot) => {
                                 const tableau: UserDatas[] = []
-                                querySnapshot.docs.map((doc) => {
+                                querySnapshot.docs.map(async (doc) => {
                                     const newData = new UserDatas();
                                     newData.setUID(doc.data()?.uid)
                                     newData.setFirstname(doc.data()?.firstname)
                                     newData.setLastname(doc.data()?.lastname)
                                     newData.setEmail(doc.data()?.email)
                                     newData.setAgency(doc.data()?.agency)
+
                                     tableau.push(newData)
                                 })
                                 newData.setMembers(tableau)
                             });
 
+                        // Get tous les logements
+                        await HostDataServices.getAll(where("agency", "==",doc.id))
+                            .then((querySnapshot) => {
+                                const hosts: HostDatas[] = []
+                                querySnapshot.docs.map(async (docH) => {
+                                    const newHost = new HostDatas();
+                                    newHost.setTitle(docH.data().title)
+                                    newHost.setDate(docH.data().createdAt)
+                                    newHost.setId(docH.id)
+                                    hosts.push(newHost)
+
+                                })
+                                newData.setHosts(hosts)
+                            })
+
                         newData.setOwner(doc.data()?.owner);
                         newData.setPermissions(doc.data()?.permissions);
+
+                        console.log(newData)
 
                         setAgencyData(newData)
                     })

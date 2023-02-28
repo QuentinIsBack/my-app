@@ -1,4 +1,4 @@
-import * as Icons from "react-icons/myiconsT"
+import * as Icons from "react-icons/myicons"
 
 type ComponentType = { 
     name: string,

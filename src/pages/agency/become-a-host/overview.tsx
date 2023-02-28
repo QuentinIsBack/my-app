@@ -14,7 +14,8 @@ function App() {
     const navigate = useNavigate();
     const [homeCreated, setHomeCreated] = useState({
         agency: AgencyData.getUID(),
-        status: "draft"
+        status: "draft",
+        createdAt: new Date()
     })
 
     const createHost = () => {
