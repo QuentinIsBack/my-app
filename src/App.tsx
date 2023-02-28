@@ -8,12 +8,15 @@ import AgencyIndex from './pages/agency/index'
 import AgencyTeam from './pages/agency/team'
 import AgencySettings from './pages/agency/settings'
 import AgencyCalendar from './pages/agency/calendar'
-import AgencyBecomeAHost from './pages/agency/become-a-host'
+import AgencyBecomeAHost from './pages/agency/become-a-host/index'
 import AgencyBecomeAHostOverView from './pages/agency/become-a-host/overview'
 import AgencyBecomeAHostAbout from './pages/agency/become-a-host/about-your-place'
 import AgencyBecomeAHostStructure from './pages/agency/become-a-host/structure'
 import AgencyBecomeAHostPropertyType from './pages/agency/become-a-host/property-type'
 import AgencyBecomeAHostPrivacyType from './pages/agency/become-a-host/privacy-type'
+import AgencyBecomeAHostStandOut from './pages/agency/become-a-host/stand-out'
+import AgencyBecomeAHostAmenities from './pages/agency/become-a-host/amenities'
+
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
               <Route path="/agency/become-a-host/:id/structure" element={<AgencyBecomeAHostStructure />} />
               <Route path="/agency/become-a-host/:id/property-type" element={<AgencyBecomeAHostPropertyType />} />
               <Route path="/agency/become-a-host/:id/privacy-type" element={<AgencyBecomeAHostPrivacyType />} />
+              <Route path="/agency/become-a-host/:id/stand-out" element={<AgencyBecomeAHostStandOut />} />
+              <Route path="/agency/become-a-host/:id/amenities" element={<AgencyBecomeAHostAmenities />} />
+
             </Route>
 
             </Route>

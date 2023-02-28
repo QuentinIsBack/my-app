@@ -29,6 +29,7 @@ module.exports = {
         "15rem": "15rem",
         '14rem': '14rem',
         "20rem": "20rem",
+        "25rem": "25rem",
         "28rem": "28rem",
         "30rem": "30rem",
         "35rem": "35rem",
@@ -49,6 +50,7 @@ module.exports = {
         "90rem": "90rem",
       },
       padding: {
+        '5rem': '5rem',
         '5.5rem': '5.5rem',
         "20rem": "20rem",
         "30rem": "30rem",
@@ -119,9 +121,13 @@ module.exports = {
         '4xl': '1640px',
 
         '14rem': '14rem',
+        "25rem": "25rem",
+        '35rem': '35rem',
         '36rem': '36rem',
+        "38rem": "38rem",
       },
       minWidth: {
+        '35rem': '35rem',
         '36rem': '36rem',
       },
       animation: {

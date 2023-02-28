@@ -1,11 +1,12 @@
-import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
+import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
 
-import Icon from "../../components/icon/icons";
-import { UserContext } from "../../contexts/UserContext";
-import { useContext, useEffect } from "react";
+import Icon from "../../../components/icon/icons";
+import { UserContext } from "../../../contexts/UserContext";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Begin } from "../../components/pagebuilder/begin";
-import { AgencyContext } from "../../contexts/AgencyContext";
+import { Begin } from "../../../components/pagebuilder/begin";
+import { AgencyContext } from "../../../contexts/AgencyContext";
+import { IStructure } from "../../../services/CustomData.services";
 
 function App() {
    const { UserData } = useContext(UserContext)
@@ -17,9 +18,9 @@ function App() {
             <>
                <Begin nextClic={()=>navigate('/agency/become-a-host/overview')}>
                   <>
-                   <div className="h-full w-full flex flex-col justify-center items-center">
+                   <div className="h-full w-full flex flex-col justify-center items-center m-auto">
 
-                      <div className="w-38rem">
+                      <div className="w-38rem max-w-38rem">
                          <div className="text-4xl font-semibold text-supergray">Bon retour, {UserData.getFirstname()}</div>
                          <div className="pt-8 space-y-20">
                             {AgencyData.getHosts()?.length > 0 && <div className="flex flex-col">
@@ -31,7 +32,7 @@ function App() {
                                           <Icon size={20} name="IoHomeSharp" />
                                        </div>
                                        <div className="flex items-center justify-center font-semibold text-supergray text-base truncate">
-                                          {"Votre annonce commencé le " + h.getDate()?.toDate().getDate() + " " + h.getDate()?.toDate().toLocaleString('fr', { month: 'long' }) + ", " + h.getDate()?.toDate().getFullYear()}
+                                          {"Votre annonce "+ (h.getStructure() !== undefined ? "(Appartement)":"") +" a été créée le " + h.getDate()?.toDate().getDate() + " " + h.getDate()?.toDate().toLocaleString('fr', { month: 'long' }) + " " + h.getDate()?.toDate().getFullYear() }
                                        </div>
                                     </button>
                                  ))}

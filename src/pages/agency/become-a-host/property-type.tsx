@@ -2,10 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ChooseButton } from "../../../components/button/ChooseButton";
 import { IButton } from "../../../components/footer/footer-begin";
-import { NavBar } from "../../../components/navbar/navbar-begin";
 import { Begin } from "../../../components/pagebuilder/begin";
 import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
-import { UserContext } from "../../../contexts/UserContext";
 import CustomDataServices, { IStructure } from "../../../services/CustomData.services";
 import HostDataServices from "../../../services/HostData.services";
 
@@ -33,7 +31,7 @@ function App() {
 
     const updateHost = () => {
         async function updateData() {
-            await HostDataServices.update(id, {"property-type": selected?.id}).then((e)=>{
+            await HostDataServices.update(id, {"property_type": selected?.id}).then((e)=>{
                 navigate(`/agency/become-a-host/${id}/privacy-type`)
             })
         }
@@ -43,11 +41,13 @@ function App() {
     return (
         <PageBuilder title="Annonces" show={show}>
             <>
-                <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={66}>
+                <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={50}>
                     <>
-                        <div className='flex flex-col justify-center items-center w-full h-full px-35rem space-y-10'>
-                            <div className="w-full text-left font-semibold text-3xl text-supergray">Parmi les propositions suivantes, laquelle décrit le mieux votre logement ?</div>
-                            <ChooseButton list={list} selected={selected} setSelected={setSelected} />
+                        <div className='flex flex-col justify-center items-center w-full h-full space-y-10'>
+                            <div className="w-35rem min-w-35rem flex flex-col space-y-10">
+                                <div className="w-full text-left font-semibold text-3xl text-supergray">Parmi les propositions suivantes, laquelle décrit le mieux votre logement ?</div>
+                                <ChooseButton list={list} selected={selected} setSelected={setSelected} />
+                            </div>
                         </div>
                     </>
                 </Begin>

@@ -12,17 +12,17 @@ function App() {
     return (
         <PageBuilder title="Annonces" show={true}>
             <>
-                <Begin nextClic={() => navigate(`/agency/become-a-host/${id}/structure`)} backBtn={true} nextBtn={IButton.next}>
+                <Begin nextClic={() => navigate(`/agency/become-a-host/${id}/amenities`)} backBtn={true} nextBtn={IButton.next} progressPercentage={100}>
                     <>
                         <div className='flex flex-row w-full h-full px-36'>
                             <div className="flex flex-col items-start justify-center space-y-4 w-36rem max-w-36rem min-w-36rem">
-                                <div className="font-semibold text-base text-supergray">Étape 1</div>
-                                <div className="font-semibold text-5xl text-supergray">Parlez-nous de votre logement</div>
-                                <div className="font-normal text-lg text-supergray">Dans cette étape, nous vous demanderons quel type de propriété vous avez et si les invités réserveront l'endroit entier ou juste une pièce. Ensuite, faites-nous savoir l'emplacement et le nombre d'invités.</div>
+                                <div className="font-semibold text-base text-supergray">Étape 2</div>
+                                <div className="font-semibold text-5xl text-supergray">Faites sortir votre annonce du lot</div>
+                                <div className="font-normal text-lg text-supergray">Au cours de cette étape, vous pourrez ajouter certains des équipements proposés dans votre logement et au moins 5 photos. Vous pourrez ensuite ajouter un titre et une description.</div>
                             </div>
                             <div className="flex flex-col justify-center divide-y px-10">
                                 <video muted autoPlay className="scale-115">
-                                    <source src="https://stream.media.muscache.com/zFaydEaihX6LP01x8TSCl76WHblb01Z01RrFELxyCXoNek.mp4?v_q=high" type="video/mp4" />
+                                    <source src="https://stream.media.muscache.com/H0101WTUG2qWbyFhy02jlOggSkpsM9H02VOWN52g02oxhDVM.mp4?v_q=high" type="video/mp4" />
                                 </video>
                             </div>
                         </div>

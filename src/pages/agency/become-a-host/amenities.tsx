@@ -21,7 +21,6 @@ function App() {
     const [show, setShow] = useState(false)
     const { id } = useParams<{id?: string}>() as any;
     const [selected, setSelected] = useState<TypeSelected>();
-    //const [selected, setSelected] = useState<TypeSelected>(list?.find(idd => idd == AgencyData.getHosts().find(ids => ids.getId() == id)?.getStructure()));
     const navigate = useNavigate();
  
     useEffect(()=>{
@@ -38,7 +37,7 @@ function App() {
     const updateHost = () => {
         async function updateData() {
             await HostDataServices.update(id, {structure: selected?.id}).then((e)=>{
-                navigate(`/agency/become-a-host/${id}/property-type`)
+                //navigate(`/agency/become-a-host/${id}/property-type`)
             })
         }
         updateData()
@@ -47,11 +46,12 @@ function App() {
     return (
         <PageBuilder title="Annonces" show={show}>
             <>
-                <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={25}>
+                <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={100}>
                     <>
                         <div className='flex flex-col justify-center items-center w-full h-full space-y-10'>
-                            <div className="w-35rem min-w-35rem flex flex-col space-y-10">
-                                <div className="w-full text-left font-semibold text-3xl text-supergray">Quel type de logement allez-vous proposer ?</div>
+                            <div className="w-35rem min-w-35rem flex flex-col space-y-6">
+                                <div className="w-full text-left font-semibold text-3xl text-supergray">Indiquez aux voyageurs quels sont les équipements de votre logement</div>
+                                <div className="w-full text-left font-normal text-xl text-supergray/75">Vous pourrez ajouter des équipements une fois votre annonce publiée.</div>
                                 <ChooseButton list={list} selected={selected} setSelected={setSelected} />
                             </div>
                         </div>

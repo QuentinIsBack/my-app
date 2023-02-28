@@ -1,19 +1,13 @@
 import { Timestamp } from "firebase/firestore";
-import React, { useState } from "react";
-import { NavigateFunction, useNavigate } from "react-router-dom";
-import AgencyDataServices from "../services/AgencyData.services";
-import UserDatas from "./User.data";
-
-function GoTo(url: string){
-    const navigate = useNavigate();
-    return navigate("/")
-}
+import { NavigateFunction } from "react-router-dom";
 
 export default class HostDatas {  
 
     title: string | undefined;
     id: string | undefined;
     structure: string | undefined;
+    propertytype: string | undefined;
+    privacytype: string | undefined;
     
     date: Timestamp | undefined
 
@@ -26,12 +20,24 @@ export default class HostDatas {
     setStructure = (newData: string) => { this.structure = newData }
     getStructure = () => { return this.structure }
 
+    setPropertyType = (newData: string) => { this.propertytype = newData }
+    getPropertyType = () => { return this.propertytype }
+
+    setPrivacyType = (newData: string) => { this.privacytype = newData }
+    getPrivacyType = () => { return this.privacytype }
+
     setDate = (newData: Timestamp) => { this.date = newData }
     getDate = () => { return this.date }
 
     getForgetInformations = (navigate: NavigateFunction) => {
-        if (this.structure == null || this.structure == "") {
+        if (this.structure == undefined) {
             return navigate(`/agency/become-a-host/${this.getId()}/structure`);
+        }
+        if (this.propertytype == undefined) {
+            return navigate(`/agency/become-a-host/${this.getId()}/property-type`);
+        }
+        if (this.privacytype == undefined) {
+            return navigate(`/agency/become-a-host/${this.getId()}/privacy-type`);
         }
     }
 

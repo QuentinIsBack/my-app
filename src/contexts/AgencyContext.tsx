@@ -42,17 +42,17 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
 
                 try {
 
-                    onSnapshot(doc(db, "agencies", UserData.getAgency()), async (doc) => {
+                    onSnapshot(doc(db, "agencies", UserData.getAgency()), async (docR) => {
 
                         const newData = new AgencyDatas();
 
-                        newData.setUID(doc.id)
-                        newData.setTitle(doc.data()?.title);
-                        newData.setDescription(doc.data()?.description);
+                        newData.setUID(docR.id)
+                        newData.setTitle(docR.data()?.title);
+                        newData.setDescription(docR.data()?.description);
 
 
                         // Get tous les utilisateurs
-                        await UserDataServices.getAll(where("agency", "==", doc.id))
+                        await UserDataServices.getAll(where("agency", "==", docR.id))
                             .then((querySnapshot) => {
                                 const tableau: UserDatas[] = []
                                 querySnapshot.docs.map(async (doc) => {
@@ -69,13 +69,16 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
                             });
 
                         // Get tous les logements
-                        await HostDataServices.getAll(where("agency", "==",doc.id))
+                        await HostDataServices.getAll(where("agency", "==",docR.id))
                             .then((querySnapshot) => {
                                 const hosts: HostDatas[] = []
                                 querySnapshot.docs.map(async (docH) => {
                                     const newHost = new HostDatas();
                                     newHost.setTitle(docH.data().title)
                                     newHost.setDate(docH.data().createdAt)
+                                    newHost.setStructure(docH.data().structure)
+                                    newHost.setPropertyType(docH.data().property_type)
+                                    newHost.setPrivacyType(docH.data().privacy_type)
                                     newHost.setId(docH.id)
                                     hosts.push(newHost)
 
@@ -83,8 +86,8 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
                                 newData.setHosts(hosts)
                             })
 
-                        newData.setOwner(doc.data()?.owner);
-                        newData.setPermissions(doc.data()?.permissions);
+                        newData.setOwner(docR.data()?.owner);
+                        newData.setPermissions(docR.data()?.permissions);
 
                         console.log(newData)
 
