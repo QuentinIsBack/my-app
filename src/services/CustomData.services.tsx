@@ -6,6 +6,8 @@ export const IStructure = {
     Structure: "structure",
     PropertyType: "property-type",
     PrivacyType: "privacy-type",
+    AmenitiesBasic: "amenities_basic",
+    AmenitiesExtraordinary: "amenities_extraordinary",
 }
 
 class CustomDataServices {

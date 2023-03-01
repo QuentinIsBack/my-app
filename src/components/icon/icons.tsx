@@ -10,5 +10,5 @@ export default function Icon({
     size,  
 }: ComponentType) { 
     const IconT = (Icons as any)[name];
-    return (<IconT size={size} />)
+    return <IconT size={size} />
 } 
