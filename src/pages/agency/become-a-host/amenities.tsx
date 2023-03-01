@@ -54,7 +54,7 @@ function App() {
             <>
                 <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={100}>
                     <>
-                        <div className='flex flex-col justify-center items-center w-full h-full space-y-10'>
+                        <div className='flex flex-col justify-start items-center w-full h-full space-y-10'>
                             <div className="w-35rem min-w-35rem flex flex-col space-y-12">
                             
                                 <div className="flex flex-col space-y-6">

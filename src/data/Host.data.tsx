@@ -39,6 +39,8 @@ export default class HostDatas {
         if (this.privacytype == undefined) {
             return navigate(`/agency/become-a-host/${this.getId()}/privacy-type`);
         }
+        return navigate(`/agency/become-a-host/${this.getId()}/amenities`);
+        
     }
 
 }

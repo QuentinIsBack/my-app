@@ -28,7 +28,7 @@ export const NavBar = ({ padding }: CompType) => {
 
                         <NavButton title={"Aujourd'hui"} to={"/agency/"} />
                         <NavButton title={"Messages"} to={"/agency/messages/"} />
-                        <NavButton title={"Reservations"} to={"/agency/reservations/"} />
+                        <NavButton title={"Informations"} to={"/agency/reservations/"} />
                         <NavButton title={"Calendrier"} to={"/agency/calendar/"} />
 
                         <div className="dropdown dropdown-end">
