@@ -18,10 +18,12 @@ class UserDataServices {
     };
 
     getAll = async (...other: any[]) => {
+        console.log("FIREBASE !!")
         return await getDocs(query(collection(db, table), ...other));
     };
 
     get = async (id: string) => {
+        console.log("FIREBASE !!")
         return await getDoc(doc(db, table, id))
     };
 

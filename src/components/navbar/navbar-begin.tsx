@@ -10,7 +10,7 @@ export const NavBar = () => {
                         <img width={25} alt={'logo'} src={LOGOWHITE} />
                     </button>
                 </div>
-                <div className='navright flex flex-row space-x-6'>
+                <div className='navright flex flex-row space-x-4'>
                     <button className="h-full">
                         <div className='duration-150 inline-flex items-center text-supergray rounded-2xl py-2 px-4 text-sm font-medium superborder'>
                             Question?

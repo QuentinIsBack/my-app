@@ -16,7 +16,7 @@ export const ChooseButton = ({ list, selected, setSelected, style, align }: Type
                     <RadioGroup.Option key={plan.id} value={plan} className={({ active, checked }) =>
                         `${active && 'outline-supergray bg-gray-50 '}
                         ${checked && 'outline-supergray bg-gray-50 '}
-                        px-4 py-8 cursor-pointer bg-white rounded-xl hover:bg-gray-50 outline outline-gray-200 hover:outline-2 hover:outline-supergray flex items-center w-full duration-100 animation overflow-hidden`
+                        select-none active:scale-95 px-4 py-8 cursor-pointer bg-white rounded-xl hover:bg-stone-50 outline outline-1 outline-gray-200 hover:outline-2 hover:outline-supergray flex items-center w-full duration-100 animation overflow-hidden`
                     }>
                         {({ active, checked }) => (
                             <div className={`flex w-full items-center justify-between`}>

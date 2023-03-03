@@ -49,7 +49,7 @@ function App() {
             <>
                 <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={25}>
                     <>
-                        <div className='flex flex-col justify-center items-center w-full h-full space-y-10'>
+                        <div className='animate-showin flex flex-col justify-center items-center w-full h-full space-y-10'>
                             <div className="w-35rem min-w-35rem flex flex-col space-y-10">
                                 <div className="w-full text-left font-semibold text-3xl text-supergray">Quel type de logement allez-vous proposer ?</div>
                                 <ChooseButton list={list} selected={selected} setSelected={setSelected} />

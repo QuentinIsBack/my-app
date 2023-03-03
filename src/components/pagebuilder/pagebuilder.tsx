@@ -38,5 +38,6 @@ export const PageBuilder = ({
 
 PageBuilder.defaultProps = {
     navbar: undefined,
-    footer: undefined
+    footer: undefined,
+    show: true
 }

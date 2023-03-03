@@ -29,7 +29,6 @@ function App() {
             await CustomDataServices.getAll(IStructure.AmenitiesBasic)
                 .then(async (querySnapshot) => {
                     setListBasic(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-                    setShow(true)
                 })
             await CustomDataServices.getAll(IStructure.AmenitiesExtraordinary)
                 .then(async (querySnapshot) => {
@@ -54,12 +53,12 @@ function App() {
             <>
                 <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={100}>
                     <>
-                        <div className='flex flex-col justify-start items-center w-full h-full space-y-10'>
+                        <div className='animate-showin flex flex-col justify-start items-center w-full h-full space-y-10'>
                             <div className="w-35rem min-w-35rem flex flex-col space-y-12">
                             
                                 <div className="flex flex-col space-y-6">
-                                    <div className="w-full text-left font-semibold text-3xl text-supergray">Indiquez aux locataires quels sont les équipements de votre logement</div>
-                                    <div className="w-full text-left font-normal text-xl text-supergray/75">Vous pourrez ajouter des équipements une fois votre annonce publiée.</div>
+                                    <div className="w-full text-left font-semibold text-3xl text-supergray">Indiquez-nous les équipements du logement</div>
+                                    <div className="w-full text-left font-normal text-base text-supergray/75">Vous pourrez ajouter des équipements une fois votre annonce publiée.</div>
                                     <ChooseButton style="grid grid-cols-3 gap-4" list={listBasic} selected={selectedBasic} setSelected={setSelectedBasic} />
                                 </div>
                                 

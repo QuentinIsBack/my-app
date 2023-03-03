@@ -16,6 +16,8 @@ body {
 :root {
   --navbar--big: 6rem;
   --footer--big: 5.5rem;
+
+  --nav--starter: 5rem;
 }
 
 @font-face {

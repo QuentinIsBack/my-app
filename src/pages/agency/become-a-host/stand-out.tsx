@@ -14,7 +14,7 @@ function App() {
             <>
                 <Begin nextClic={() => navigate(`/agency/become-a-host/${id}/amenities`)} backBtn={true} nextBtn={IButton.next} progressPercentage={100}>
                     <>
-                        <div className='flex flex-row w-full h-full px-36'>
+                        <div className='animate-showin flex flex-row w-full h-full px-36'>
                             <div className="flex flex-col items-start justify-center space-y-4 w-36rem max-w-36rem min-w-36rem">
                                 <div className="font-semibold text-base text-supergray">Étape 2</div>
                                 <div className="font-semibold text-5xl text-supergray">Faites sortir votre annonce du lot</div>

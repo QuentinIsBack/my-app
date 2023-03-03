@@ -29,7 +29,7 @@ function App() {
                 setShow(true)
         }
         fetchData()
-    })
+    }, [])
 
     const updateHost = () => {
         async function updateData() {
@@ -45,7 +45,7 @@ function App() {
             <>
                 <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={75}>
                     <>
-                        <div className='flex flex-col justify-center items-center w-full h-full space-y-10'>
+                        <div className='animate-showin flex flex-col justify-center items-center w-full h-full space-y-10'>
                             <div className="w-35rem min-w-35rem flex flex-col space-y-10">
                                 <div className="w-full text-left font-semibold text-3xl text-supergray">Quel type de logement sera à la disposition des voyageurs ?</div>
                                 <ChooseButton list={list} selected={selected} setSelected={setSelected} />

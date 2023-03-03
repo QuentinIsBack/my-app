@@ -32,7 +32,7 @@ function App() {
             <>
                 <Begin nextClic={createHost} progressShow={false} backBtn={true} nextBtn={IButton.start}>
                     <>
-                        <div className='grid grid-cols-2 w-full h-full px-36'>
+                        <div className='animate-showin grid grid-cols-2 w-full h-full px-36'>
                             <div className="flex items-center justify-center">
                                 <div className="font-semibold text-6xl text-supergray">C'est facile de commencer sur HubNest</div>
                             </div>

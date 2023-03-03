@@ -18,7 +18,7 @@ function App() {
             <>
                <Begin nextClic={()=>navigate('/agency/become-a-host/overview')}>
                   <>
-                   <div className="h-full w-full flex flex-col justify-center items-center m-auto">
+                   <div className="animate-showin h-full w-full flex flex-col justify-center items-center m-auto">
 
                       <div className="w-38rem max-w-38rem">
                          <div className="text-4xl font-semibold text-supergray">Bon retour, {UserData.getFirstname()}</div>

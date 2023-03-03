@@ -25,10 +25,12 @@ class CustomDataServices {
     };
 
     getAll = async (table: string, ...other: any[]) => {
+        console.log("FIREBASE !!")
         return await getDocs(query(collection(db, table), ...other));
     };
 
     get = async (table: string, id: string) => {
+        console.log("FIREBASE !!")
         return await getDoc(doc(db, table, id))
     };
 
