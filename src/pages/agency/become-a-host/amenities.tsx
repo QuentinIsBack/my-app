@@ -48,7 +48,7 @@ function App() {
         updateData()
     }
 
-    return (
+    return ( 
         <PageBuilder title="Annonces" show={show}>
             <>
                 <Begin nextClic={updateHost} nextBtn={IButton.next} backBtn={true} progressPercentage={100}>
