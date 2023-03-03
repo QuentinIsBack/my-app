@@ -18,7 +18,7 @@ import AgencyBecomeAHostStandOut from './pages/agency/become-a-host/stand-out'
 import AgencyBecomeAHostAmenities from './pages/agency/become-a-host/amenities'
 
 
-import Starter from './pages/starter2/overview'
+import Starter from './pages/starter/overview'
 
 
 function App() {
