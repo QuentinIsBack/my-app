@@ -36,6 +36,8 @@ module.exports = {
         "36rem": "36rem",
         "38rem": "38rem",
         "40rem": "40rem",
+        "44rem": "44rem",
+        "50rem": "50rem",
       },
       margin: {
         "7.5": "2rem",
@@ -125,6 +127,7 @@ module.exports = {
         '35rem': '35rem',
         '36rem': '36rem',
         "38rem": "38rem",
+        "50rem": "50rem",
       },
       minWidth: {
         '35rem': '35rem',

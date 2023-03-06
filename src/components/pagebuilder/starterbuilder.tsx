@@ -16,11 +16,16 @@ export const StarterBuilder = ({
                 <div className="bg-gradient-to-b from-indigo-600 to-pink-500">
 
                 </div>
-                <div className="relative">
+                <div className="relative flex flex-col">
                     <div className="h-[var(--nav--starter)] border-b">
                         
                     </div>
+                    <div className="grow">
                     {children}
+                    </div>
+                    <div className="h-[var(--footer--starter)] border-t">
+                        
+                    </div>
                 </div>
             </div>
         </>
