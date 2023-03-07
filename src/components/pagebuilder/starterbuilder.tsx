@@ -6,7 +6,7 @@ interface SBthemes {
     pages: string,
 }
 export const SBthemes = {
-    home: "bg-[url('https://images.pexels.com/photos/5825604/pexels-photo-5825604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-black",
+    home: "bg-gradient-to-b from-indigo-600 to-pink-500",
     pages: "bg-gradient-to-b from-indigo-600 to-pink-500"
 };
 
@@ -33,7 +33,7 @@ export const StarterBuilder = ({
                     <div className="h-[var(--nav--starter)] border-b">
                         
                     </div>
-                    <div className="grow">
+                    <div className="grow overflow-scroll h-0">
                         {children}
                     </div>
                     {footer && <div className="h-[var(--footer--starter)] border-t">
