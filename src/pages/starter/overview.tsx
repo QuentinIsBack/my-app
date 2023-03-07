@@ -20,9 +20,9 @@ function App() {
                 <StarterBuilder theme={SBthemes.home} footer={false}>
                     <>
                             <div className="flex flex-col justify-start items-center w-full  h-full py-20">
-                                <div className="w-35rem max-w-35rem flex flex-col h-full justify-between">
+                                <div className="w-35rem max-w-35rem flex flex-col space-y-8 h-full justify-between">
 
-                                    <div className="flex flex-col space-y-8">
+                                    <div className="flex flex-col space-y-8 h-full overflow-scroll">
                                         <div>
                                             <div className="text-3xl font-semibold text-supergray">Bon retour, {UserData.getFirstname()}</div>
                                         </div>
@@ -51,7 +51,7 @@ function App() {
 
                                         <div>
                                             <div className="text-xl font-semibold text-supergray">Commencer une nouvelle annonce</div>
-                                        <button onClick={() => navigate('/agency/become-a-host/overview')} className="h-6rem flex flex-row justify-between items-center border-b w-full mt-4">
+                                            <button onClick={() => navigate('/agency/become-a-host/overview')} className="h-6rem flex flex-row justify-between items-center border-b w-full mt-4">
                                                 <div className="flex flew-row items-center space-x-4">
                                                     <div><Icon size={35} name="IoHomeOutline" /></div>
                                                     <div className="text-base font-medium text-supergray">Créer une nouvelle annonce</div>
@@ -64,6 +64,21 @@ function App() {
 
                                     </div>
 
+
+                                        <div className="card card-side bg-gray-100 h-20rem overflow-hidden">
+                                            <div className="card-body">
+                                                <div className="text-supergray font-semibold text-2xl">
+                                                    Vous avez besoin d'aide pour votre annonce ?
+                                                </div>
+                                                <div className="text-supergray font-normal text-sm pt-1">
+                                                    Bénéficiez gratuitement de conseils personnalisés et de l'aide d'hôtes expérimentés.
+                                                </div>
+                                                <button className="flex-none self-start rounded-md bg-gray-plus bg-black text-white font-semibold text-sm py-2 px-4">
+                                                    Discutez avec un Superhôte
+                                                </button>
+                                            </div>
+                                            <div className="bg-[url('https://a0.muscache.com/im/pictures/d5033e5a-d457-4dd6-aa41-2d588bea7657.jpg')] h-full w-72 bg-cover" />
+                                        </div>
 
 
                                     
