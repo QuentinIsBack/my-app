@@ -1,7 +1,7 @@
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
 import { useNavigate } from "react-router-dom";
-import { SBthemes, StarterBuilder, SBbuttons } from "../../components/pagebuilder/starterbuilder";
+import { SBthemes, StarterBuilder } from "../../components/pagebuilder/starterbuilder";
 import { useContext, useEffect, useState } from "react";
 import { AgencyContext } from "../../contexts/AgencyContext";
 import Icon from "../../components/icon/icons";
@@ -27,7 +27,7 @@ function App() {
 
     useEffect(()=>{
         async function fetchData(){
-            await CustomDataServices.getAll(IStructure.Structure)
+            await CustomDataServices.getAll(IStructure.PropertyType)
                 .then((querySnapshot) => setList(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))))
                 setShow(true)
         }
@@ -37,7 +37,7 @@ function App() {
     return (
         <PageBuilder title="Starter" show={true}>
             <>
-                <StarterBuilder buttonNext={ selected ? SBbuttons.allow : SBbuttons.blocked } theme={SBthemes.home} footer={true} title={"Quel type de logement allez-vous proposer ?"}>
+                <StarterBuilder theme={SBthemes.home} footer={true} title={"Quel type de logement allez-vous proposer ?"}>
                     <>
                         <div className="flex flex-col justify-start items-center w-full h-full py-20">
                             <div className="w-35rem max-w-35rem flex flex-col h-full justify-center">

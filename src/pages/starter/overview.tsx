@@ -64,23 +64,20 @@ function App() {
 
                                     </div>
 
-
-                                        <div className="card card-side bg-gray-100 h-20rem overflow-hidden">
-                                            <div className="card-body">
-                                                <div className="text-supergray font-semibold text-2xl">
-                                                    Vous avez besoin d'aide pour votre annonce ?
-                                                </div>
-                                                <div className="text-supergray font-normal text-sm pt-1">
-                                                    Bénéficiez gratuitement de conseils personnalisés et de l'aide d'hôtes expérimentés.
-                                                </div>
-                                                <button className="flex-none self-start rounded-md bg-gray-plus bg-black text-white font-semibold text-sm py-2 px-4">
-                                                    Discutez avec un Superhôte
-                                                </button>
+                                    <div className="card card-side bg-gray-100 h-20rem overflow-hidden">
+                                        <div className="card-body">
+                                            <div className="text-supergray font-semibold text-2xl">
+                                                Vous avez besoin d'aide pour votre annonce ?
                                             </div>
-                                            <div className="bg-[url('https://a0.muscache.com/im/pictures/d5033e5a-d457-4dd6-aa41-2d588bea7657.jpg')] h-full w-72 bg-cover" />
+                                            <div className="text-supergray font-normal text-sm pt-1">
+                                                Bénéficiez gratuitement de conseils personnalisés et de l'aide d'hôtes expérimentés.
+                                            </div>
+                                            <button className="flex-none self-start rounded-md bg-gray-plus bg-black text-white font-semibold text-sm py-2 px-4">
+                                                Discutez avec un Superhôte
+                                            </button>
                                         </div>
-
-
+                                        <div className="bg-[url('https://a0.muscache.com/im/pictures/d5033e5a-d457-4dd6-aa41-2d588bea7657.jpg')] h-full w-72 bg-cover" />
+                                    </div>
                                     
                                 </div>
     

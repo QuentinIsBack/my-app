@@ -44,8 +44,11 @@ function App() {
                 <Route path="/agency/become-a-host/:id/amenities" element={<AgencyBecomeAHostAmenities />} />
               </Route>
 
+              <Route path="/:id" element={<StarterStructure />} />
+
               <Route path="/starter" element={<Starter />} />
-              <Route path="/structure" element={<StarterStructure />} />
+              <Route path="/:id/structure" element={<StarterStructure />} />
+              <Route path="/:id/property-type" element={<StarterStructure />} />
 
 
             </Route>

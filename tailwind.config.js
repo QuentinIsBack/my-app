@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       height: {
         "1rem": "1rem",
+        "0.5rem": "0.5rem",
         "1.5rem": "1.5rem",
         "2rem": "2rem",
         "2.25rem": "2.25rem",
@@ -53,6 +54,7 @@ module.exports = {
       },
       padding: {
         '5rem': '5rem',
+        '2rem': '2rem',
         '5.5rem': '5.5rem',
         "20rem": "20rem",
         "30rem": "30rem",

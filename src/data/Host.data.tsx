@@ -31,16 +31,15 @@ export default class HostDatas {
 
     getForgetInformations = (navigate: NavigateFunction) => {
         if (this.structure == undefined) {
-            return navigate(`/agency/become-a-host/${this.getId()}/structure`);
+            return navigate(`/${this.getId()}/structure`);
         }
         if (this.propertytype == undefined) {
-            return navigate(`/agency/become-a-host/${this.getId()}/property-type`);
+            return navigate(`/${this.getId()}/property-type`);
         }
         if (this.privacytype == undefined) {
-            return navigate(`/agency/become-a-host/${this.getId()}/privacy-type`);
+            return navigate(`/${this.getId()}/privacy-type`);
         }
-        return navigate(`/agency/become-a-host/${this.getId()}/amenities`);
-        
+        return navigate(`/${this.getId()}/amenities`);
     }
 
 }

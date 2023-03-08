@@ -1,6 +1,16 @@
 import { useTitle } from "../../hooks/useTitle"
+import Icon from "../icon/icons";
 import { ProgressBar } from "../progressbar/ProgressBar";
 
+
+interface SBbuttons {
+    default: string,
+    pages: string,
+}
+export const SBbuttons = {
+    blocked: "flex flex-row items-center space-x-2 cursor-not-allowed bg-supergray/70 py-3 pl-4 pr-6 rounded-xl text-white font-semibold text-base",
+    allow: "flex flex-row items-center space-x-2 bg-supergray hover:bg-black py-3 pl-6 pr-6 rounded-xl text-white font-semibold text-base",
+};
 
 interface SBthemes {
     default: string,
@@ -16,7 +26,10 @@ type PageType = {
     theme: string,
     children: JSX.Element
     title: string,
-    footer: boolean
+    footer: boolean,
+    progress: number
+    buttonNext: string,
+
 }
 
 export const StarterBuilder = ({
@@ -24,6 +37,8 @@ export const StarterBuilder = ({
     theme,
     footer,
     title,
+    progress,
+    buttonNext,
     show,
 }: PageType) => {
     return (
@@ -36,13 +51,24 @@ export const StarterBuilder = ({
                 </div>
                 <div className="relative flex flex-col">
                     <div className="h-[var(--nav--starter)] border-b">
-                        
+                        <div className="flex flex-row justify-between items-center h-full">
+                            <div>
+v
+                            </div>
+                            <div>
+                                <button>Quitter</button>
+                            </div>
+                        </div>
                     </div>
                     <div className="grow overflow-scroll h-0">
                         {children}
                     </div>
                     {footer && <div className="h-[var(--footer--starter)]">
-                        <ProgressBar progressPercentage={20} />
+                        <ProgressBar progressPercentage={progress} />
+                        <div className="flex flex-row justify-between items-center h-[4.5rem] px-[1rem]">
+                            <div></div>
+                            <div><button className={`${buttonNext}`}>{buttonNext === SBbuttons.blocked&&<Icon name="HiLockClosed" size={20} />}<div>Suivant</div></button></div>
+                        </div>
                     </div>}
                 </div>
             </div>
@@ -54,5 +80,7 @@ StarterBuilder.defaultProps = {
     show: true,
     footer: false,
     theme: SBthemes.pages,
-    title: ""
+    title: "",
+    progress: 0,
+    buttonNext: SBbuttons.blocked,
 }
