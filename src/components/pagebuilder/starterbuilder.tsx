@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle"
 import Icon from "../icon/icons";
 import { ProgressBar } from "../progressbar/ProgressBar";
@@ -29,7 +31,7 @@ type PageType = {
     footer: boolean,
     progress: number
     buttonNext: string,
-
+    btnClick: ()=>void;
 }
 
 export const StarterBuilder = ({
@@ -40,7 +42,9 @@ export const StarterBuilder = ({
     progress,
     buttonNext,
     show,
+    btnClick
 }: PageType) => {
+    const navigate = useNavigate();
     return (
         <>
             <div className="grid grid-cols-2 h-full w-full">
@@ -66,8 +70,8 @@ v
                     {footer && <div className="h-[var(--footer--starter)]">
                         <ProgressBar progressPercentage={progress} />
                         <div className="flex flex-row justify-between items-center h-[4.5rem] px-[1rem]">
-                            <div></div>
-                            <div><button className={`${buttonNext}`}>{buttonNext === SBbuttons.blocked&&<Icon name="HiLockClosed" size={20} />}<div>Suivant</div></button></div>
+                            <div><button onClick={()=>navigate(-1)} className={'underline hover:bg-gray-100 py-3 pl-4 pr-6 rounded-xl text-supergray font-semibold text-base'}>Retour</button></div>
+                            <div><button onClick={buttonNext != SBbuttons.blocked ? btnClick : undefined} className={`${buttonNext}`}>{buttonNext === SBbuttons.blocked&&<Icon name="HiLockClosed" size={20} />}<div>Suivant</div></button></div>
                         </div>
                     </div>}
                 </div>
@@ -83,4 +87,5 @@ StarterBuilder.defaultProps = {
     title: "",
     progress: 0,
     buttonNext: SBbuttons.blocked,
+    btnClick: undefined
 }

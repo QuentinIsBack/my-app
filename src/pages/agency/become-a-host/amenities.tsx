@@ -26,11 +26,11 @@ function App() {
  
     useEffect(()=>{
         async function fetchData(){
-            await CustomDataServices.getAll(IStructure.AmenitiesBasic)
+            await CustomDataServices.getAll(IStructure.Amenities)
                 .then(async (querySnapshot) => {
                     setListBasic(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
                 })
-            await CustomDataServices.getAll(IStructure.AmenitiesExtraordinary)
+            await CustomDataServices.getAll(IStructure.Amenities)
                 .then(async (querySnapshot) => {
                     setListExtra(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
                     setShow(true)
