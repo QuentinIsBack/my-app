@@ -9,6 +9,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { ChooseButton } from "../../components/button/ChooseButton";
 import CustomDataServices, { IStructure } from "../../services/CustomData.services";
 import { orderBy } from "firebase/firestore";
+import HostDataServices from "../../services/HostData.services";
 
 type TypeSelected = {
     title: string,
@@ -38,6 +39,7 @@ function App() {
 
     const test = () => { 
         console.log("ok")
+        HostDataServices.update(id as string, { structure: selected?.id })
         //navigate(`/${id}/property-type`)
         navigate(`/${id}/property-type`)
     }
@@ -45,7 +47,7 @@ function App() {
     return (
         <PageBuilder title="Starter" show={true}>
             <>
-                <StarterBuilder btnClick={test} buttonNext={ selected ? SBbuttons.allow : SBbuttons.blocked } theme={SBthemes.home} footer={true} title={"Quel type de logement allez-vous proposer ?"}>
+                <StarterBuilder progress={10} btnClick={test} buttonNext={ selected ? SBbuttons.allow : SBbuttons.blocked } theme={SBthemes.home} footer={true} title={"Quel type de logement allez-vous proposer ?"}>
                     <>
                         <div className="flex flex-col justify-start items-center w-full h-full py-20">
                             <div className="w-35rem max-w-35rem flex flex-col h-full justify-center">

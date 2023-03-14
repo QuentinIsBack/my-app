@@ -21,7 +21,8 @@ import AgencyBecomeAHostAmenities from './pages/agency/become-a-host/amenities'
 import Starter from './pages/starter/overview'
 import StarterStructure from './pages/starter/structure'
 import StarterProperty from './pages/starter/property-type'
-import StarterAmenities from './pages/starter/amenities'
+import StarterTitle from './pages/starter/title'
+import StarterDescription from './pages/starter/description'
 
 
 function App() {
@@ -51,7 +52,8 @@ function App() {
               <Route path="/starter" element={<Starter />} />
               <Route path="/:id/structure" element={<StarterStructure />} />
               <Route path="/:id/property-type" element={<StarterProperty />} />
-              <Route path="/:id/amenities" element={<StarterAmenities />} />
+              <Route path="/:id/title" element={<StarterTitle />} />
+              <Route path="/:id/description" element={<StarterDescription />} />
 
 
             </Route>

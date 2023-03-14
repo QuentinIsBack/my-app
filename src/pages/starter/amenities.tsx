@@ -39,27 +39,28 @@ function App() {
     const test = () => { 
         console.log("ok")
         //navigate(`/${id}/property-type`)
-        navigate(`/${id}/property-type`)
+        navigate(`/${id}/title`)
     }
 
+
     return (
-        <PageBuilder title="Starter" show={true}>
+        <PageBuilder title="Starter" show={show}>
             <>
-                <StarterBuilder btnClick={test} buttonNext={ selected ? SBbuttons.allow : SBbuttons.blocked } theme={SBthemes.home} footer={true} title={"Quel type de logement allez-vous proposer ?"}>
+                <StarterBuilder progress={30} btnClick={test} buttonNext={ selected ? SBbuttons.allow : SBbuttons.blocked } theme={SBthemes.home} footer={true} title={"Indiquez aux locataires quels sont les équipements de votre logement"}>
                     <>
-                        <div className="flex flex-col justify-start items-center w-full h-full py-20">
-                            <div className="w-35rem max-w-35rem flex flex-col space-y-14 h-full justify-center">
+                        <div className="flex flex-col justify-start items-center w-full h-full py-20 overflow-scroll">
+                            <div className="w-35rem max-w-35rem flex flex-col space-y-14 justify-start">
 
                                 <div className="flex flex-col space-y-6">
-                                    <div className="w-full text-left font-semibold text-xl text-supergray">Indiquez aux locataires les équipements du logement</div>
-                                    <ChooseButton style="grid grid-cols-3 gap-8" list={list} selected={selected} setSelected={setSelected} />  
+                                    <div className="w-full text-left font-semibold text-2xl text-supergray">Indiquez aux locataires les équipements du logement</div>
+                                    <ChooseButton style="grid grid-cols-3 gap-6" align="flex-col justify-center text-center space-y-4" list={list} selected={selected} setSelected={setSelected} />  
                                 </div>
 
                                 <div className="flex flex-col space-y-6">
-                                    <div className="w-full text-left font-semibold text-xl text-supergray">Possédez-vous des équipements hors du commun ?</div>
-                                    <ChooseButton style="grid grid-cols-3 gap-8" list={list} selected={selected} setSelected={setSelected} />  
+                                    <div className="w-full text-left font-semibold text-2xl text-supergray">Qu'en est-il de ces équipements préférés des voyageurs ?</div>
+                                    <ChooseButton style="grid grid-cols-3 gap-6" align="flex-col justify-center text-center space-y-4" list={list} selected={selected} setSelected={setSelected} />  
                                 </div>
-                                
+
                             </div>
                         </div>
                     </>

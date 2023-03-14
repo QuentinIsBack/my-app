@@ -53,8 +53,8 @@ export const StarterBuilder = ({
                         {title}
                     </div>
                 </div>
-                <div className="relative flex flex-col">
-                    <div className="h-[var(--nav--starter)] border-b">
+                <div className="relative flex flex-col h-full">
+                    <div className="absolute top-0 h-[var(--nav--starter)] border-b  w-full">
                         <div className="flex flex-row justify-between items-center h-full">
                             <div>
 v
@@ -64,10 +64,13 @@ v
                             </div>
                         </div>
                     </div>
-                    <div className="grow overflow-scroll h-0">
-                        {children}
+                    <div className="absolute top-20 bottom-20 w-full overflow-hidden">
+                        <div className="relative h-full">
+                             {children}
+                        </div>
+                       
                     </div>
-                    {footer && <div className="h-[var(--footer--starter)]">
+                    {footer && <div className="absolute bottom-0 w-full h-[var(--footer--starter)]">
                         <ProgressBar progressPercentage={progress} />
                         <div className="flex flex-row justify-between items-center h-[4.5rem] px-[1rem]">
                             <div><button onClick={()=>navigate(-1)} className={'underline hover:bg-gray-100 py-3 pl-4 pr-6 rounded-xl text-supergray font-semibold text-base'}>Retour</button></div>
