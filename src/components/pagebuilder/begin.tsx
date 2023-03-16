@@ -27,8 +27,10 @@ export const Begin = ({
     return (
         <div className="relative h-screen w-screen">
             <NavBar />
-            <div className="bodyca overflow-scroll">
-                {children}
+            <div className="absolute top-[6rem] bottom-[5.5rem] w-full overflow-hidden">
+                <div className="relative h-full w-full">
+                        {children}
+                </div>
             </div>
             {nextBtn && <Footer progressShow={progressShow} progressPercentage={progressPercentage} nextBtn={nextBtn} nextClic={nextClic} backBtn={backBtn} />}
         </div>

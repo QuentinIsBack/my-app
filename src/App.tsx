@@ -17,13 +17,12 @@ import AgencyBecomeAHostPrivacyType from './pages/agency/become-a-host/privacy-t
 import AgencyBecomeAHostStandOut from './pages/agency/become-a-host/stand-out'
 import AgencyBecomeAHostAmenities from './pages/agency/become-a-host/amenities'
 
-
-import Starter from './pages/starter/overview'
-import StarterStructure from './pages/starter/structure'
-import StarterProperty from './pages/starter/property-type'
-import StarterTitle from './pages/starter/title'
-import StarterDescription from './pages/starter/description'
-
+import HostNew from './pages/host/index'
+import HostOverview from './pages/host/begin/overview'
+import HostAbout from './pages/host/begin/about-your-place'
+import HostStructure from './pages/host/begin/structure'
+import HostPrivacy from './pages/host/begin/privacy'
+import HostProperty from './pages/host/begin/property'
 
 function App() {
   return (
@@ -47,15 +46,13 @@ function App() {
                 <Route path="/agency/become-a-host/:id/amenities" element={<AgencyBecomeAHostAmenities />} />
               </Route>
 
-              <Route path="/:id" element={<StarterStructure />} />
-
-              <Route path="/starter" element={<Starter />} />
-              <Route path="/:id/structure" element={<StarterStructure />} />
-              <Route path="/:id/property-type" element={<StarterProperty />} />
-              <Route path="/:id/title" element={<StarterTitle />} />
-              <Route path="/:id/description" element={<StarterDescription />} />
-
-
+              <Route path="/new" element={<HostNew />} />
+              <Route path="/:id/overview" element={<HostOverview />} />
+              <Route path="/:id/about-your-place" element={<HostAbout />} />
+              <Route path="/:id/structure" element={<HostStructure />} />
+              <Route path="/:id/privacy" element={<HostPrivacy />} />
+              <Route path="/:id/property" element={<HostProperty />} />
+              
             </Route>
       </Routes>
     </BrowserRouter>

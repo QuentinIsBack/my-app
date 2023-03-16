@@ -1,7 +1,7 @@
 .footerbig {
     height: var(--footer--big);
     width: 100%;
-    position: relative;
+    position: absolute;
     bottom: 0px;
     background-color: white;
 }

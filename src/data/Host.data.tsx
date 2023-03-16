@@ -1,14 +1,35 @@
 import { Timestamp } from "firebase/firestore";
 import { NavigateFunction } from "react-router-dom";
 
+class IStructure {
+    id: string | undefined
+    title: string | undefined
+    icon: string | undefined
+}
+
+class IPropertyType {
+    id: string | undefined
+    title: string | undefined
+    description: string | undefined
+}
+
+class IPrivacyType {
+    id: string | undefined
+    title: string | undefined
+    description: string | undefined
+}
+
 export default class HostDatas {  
 
     title: string | undefined;
     id: string | undefined;
-    structure: string | undefined;
-    propertytype: string | undefined;
-    privacytype: string | undefined;
-    
+    structure: IStructure | undefined;
+    propertytype: IPropertyType | undefined;
+    privacytype: IPrivacyType | undefined;
+    price: number | undefined;
+
+    agency: string | undefined
+
     date: Timestamp | undefined
 
     setTitle = (newData: string) => { this.title = newData }
@@ -17,29 +38,35 @@ export default class HostDatas {
     setId = (newData: string) => { this.id = newData }
     getId = () => { return this.id }
 
-    setStructure = (newData: string) => { this.structure = newData }
+    setStructure = (newData: IStructure) => { this.structure = newData }
     getStructure = () => { return this.structure }
 
-    setPropertyType = (newData: string) => { this.propertytype = newData }
+    setPropertyType = (newData: IPropertyType) => { this.propertytype = newData }
     getPropertyType = () => { return this.propertytype }
 
-    setPrivacyType = (newData: string) => { this.privacytype = newData }
+    setPrivacyType = (newData: IPrivacyType) => { this.privacytype = newData }
     getPrivacyType = () => { return this.privacytype }
+
+    setPrice = (newData: number) => { this.price = newData }
+    getPrice = () => { return this.price }
+
+    setAgency = (newData: string) => { this.agency = newData }
+    getAgency = () => { return this.agency }
 
     setDate = (newData: Timestamp) => { this.date = newData }
     getDate = () => { return this.date }
 
     getForgetInformations = (navigate: NavigateFunction) => {
-        if (this.structure == undefined) {
-            return navigate(`/${this.getId()}/structure`);
+        /*if (this.structure == undefined) {
+            return navigate(`/starter/${this.getId()}/structure`);
         }
         if (this.propertytype == undefined) {
-            return navigate(`/${this.getId()}/property-type`);
+            return navigate(`/starter/${this.getId()}/property-type`);
         }
         if (this.privacytype == undefined) {
-            return navigate(`/${this.getId()}/privacy-type`);
-        }
-        return navigate(`/${this.getId()}/amenities`);
+            return navigate(`/starter/${this.getId()}/privacy-type`);
+        }*/
+        return navigate(`/starter/${this.getId()}/structure`);
     }
 
 }

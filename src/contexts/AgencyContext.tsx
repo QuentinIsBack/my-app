@@ -81,7 +81,6 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
                                     newHost.setPrivacyType(docH.data().privacy_type)
                                     newHost.setId(docH.id)
                                     hosts.push(newHost)
-
                                 })
                                 newData.setHosts(hosts)
                             })
