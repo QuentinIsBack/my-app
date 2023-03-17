@@ -39,7 +39,7 @@ function App() {
             <button className="overflow-hidden w-20rem">
                 <button className="rounded-2xl aspect-square bg-gray-100 w-full bg-center bg-cover" style={{ backgroundImage: `url(${""})` }} />
                 <div className="pt-2.5 text-left">
-                    <div className="font-medium text-base">{plan.getPropertyType()?.title} - {plan.getStructure()?.title}</div>
+                    <div className="font-medium text-base"> - </div>
                   <div className="font-normal text-sm text-stone-500">{plan.getAgency() ? "Agence" : "Particulié"}</div>
                     <div className="font-normal text-sm text-stone-500">12-16 févr.</div>
                     <div className="pt-1 flex flex-row space-x-1.5">

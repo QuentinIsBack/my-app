@@ -14,7 +14,7 @@ interface IPerms {
 }
 
 export default class AgencyDatas {  
-    uid: any;
+    uid: string = ""
 
     title: string | undefined;
     description: any | undefined;

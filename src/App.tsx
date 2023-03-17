@@ -3,7 +3,7 @@ import AuthenticatedRoute from './routes/AuthenticatedRoute';
 import AgencyRoute from './routes/AgencyRoute';
 
 import Index from './pages/index'
-
+ 
 import AgencyIndex from './pages/agency/index'
 import AgencyTeam from './pages/agency/team'
 import AgencySettings from './pages/agency/settings'
@@ -17,12 +17,16 @@ import AgencyBecomeAHostPrivacyType from './pages/agency/become-a-host/privacy-t
 import AgencyBecomeAHostStandOut from './pages/agency/become-a-host/stand-out'
 import AgencyBecomeAHostAmenities from './pages/agency/become-a-host/amenities'
 
-import HostNew from './pages/host/index'
+import HostNew from './pages/new'
+import Host from './pages/host/host'
 import HostOverview from './pages/host/begin/overview'
 import HostAbout from './pages/host/begin/about-your-place'
 import HostStructure from './pages/host/begin/structure'
 import HostPrivacy from './pages/host/begin/privacy'
 import HostProperty from './pages/host/begin/property'
+import HostFloor from './pages/host/begin/floor'
+import HostTitle from './pages/host/begin/title'
+import HostDescription from './pages/host/begin/description'
 
 function App() {
   return (
@@ -44,14 +48,19 @@ function App() {
                 <Route path="/agency/become-a-host/:id/privacy-type" element={<AgencyBecomeAHostPrivacyType />} />
                 <Route path="/agency/become-a-host/:id/stand-out" element={<AgencyBecomeAHostStandOut />} />
                 <Route path="/agency/become-a-host/:id/amenities" element={<AgencyBecomeAHostAmenities />} />
-              </Route>
 
-              <Route path="/new" element={<HostNew />} />
-              <Route path="/:id/overview" element={<HostOverview />} />
-              <Route path="/:id/about-your-place" element={<HostAbout />} />
-              <Route path="/:id/structure" element={<HostStructure />} />
-              <Route path="/:id/privacy" element={<HostPrivacy />} />
-              <Route path="/:id/property" element={<HostProperty />} />
+                <Route path="/new" element={<HostNew />} />
+                <Route path="/:id" element={<Host />} />
+                <Route path="/:id/overview" element={<HostOverview />} />
+                <Route path="/:id/about-your-place" element={<HostAbout />} />
+                <Route path="/:id/structure" element={<HostStructure />} />
+                <Route path="/:id/privacy" element={<HostPrivacy />} />
+                <Route path="/:id/property" element={<HostProperty />} />
+                <Route path="/:id/floor" element={<HostFloor />} />
+                <Route path="/:id/title" element={<HostTitle />} />
+                <Route path="/:id/description" element={<HostDescription />} />
+
+              </Route>
               
             </Route>
       </Routes>

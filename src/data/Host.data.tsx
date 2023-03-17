@@ -1,32 +1,19 @@
 import { Timestamp } from "firebase/firestore";
 import { NavigateFunction } from "react-router-dom";
 
-class IStructure {
-    id: string | undefined
-    title: string | undefined
-    icon: string | undefined
-}
-
-class IPropertyType {
-    id: string | undefined
-    title: string | undefined
-    description: string | undefined
-}
-
-class IPrivacyType {
-    id: string | undefined
-    title: string | undefined
-    description: string | undefined
-}
-
 export default class HostDatas {  
 
     title: string | undefined;
+    description: string | undefined;
     id: string | undefined;
-    structure: IStructure | undefined;
-    propertytype: IPropertyType | undefined;
-    privacytype: IPrivacyType | undefined;
+    structure: string | undefined;
+    propertytype: string | undefined;
+    privacytype: string | undefined;
     price: number | undefined;
+
+    rooms: number | undefined;
+    bedrooms: number | undefined;
+    bathroom: number | undefined;
 
     agency: string | undefined
 
@@ -35,20 +22,32 @@ export default class HostDatas {
     setTitle = (newData: string) => { this.title = newData }
     getTitle = () => { return this.title }
 
+    setDescription = (newData: string) => { this.description = newData }
+    getDescription = () => { return this.description }
+
     setId = (newData: string) => { this.id = newData }
     getId = () => { return this.id }
 
-    setStructure = (newData: IStructure) => { this.structure = newData }
+    setStructure = (newData: string) => { this.structure = newData }
     getStructure = () => { return this.structure }
 
-    setPropertyType = (newData: IPropertyType) => { this.propertytype = newData }
+    setPropertyType = (newData: string) => { this.propertytype = newData }
     getPropertyType = () => { return this.propertytype }
 
-    setPrivacyType = (newData: IPrivacyType) => { this.privacytype = newData }
+    setPrivacyType = (newData: string) => { this.privacytype = newData }
     getPrivacyType = () => { return this.privacytype }
 
     setPrice = (newData: number) => { this.price = newData }
     getPrice = () => { return this.price }
+
+    setRooms = (newData: number) => { this.rooms = newData }
+    getRooms = () => { return this.rooms }
+    
+    setBedrooms = (newData: number) => { this.bedrooms = newData }
+    getBedrooms = () => { return this.bedrooms }
+
+    setBathroom = (newData: number) => { this.bathroom = newData }
+    getBathroom = () => { return this.bathroom }
 
     setAgency = (newData: string) => { this.agency = newData }
     getAgency = () => { return this.agency }
@@ -66,7 +65,7 @@ export default class HostDatas {
         if (this.privacytype == undefined) {
             return navigate(`/starter/${this.getId()}/privacy-type`);
         }*/
-        return navigate(`/starter/${this.getId()}/structure`);
+        return navigate(`/${this.getId()}/overview`);
     }
 
 }

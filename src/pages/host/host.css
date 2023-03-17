@@ -1,0 +1,179 @@
+@tailwind components;
+@tailwind base;
+
+@layer components {
+    .home-separator>span {
+        position: relative;
+    }
+
+    .home-separator>span:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        @apply border-t;
+        @apply w-full;
+    }
+
+    .info-separator>span {
+        position: relative;
+    }
+
+    .info-separator>span:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        @apply border-r;
+        @apply h-full;
+    }
+
+    .dot-separator-6>span {
+        position: relative;
+    }
+
+    .dot-separator-6>span:not(:last-child)::after {
+        content: '·';
+        color: black;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .dot-separator-3>span {
+        position: relative;
+    }
+
+    .dot-separator-3>span:not(:last-child)::after {
+        content: '·';
+        color: black;
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+
+    .divtitletitle {
+        @apply text-2xl;
+        @apply text-supergray;
+        @apply font-medium;
+    }
+}
+
+.shadowbox {
+    box-shadow: 0px 6px 16px rgb(0 0 0 / 12%) !important;
+}
+
+@layer base {
+    .title {
+        @apply py-6;
+        @apply flex;
+        @apply flex-col;
+        @apply justify-center;
+        @apply items-start;
+    }
+    
+    .titlename {
+        @apply text-2xl;
+        @apply text-supergray;
+        @apply font-semibold;
+    }
+
+    .titledesc {
+        @apply flex;
+        @apply flex-row;
+        @apply text-base;
+        @apply text-supergray;
+        @apply font-normal;
+    }
+
+    .floattitledesc {
+        @apply flex;
+        @apply flex-row;
+        @apply text-sm;
+        @apply text-supergray;
+        @apply font-normal;
+    }
+
+    .divstatus {
+        @apply py-6;
+        @apply flex;
+        @apply flex-col;
+        @apply space-y-5;
+    }
+
+    .divstatusmodule {
+        @apply flex;
+        @apply flex-row;
+        @apply space-x-5;
+        @apply items-center;
+    }
+
+    .divstatuslineup {
+        @apply flex;
+        @apply flex-col;
+    }
+
+    .divstatustitle {
+        @apply font-semibold;
+        @apply text-base;
+        @apply text-supergray;
+    }
+
+    .divstatusdesc {
+        @apply font-normal;
+        @apply text-sm;
+        @apply text-supergray/80;
+        @apply leading-snug;
+    }
+
+    .contenerdesc {
+        @apply font-normal;
+        @apply text-base;
+        @apply text-supergray/90;
+        @apply leading-snug;
+        @apply line-clamp-4; 
+    }
+
+    .contenerequipementgrid {
+        @apply grid;
+        @apply grid-cols-2;
+        @apply w-2/3;
+        @apply gap-5
+    }
+
+    .contenerequipementdiv {
+        @apply flex;
+        @apply flex-row;
+        @apply justify-start;
+        @apply items-center;
+        @apply space-x-5
+    }
+
+    .contenerequipementtitle {
+        @apply text-left;
+        @apply text-base;
+        @apply font-normal;
+        @apply text-supergray;
+        @apply leading-snug;
+    }
+
+    .contenerwherediv {
+        @apply h-20rem;
+        @apply w-full;
+        @apply rounded-xl;
+        @apply overflow-hidden;
+    }
+
+    .bodycontent {
+        @apply pt-20;
+        @apply xs:px-6;
+        @apply sm:px-6;
+        @apply md:px-10;
+        @apply lg:px-10;
+        @apply xl:px-10;
+        @apply 2xl:mx-5rem;
+        @apply 3xl:mx-10rem;
+        @apply 4xl:mx-17rem;
+        @apply max-w-xl;
+        @apply m-auto;
+        @apply grid;
+        @apply grid-cols-7;
+        @apply gap-5;
+    }
+    
+    
+}

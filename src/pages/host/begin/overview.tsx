@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IButton } from "../../../components/footer/footer-begin";
 import { NavBar } from "../../../components/navbar/navbar-begin";
@@ -10,20 +10,34 @@ import AgencyDatas from "../../../data/Agency.data";
 import HostDataServices from "../../../services/HostData.services";
 
 function App() {
-    const navigate = useNavigate();
     const { id } = useParams();
-
+    const navigate = useNavigate();
     const { AgencyData } = useContext(AgencyContext)
+    const [show, setShow] = useState(false)
     const [homeCreated, setHomeCreated] = useState({
         agency: AgencyData.getUID(),
         status: "draft",
         createdAt: new Date()
     })
 
+    useEffect(()=>{
+        async function fetchData(){
+            await HostDataServices.get(id as string).then((e)=>{
+                console.log(e.data())
+                setShow(true)
+            })
+        }
+        fetchData()
+    }, [])
+
+    const submit = () => { 
+        navigate(`/${id}/about-your-place`)    
+    }
+
     return (
-        <PageBuilder title="Annonces" show={true}>
+        <PageBuilder title="Annonces" show={show}>
             <>
-                <Begin nextClic={() => navigate(`/${id}/about-your-place`)} progressShow={false} backBtn={true} nextBtn={IButton.start}>
+                <Begin nextClic={submit} progressShow={false} backBtn={true} nextBtn={IButton.start}>
                     <>
                         <div className='animate-showin grid grid-cols-2 w-full h-full px-36'>
                             <div className="flex items-center justify-center">

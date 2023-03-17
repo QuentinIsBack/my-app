@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../contexts/UserContext";
-import { AgencyContext } from "../../contexts/AgencyContext";
+import { UserContext } from "../contexts/UserContext";
+import { AgencyContext } from "../contexts/AgencyContext";
 import { useNavigate } from "react-router-dom";
-import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
-import { Begin } from "../../components/pagebuilder/begin";
-import Icon from "../../components/icon/icons";
+import { PageBuilder } from "../components/pagebuilder/pagebuilder";
+import { Begin } from "../components/pagebuilder/begin";
+import Icon from "../components/icon/icons";
 
 function App() {
    const { UserData } = useContext(UserContext)
