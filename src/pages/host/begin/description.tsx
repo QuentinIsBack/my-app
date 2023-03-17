@@ -43,7 +43,7 @@ function App() {
 
     const submit = () => { 
         HostDataServices.update(id as string, { description: description })
-        navigate(`/${id}/description`)
+        navigate(`/${id}/floor`)
     }
 
     return (

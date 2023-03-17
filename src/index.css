@@ -92,6 +92,53 @@ body {
     @apply hover:border-supergray;
     @apply hover:bg-gray-50
   }
+
+  .contenerdiv {
+    @apply py-6;
+    @apply w-full
+  }
+  .contenertitle {
+    @apply pb-5;
+    @apply font-semibold;
+    @apply text-xl;
+    @apply text-supergray;
+  }
+  .contenermore {
+    @apply mt-4;
+    @apply underline;
+    @apply font-normal;
+    @apply font-semibold;
+    @apply text-supergray;
+    @apply leading-snug;
+    @apply hover:bg-gray-50;
+    @apply rounded-lg;
+    @apply px-3;
+    @apply py-2;
+    @apply -translate-x-3
+  }
+
+  .contenerbtn {
+    @apply mt-6;
+    @apply rounded-lg;
+    @apply font-medium;
+    @apply text-base;
+    @apply text-supergray;
+    @apply outline;
+    @apply outline-1;
+    @apply outline-stone-400;
+    @apply hover:outline-2;
+    @apply hover:outline-black;
+    @apply px-5;
+    @apply py-2.5
+  }
+
+  .divstatus {
+    @apply py-6;
+    @apply flex;
+    @apply flex-col;
+    @apply space-y-5;
+}
+
 }
 
 .vertical-center {

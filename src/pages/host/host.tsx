@@ -14,6 +14,9 @@ import { Footer } from "../../components/footer/footer-begin";
 import './host.css'
 import { LongBar } from "../../components/bar/longbar";
 import { LongBarItem } from "../../components/bar/longbaritem";
+import { Contener } from "../../components/contener/contener";
+import { ContenerButton } from "../../components/button/ContenerButton";
+import { InfoButton } from "../../components/button/InfoButton";
 
 function App() {
    const { id } = useParams();
@@ -67,6 +70,24 @@ function App() {
                                         icon={"SlEnergy"} />
                                         </>
                                 </LongBar>
+                            </span>
+                            <span>
+                                <Contener title={"À propos"}>
+                                    <>
+                                        <div className={`${host.getDescription() && "mb-6"} grid grid-cols-3 w-4/5 gap-4`}>
+                                            {/*<InfoButton title={"Surface"} value={home.surface ? home.surface : 0} icon={"BiHomeAlt"} />*/}
+                                            <InfoButton title={"Pièces"} value={host.getRooms() ? host.getRooms()+"" : 0 + ""} icon={"MdMeetingRoom"} />
+                                            {/*<InfoButton title={"Ascenseur"} value={home.lift ? home.lift : 0} icon={"GiLift"} />*/}
+                                            <InfoButton title={"Chambres"} value={host.getBedrooms() ? host.getBedrooms()+"" : 0+""} icon={"MdOutlineBedroomParent"} />
+                                            {/*<InfoButton title={"GES"} value={home.ges ? home.ges : 0} icon={"GiPoisonGas"} />*/}
+                                            {/*<InfoButton title={"DPE"} value={home.dpe ? home.dpe : 0} icon={"SlEnergy"} />*/}
+                                            {/*<InfoButton title={"Etage"} value={home.floor ? home.floor : 0} icon={"MdBalcony"} />*/}
+                                            {/*<InfoButton title={"Parking"} value={home.parking ? home.parking : 0} icon={"FaParking"} />*/}
+                                        </div>
+                                        <div className='contenerdesc'>{host.getDescription()&& host.getDescription()}</div>
+                                        <ContenerButton title={"En savoir plus"} />
+                                    </>
+                                </Contener>
                             </span>
                         </div>
                     </div>
