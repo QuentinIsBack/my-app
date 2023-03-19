@@ -17,6 +17,8 @@ function App() {
             <>
                 <BecomeBuilder
                     information={`Bon retour ${UserData.getFirstname()},`}
+                    clickBack={undefined}
+                    clickNext={undefined}
                 >
                     <>
                         <div className="flex flex-col items-center justify-center space-y-12 w-full h-full animate-showin ">

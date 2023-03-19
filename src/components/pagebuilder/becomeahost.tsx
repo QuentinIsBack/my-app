@@ -1,14 +1,21 @@
+import { MouseEventHandler } from 'react'
 import './style.css'
 
 type PageType = {
     show: boolean,
-    information: string
+    information: string,
+
+    clickBack: MouseEventHandler<HTMLButtonElement> | undefined
+    clickNext: MouseEventHandler<HTMLButtonElement> | undefined
 
     children: JSX.Element
 }
 export const BecomeBuilder = ({ 
     show,
     information,
+
+    clickBack,
+    clickNext,
 
     children 
 }: PageType) => {
@@ -29,7 +36,18 @@ export const BecomeBuilder = ({
                         {children}
                     </div>
                     <div className="absolute bottom-0 h-[var(--bottom--become)] w-full border-t">
-
+                        <div className='flex flex-row justify-between items-center h-full px-6'>
+                            <div>
+                                <button onClick={clickBack} className='duration-150 hover:bg-gray-100 rounded-xl px-6 py-3 font-medium text-base text-supergray underline'>
+                                    Suivant
+                                </button>
+                            </div>
+                            <div>
+                                <button onClick={clickNext} className='duration-150 bg-supergray hover:bg-black rounded-xl px-6 py-3 font-medium text-base text-white'>
+                                    Suivant
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

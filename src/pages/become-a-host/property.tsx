@@ -6,10 +6,10 @@ import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 import { HostBuilder } from "../../constructor/Host.constructor";
 import HostDatas from "../../data/Host.data";
 import HostDataServices from "../../services/HostData.services";
-import StructureUtils from '../../utils/Structure.utils.json'
+import PropertyUtils from '../../utils/Property.utils.json'
 
 function App() {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
     const [host, setHost] = useState(new HostDatas())
     const [selected, setSelected] = useState<string | undefined>()
 
@@ -17,10 +17,10 @@ function App() {
     const { id } = useParams();
 
     const clickBack = () => {
-        navigate("/become-a-host")
+        navigate(`/${id}/privacy`)
     }
     const clickNext = () => {
-        navigate(`/${id}/privacy`)
+        //navigate(`/${id}/property`)
     }
 
     useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
             await HostDataServices.get(id as string).then((e) => {
                 const newHost = HostBuilder(e.data())
                 setHost(newHost);
-                setSelected(newHost.getStructure())
+                setSelected(newHost.getPropertyType())
             })
             setShow(true)
         }
@@ -36,18 +36,18 @@ function App() {
     }, [])
 
     return (
-        <PageBuilder show={show} title={"ok"} >
+        <PageBuilder show={true} title={"ok"} >
             <>
-                <BecomeBuilder 
-                    information={`Parlez-nous de votre logement`} 
+                <BecomeBuilder information={`Parlez-nous de votre logement`}
                     clickBack={clickBack}
                     clickNext={clickNext}
+                    show={show}
                 >
                     <>
                         <div className="flex flex-col items-center justify-center space-y-12 w-full h-full animate-showin">
                             <div className="flex flex-col space-y-6 w-[30rem]">
-                                <div className="font-semibold text-2xl text-supergray">Quel type de logement allez-vous proposer ?</div>
-                                <ChooseButtonNew list={StructureUtils} selected={selected} setSelected={setSelected} />
+                                <div className="font-semibold text-2xl text-supergray">Parmi les propositions suivantes, laquelle décrit le mieux votre logement ?</div>
+                                <ChooseButtonNew list={PropertyUtils} selected={selected} setSelected={setSelected} />
                             </div>
                         </div>
                     </>
@@ -57,4 +57,3 @@ function App() {
     );
 }
 export default App; 
-
