@@ -20,6 +20,7 @@ import HostTitle from './pages/host/begin/title'
 import HostDescription from './pages/host/begin/description'
 
 import BecomeAHost from './pages/become-a-host'
+import BecomeAHostStructure from './pages/become-a-host/structure'
 
 function App() {
   return (
@@ -37,15 +38,19 @@ function App() {
                 <Route path="/new" element={<HostNew />} />
                 <Route path="/:id/overview" element={<HostOverview />} />
                 <Route path="/:id/about-your-place" element={<HostAbout />} />
-                <Route path="/:id/structure" element={<HostStructure />} />
+                {/*<Route path="/:id/structure" element={<HostStructure />} />*/}
                 <Route path="/:id/privacy" element={<HostPrivacy />} />
                 <Route path="/:id/property" element={<HostProperty />} />
                 <Route path="/:id/floor" element={<HostFloor />} />
                 <Route path="/:id/title" element={<HostTitle />} />
                 <Route path="/:id/description" element={<HostDescription />} />
-              </Route>
 
               <Route path="/become-a-host" element={<BecomeAHost />} />
+              <Route path="/:id/structure" element={<BecomeAHostStructure />} />
+
+
+              </Route>
+
 
               
             </Route>

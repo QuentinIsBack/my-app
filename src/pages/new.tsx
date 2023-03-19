@@ -30,7 +30,7 @@ function App() {
          await AgencyData.createHost(homeCreated).then((e)=>{
             navigate(`/${e.id}/overview`)
          })
-      }
+      } 
       createData()
    }
 

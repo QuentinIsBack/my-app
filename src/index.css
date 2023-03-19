@@ -93,6 +93,28 @@ body {
     @apply hover:bg-gray-50
   }
 
+  .superborder-b {
+    @apply duration-150;
+    @apply border-b;
+    @apply border-supergray/20;
+    @apply hover:border-supergray;
+  }
+
+  .newborder {
+    @apply duration-150;
+    @apply active:scale-98;
+    @apply p-6;
+    @apply bg-white;
+    @apply hover:bg-stone-50 ;
+    @apply rounded-xl;
+    @apply ring-1 ;
+    @apply ring-gray-200 ;
+    @apply hover:ring-2 ;
+    @apply hover:ring-supergray ;
+    @apply duration-150 ;
+    @apply overflow-hidden;
+  }
+
   .contenerdiv {
     @apply py-6;
     @apply w-full
