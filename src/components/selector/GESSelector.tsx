@@ -55,13 +55,13 @@ export const GESSelector = ({
     return (
         <div className="relative w-full">
             <div className="grid grid-cols-7 text-base font-semibold text-supergray rounded-md w-full ring-1 ring-stone-400 ring-none">
-                <button className="rounded-l-md text-center bg-purple-300 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">A</button>
-                <button className="text-center bg-purple-400 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">B</button>
-                <button className="text-center bg-purple-500 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">C</button>
-                <button className="text-center bg-purple-600 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">D</button>
-                <button className="text-center bg-purple-700 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">E</button>
-                <button className="text-center bg-purple-800 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">F</button>
-                <button className="rounded-r-md text-center bg-purple-900 px-3 py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">G</button>
+                <button className="rounded-l-md text-center bg-purple-300 flex justify-center  py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">A</button>
+                <button className="text-center bg-purple-400 flex justify-center py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">B</button>
+                <button className="text-center bg-purple-500 flex justify-center py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">C</button>
+                <button className="text-center bg-purple-600 flex justify-center py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">D</button>
+                <button className="text-center bg-purple-700 flex justify-center py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">E</button>
+                <button className="text-center bg-purple-800 flex justify-center py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">F</button>
+                <button className="rounded-r-md text-center bg-purple-900 flex justify-center py-3 hover:ring-2 hover:z-50 hover:rounded-md ring-black">G</button>
             </div>
         </div>                    
     )

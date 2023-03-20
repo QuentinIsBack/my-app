@@ -36,7 +36,7 @@ function App() {
     }, [])
 
     return (
-        <PageBuilder show={true} title={"ok"} >
+        <PageBuilder show={true} title={"Quel type de location sera à la disposition des locataires ?"} >
             <>
                 <BecomeBuilder information={`Parlez-nous de votre loation`}
                     clickBack={clickBack}

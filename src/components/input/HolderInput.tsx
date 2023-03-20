@@ -24,9 +24,10 @@ export const themes = {
 type CompType = {
     id: string,
     type: string,
-    defaultValue: string,
+    defaultValue: string | number,
     value: string | number,
-    onChange: any,
+    onChange: (e:string | number)=>void,
+    //onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
     placeholder: string,
 
     theme: IVthemes,
@@ -47,9 +48,9 @@ export const HolderInput = ({
 }: CompType) => {
 
     const [values, setValues] = useState(defaultValue ? defaultValue : '')
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValues(e.target.value)
-        onChange(e)
+        onChange(e.target.value)
     }
 
     return (
@@ -57,11 +58,14 @@ export const HolderInput = ({
             <input
                 id={id}
                 type={type}
-                defaultValue={defaultValue}
+                onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()}
                 onChange={e=>handleChange(e)}
-                className={`text-center text-xl font-semibold text-supergray px-3 py-3 rounded-md peer inherit transition-all placeholder-transparent decoration-none truncate ${statut=="normal" && theme.normal} ${statut==="error" && theme.error} ${statut==="valid" && theme.valid}`}
+                value={values}
+                required={true}
+                pattern="[A-Za-z0-9]{1,20}"
+                className={`appearance-none focus:outline-none text-center text-xl font-semibold text-supergray px-3 py-3 rounded-md peer inherit transition-all placeholder-transparent decoration-none truncate ${statut=="normal" && theme.normal} ${statut==="error" && theme.error} ${statut==="valid" && theme.valid}`}
                 placeholder={placeholder} />
-            <label htmlFor={id} className={`py-3 pointer-events-none truncate absolute z-10 right-0 unselectable text-right text-xl font-semibold text-supergray/50 mr-3`}>{placeholder}</label>
+            <label htmlFor={id} className={`appearance-none focus:outline-none py-3 pointer-events-none truncate absolute z-10 right-0 unselectable text-right text-xl font-semibold text-supergray/50 mr-3`}>{placeholder}</label>
 
         </div>                    
     )

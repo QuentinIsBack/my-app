@@ -13,7 +13,7 @@ function App() {
     const { UserData } = useContext(UserContext)
 
     return (
-        <PageBuilder show={true} title={"ok"} >
+        <PageBuilder show={true} title={"Annonces"} >
             <>
                 <BecomeBuilder
                     information={`Bon retour ${UserData.getFirstname()},`}

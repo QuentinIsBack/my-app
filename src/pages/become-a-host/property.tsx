@@ -20,7 +20,7 @@ function App() {
         navigate(`/${id}/privacy`)
     }
     const clickNext = () => {
-        //navigate(`/${id}/property`)
+        navigate(`/${id}/floor`)
     }
 
     useEffect(() => {
@@ -36,7 +36,7 @@ function App() {
     }, [])
 
     return (
-        <PageBuilder show={true} title={"ok"} >
+        <PageBuilder show={true} title={"Parmi les propositions suivantes, laquelle décrit le mieux votre location ?"} >
             <>
                 <BecomeBuilder information={`Parlez-nous de votre location`}
                     clickBack={clickBack}
