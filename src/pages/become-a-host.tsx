@@ -13,12 +13,13 @@ function App() {
     const { UserData } = useContext(UserContext)
 
     return (
-        <PageBuilder show={show} title={"ok"} >
+        <PageBuilder show={true} title={"ok"} >
             <>
                 <BecomeBuilder
                     information={`Bon retour ${UserData.getFirstname()},`}
                     clickBack={undefined}
                     clickNext={undefined}
+                    show={show}
                 >
                     <>
                         <div className="flex flex-col items-center justify-center space-y-12 w-full h-full animate-showin ">

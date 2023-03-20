@@ -38,15 +38,16 @@ function App() {
     return (
         <PageBuilder show={true} title={"ok"} >
             <>
-                <BecomeBuilder information={`Parlez-nous de votre logement`}
+                <BecomeBuilder information={`Parlez-nous de votre location`}
                     clickBack={clickBack}
                     clickNext={clickNext}
+                    lockedNext={selected === undefined}
                     show={show}
                 >
                     <>
                         <div className="flex flex-col items-center justify-center space-y-12 w-full h-full animate-showin">
                             <div className="flex flex-col space-y-6 w-[30rem]">
-                                <div className="font-semibold text-2xl text-supergray">Parmi les propositions suivantes, laquelle décrit le mieux votre logement ?</div>
+                                <div className="font-semibold text-2xl text-supergray">Parmi les propositions suivantes, laquelle décrit le mieux votre location ?</div>
                                 <ChooseButtonNew list={PropertyUtils} selected={selected} setSelected={setSelected} />
                             </div>
                         </div>

@@ -9,7 +9,7 @@ import HostDataServices from "../../services/HostData.services";
 import StructureUtils from '../../utils/Structure.utils.json'
 
 function App() {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
     const [host, setHost] = useState(new HostDatas())
     const [selected, setSelected] = useState<string | undefined>()
 
@@ -36,17 +36,19 @@ function App() {
     }, [])
 
     return (
-        <PageBuilder show={show} title={"ok"} >
+        <PageBuilder show={true} title={"ok"} >
             <>
                 <BecomeBuilder 
-                    information={`Parlez-nous de votre logement`} 
+                    information={`Parlez-nous de votre location`} 
                     clickBack={clickBack}
                     clickNext={clickNext}
+                    lockedNext={selected === undefined}
+                    show={show} 
                 >
                     <>
                         <div className="flex flex-col items-center justify-center space-y-12 w-full h-full animate-showin">
                             <div className="flex flex-col space-y-6 w-[30rem]">
-                                <div className="font-semibold text-2xl text-supergray">Quel type de logement allez-vous proposer ?</div>
+                                <div className="font-semibold text-2xl text-supergray">Quel type de location allez-vous proposer ?</div>
                                 <ChooseButtonNew list={StructureUtils} selected={selected} setSelected={setSelected} />
                             </div>
                         </div>

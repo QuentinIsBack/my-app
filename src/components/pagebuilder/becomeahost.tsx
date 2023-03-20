@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react'
+import Icon from '../icon/icons'
 import './style.css'
 
 type PageType = {
@@ -7,6 +8,7 @@ type PageType = {
 
     clickBack: MouseEventHandler<HTMLButtonElement> | undefined
     clickNext: MouseEventHandler<HTMLButtonElement> | undefined
+    lockedNext: boolean
 
     children: JSX.Element
 }
@@ -16,6 +18,7 @@ export const BecomeBuilder = ({
 
     clickBack,
     clickNext,
+    lockedNext,
 
     children 
 }: PageType) => {
@@ -33,17 +36,20 @@ export const BecomeBuilder = ({
                       
                     </div>
                     <div className='absolute top-[var(--top--become)] bottom-[var(--bottom--become)] w-full'>
-                        {children}
+                        {show && children}
                     </div>
                     <div className="absolute bottom-0 h-[var(--bottom--become)] w-full border-t">
                         <div className='flex flex-row justify-between items-center h-full px-6'>
                             <div>
-                                <button onClick={clickBack} className='duration-150 hover:bg-gray-100 rounded-xl px-6 py-3 font-medium text-base text-supergray underline'>
-                                    Suivant
+                                <button onClick={clickBack} className='duration-150 hover:bg-gray-100 rounded-xl px-6 py-3 font-medium text-base text-supergray underline underline-offset-2'>
+                                    Retour
                                 </button>
                             </div>
                             <div>
-                                <button onClick={clickNext} className='duration-150 bg-supergray hover:bg-black rounded-xl px-6 py-3 font-medium text-base text-white'>
+                                <button 
+                                    data-tip="Veuillez compléter les champs requis." 
+                                    onClick={clickNext} 
+                                    className={`${ (show && lockedNext) ? 'cursor-not-allowed tooltip tooltip-warning tooltip-left' : 'hover:bg-black'} duration-150 bg-supergray rounded-xl px-6 py-3 font-medium text-base text-white`}>
                                     Suivant
                                 </button>
                             </div>
@@ -56,7 +62,8 @@ export const BecomeBuilder = ({
 }
 
 BecomeBuilder.defaultProps = {
-    show: false
+    show: false,
+    lockedNext: true
 }
 
 export const SBthemes = {
