@@ -87,7 +87,6 @@ function App() {
                                                 <Icon name="RiQuestionLine" size={20} />
                                             </button>
                                         </div>
-                                        <GESSelector id={""} type={""} theme={themes.default} />
                                     </div>
                                 </div>
                             </div>

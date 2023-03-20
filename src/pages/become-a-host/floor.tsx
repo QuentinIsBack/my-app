@@ -24,12 +24,14 @@ function App() {
     const [space, setSpace] = useState(28)
     const [stage, setStage] = useState(1)
     const [dpe, setDpe] = useState("d")
+    const [ges, setGes] = useState("d")
 
     const clickBack = () => { 
         navigate(`/${id}/property`)
     }
     const clickNext = () => {
         console.log(dpe)
+        console.log(ges)
         //navigate(`/${id}/property`)
     } 
 
@@ -83,7 +85,7 @@ function App() {
                                                 <Icon name="RiQuestionLine" size={20} />
                                             </button>
                                         </div>
-                                        <GESSelector id={""} type={""} theme={themes.default} />
+                                        <GESSelector defaultValue={ges} onChange={(e) => { setGes(e) }} />
                                     </div>
                                 </div>
 
