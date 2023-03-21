@@ -24,6 +24,8 @@ import BecomeAHostStructure from './pages/become-a-host/structure'
 import BecomeAHostPrivacy from './pages/become-a-host/privacy'
 import BecomeAHostProperty from './pages/become-a-host/property'
 import BecomeAHostFloor from './pages/become-a-host/floor'
+import BecomeAHostTitle from './pages/become-a-host/title'
+import BecomeAHostDescription from './pages/become-a-host/description'
 
 function App() {
   return (
@@ -45,14 +47,16 @@ function App() {
                 {/*<Route path="/:id/privacy" element={<HostPrivacy />} />*/}
                 {/*<Route path="/:id/property" element={<HostProperty />} />*/}
                 {/*<Route path="/:id/floor" element={<HostFloor />} />*/}
-                <Route path="/:id/title" element={<HostTitle />} />
-                <Route path="/:id/description" element={<HostDescription />} />
+                {/*<Route path="/:id/title" element={<HostTitle />} />*/}
+                {/*<Route path="/:id/description" element={<HostDescription />} />*/}
 
               <Route path="/become-a-host" element={<BecomeAHost />} />
               <Route path="/:id/structure" element={<BecomeAHostStructure />} />
               <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
               <Route path="/:id/property" element={<BecomeAHostProperty />} />
               <Route path="/:id/floor" element={<BecomeAHostFloor />} />
+              <Route path="/:id/title" element={<BecomeAHostTitle />} />
+              <Route path="/:id/description" element={<BecomeAHostDescription />} />
 
 
               </Route>

@@ -30,9 +30,7 @@ function App() {
         navigate(`/${id}/property`)
     }
     const clickNext = () => {
-        console.log(dpe)
-        console.log(ges)
-        //navigate(`/${id}/property`)
+        navigate(`/${id}/title`)
     } 
 
     return (
