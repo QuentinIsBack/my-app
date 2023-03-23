@@ -21,6 +21,14 @@ export const themes = {
     }
 }
 
+interface sizes {
+    default: IVthemes,
+}
+export const sizes = {
+    default: "px-3 py-3",
+    big: "px-3 py-6"
+}
+
 type CompType = {
     id: string,
     type: string,
@@ -63,16 +71,16 @@ export const HolderInput = ({
                 value={values}
                 required={true}
                 pattern="[A-Za-z0-9]{1,20}"
-                className={`appearance-none focus:outline-none text-center text-xl font-semibold text-supergray px-3 py-3 rounded-md peer inherit transition-all placeholder-transparent decoration-none truncate ${statut=="normal" && theme.normal} ${statut==="error" && theme.error} ${statut==="valid" && theme.valid}`}
+                className={`appearance-none focus:outline-none text-center text-xl font-semibold text-supergray ${size} rounded-md peer inherit transition-all placeholder-transparent decoration-none truncate ${statut=="normal" && theme.normal} ${statut==="error" && theme.error} ${statut==="valid" && theme.valid}`}
                 placeholder={placeholder} />
-            <label htmlFor={id} className={`select-none appearance-none focus:outline-none py-3 pointer-events-none truncate absolute z-10 right-0 unselectable text-right text-xl font-semibold text-supergray/50 mr-3`}>{placeholder}</label>
+            <label htmlFor={id} className={`select-none appearance-none focus:outline-none ${size} pointer-events-none truncate absolute z-10 right-0 unselectable text-right text-xl font-semibold text-supergray/50 mr-3`}>{placeholder}</label>
 
         </div>                    
     )
 }
 
 HolderInput.defaultProps = {
-    size: "text-xl font-semibold text-supergray px-3 py-3 rounded-md",
+    size: sizes.default,
     statut: "normal",
     defaultValue: "",
     value: "",

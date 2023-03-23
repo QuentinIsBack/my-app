@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ChooseButtonNew } from "../../components/button/ChooseButtonNew";
 import Icon from "../../components/icon/icons";
 import { Incrementor } from "../../components/incrementor/incrementor";
-import { HolderInput, themes } from "../../components/input/HolderInput";
+import { HolderInput, sizes, themes } from "../../components/input/HolderInput";
 import { BecomeBuilder } from "../../components/pagebuilder/becomeahost";
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 import { DEPSelector } from "../../components/selector/DEPSelector";
@@ -18,25 +18,25 @@ function App() {
     const navigate = useNavigate();
     const { id } = useParams();
  
-    const [title, setTitle] = useState("")
+    const [price, setPrice] = useState(250)
 
     const handleChange = ({ currentTarget }: any) => {
-        if (currentTarget.value.length <= 500) {
-            setTitle(currentTarget.value);
+        if (currentTarget.value.length <= 50) {
+            setPrice(currentTarget.value);
         }
     };
 
     const clickBack = () => { 
-        navigate(`/${id}/title`)
+        navigate(`/${id}/description`)
     }
     const clickNext = () => {
-        navigate(`/${id}/price`)
+        navigate(`/${id}/location`)
     } 
 
     return (
-        <PageBuilder show={true} title={"Communiquez nous quelques détails essentiel sur votre logement"} >
+        <PageBuilder show={true} title={"À présent, fixez votre prix"} >
             <>
-                <BecomeBuilder information={`Les petits plus`}
+                <BecomeBuilder information={`À présent, fixez votre prix`}
                     clickBack={clickBack}
                     clickNext={clickNext}
                     lockedNext={false}
@@ -44,15 +44,19 @@ function App() {
                 >
                     <>
                         <div className="flex flex-col items-center justify-center space-y-12 w-full h-full animate-showin">
-                            <div className="flex flex-col space-y-6 w-[30rem]">
-                                <div className="flex flex-col space-y-3">
-                                    <div className="font-semibold text-2xl text-supergray">Donnez lui une description</div>
-                                    <div className="font-light text-sm text-gray-600">La description de votre annonce doit mettre en valeur ce qui fait la particularité de votre logement.</div>
-                                </div>
-                                <div className="flex flex-col">
-                                    <textarea onChange={handleChange} className="animation duration-200 p-4 border-none rounded-xl focus:outline-none ring-gray-400 ring-1 focus:ring-2 focus:ring-black focus:outline-transparent w-full font-medium text-3xl text-gray-800 h-40" value={title}></textarea>
-                                    <div className={`font-bold text-sm ${title.length >= 500 ? "text-red-500" : "text-gray-500"} pt-2`}>{title.length}/500</div>
-                                </div>
+                            <div className="flex flex-col items-center space-y-6 w-[30rem]">
+                                <div className="font-semibold text-2xl text-supergray">À présent, fixez votre prix</div>
+
+                                    <div className="flex flex-col space-y-3 w-fit">
+                                        <HolderInput id={""} type={"number"} size={sizes.big} defaultValue={price} placeholder="€" theme={themes.default} />
+                                        <div className="font-base text-center text-md">par mois</div>
+                                    </div>
+
+                                    <div className="w-10/12 p-4 text-center rounded-lg border border-gray-300 ">
+                                        Offrez une réduction de 20 % à vos 3 premiers voyageurs pour obtenir des réservations plus rapidement. En savoir plus.
+                                    </div>
+                               
+
                             </div>
                         </div>
                     </>

@@ -21,6 +21,10 @@ body {
   --footer--starter: 5rem;
 }
 
+.mapbox-improve-map {
+  display: none;
+}
+
 @font-face {
   font-family: "Inter";
   src: local("Inter"),

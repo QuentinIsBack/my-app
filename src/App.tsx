@@ -26,6 +26,8 @@ import BecomeAHostProperty from './pages/become-a-host/property'
 import BecomeAHostFloor from './pages/become-a-host/floor'
 import BecomeAHostTitle from './pages/become-a-host/title'
 import BecomeAHostDescription from './pages/become-a-host/description'
+import BecomeAHostPrice from './pages/become-a-host/price'
+import BecomeAHostLocation from './pages/become-a-host/location'
 
 function App() {
   return (
@@ -57,6 +59,8 @@ function App() {
               <Route path="/:id/floor" element={<BecomeAHostFloor />} />
               <Route path="/:id/title" element={<BecomeAHostTitle />} />
               <Route path="/:id/description" element={<BecomeAHostDescription />} />
+              <Route path="/:id/price" element={<BecomeAHostPrice />} />
+              <Route path="/:id/location" element={<BecomeAHostLocation />} />
 
 
               </Route>
