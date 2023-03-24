@@ -16,6 +16,8 @@ import { Button, IThemeBtn } from "../../components/button/Button";
 import { Map } from "react-map-gl";
 import { GetGeoInfo, GetGeoInfoByCoord } from "../../components/geocode/geoinfo";
 import { UserContext } from "../../contexts/UserContext";
+import ConditionsUtils from '../../utils/Conditions.utils.json'
+import { Condition } from "../../components/card/conditions";
 
 function App() {
     const [show, setShow] = useState(false);
@@ -143,6 +145,7 @@ function App() {
                             {/* Modal de l'annonce */}
                             <div className="modalcontener">
                                 <div className="modalform modalcont">
+                                    
                                     {/* Titre de l'annonce */}
                                     <div>
                                         <div className="modaltitle">
@@ -157,18 +160,31 @@ function App() {
                                         </div>    
                                     </div>
 
-
                                     {/* Conditions de l'annonce */}
                                     <div>
-                                        <div className="modaltitle">
-                                            <div className='pb-3 text-xl font-medium leading-snug'>{UserData.getFirstname()} : candidature admissible</div>
-                                            <div className="modaltitledesc dot-separator-6">
-                                                {host.rooms && <span>{host.rooms} Pièces</span>}
-                                                {host.bedrooms && <span>{host.bedrooms} Chambres</span>}
-                                                {host.surface && <span>{host.surface} m<sup>2</sup></span>}
+                                        <div className="modalconditioncont">
+                                            <div className='modalconditionname'>{UserData.getFirstname()} : candidature admissible</div>
+                                            <div className="modalcondition">
+                                                {Object.values(ConditionsUtils).map((m)=>(
+                                                    <>
+                                                        <Condition title={m.title} free={true} />
+                                                    </>
+                                                ))}
                                             </div>
                                         </div>   
                                     </div>
+
+                                    {/* En savoir plus sur HubNest */}
+                                    <div className='text-sm font-normal leading-snug'>
+                                        <span className='font-semibold underline'>En savoir plus</span> sur la manière dont la confirmation des informations des comptes contribues à garantir la securité de la commaunté Hubnest.
+                                    </div>
+
+                                    {/* Candidater à l'annonce */}
+                                    <div>
+                                        <button className="h-3rem w-full rounded-lg transition-all duration-1000 bg-gradient-to-r to-pink-600 via-indigo-700 from-pink-600 bg-size-200 bg-pos-0 hover:bg-pos-100  text-white text-md">Candidater</button>
+                                    </div>
+
+                                   
                                      
                                 </div>
                             </div>
