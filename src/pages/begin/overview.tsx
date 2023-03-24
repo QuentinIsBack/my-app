@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IButton } from "../../../components/footer/footer-begin";
-import { NavBar } from "../../../components/navbar/navbar-begin";
-import { Begin } from "../../../components/pagebuilder/begin";
-import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
-import { AgencyContext } from "../../../contexts/AgencyContext";
-import { UserContext } from "../../../contexts/UserContext";
-import AgencyDatas from "../../../data/Agency.data";
-import HostDataServices from "../../../services/HostData.services";
+import { IButton } from "../../components/footer/footer-begin";
+import { NavBar } from "../../components/navbar/navbar-begin";
+import { Begin } from "../../components/pagebuilder/begin";
+import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
+import { AgencyContext } from "../../contexts/AgencyContext";
+import { UserContext } from "../../contexts/UserContext";
+import AgencyDatas from "../../data/Agency.data";
+import HostDataServices from "../../services/HostData.services";
 
 function App() {
     const { id } = useParams();

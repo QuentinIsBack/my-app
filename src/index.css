@@ -97,6 +97,8 @@ body {
 }
 
 @layer base {
+
+  
   .superborder {
     @apply duration-150;
     @apply border;
@@ -127,50 +129,69 @@ body {
     @apply overflow-hidden;
   }
 
-  .contenerdiv {
-    @apply py-6;
-    @apply w-full
-  }
-  .contenertitle {
-    @apply pb-5;
-    @apply font-semibold;
-    @apply text-xl;
-    @apply text-supergray;
-  }
-  .contenermore {
-    @apply mt-4;
-    @apply underline;
-    @apply font-normal;
-    @apply font-semibold;
-    @apply text-supergray;
-    @apply leading-snug;
-    @apply hover:bg-gray-50;
-    @apply rounded-lg;
-    @apply px-3;
-    @apply py-2;
-    @apply -translate-x-3
-  }
 
-  .contenerbtn {
-    @apply mt-6;
-    @apply rounded-lg;
-    @apply font-medium;
-    @apply text-base;
-    @apply text-supergray;
-    @apply outline;
-    @apply outline-1;
-    @apply outline-stone-400;
-    @apply hover:outline-2;
-    @apply hover:outline-black;
-    @apply px-5;
-    @apply py-2.5
-  }
 
-  .divstatus {
-    @apply py-6;
-    @apply flex;
-    @apply flex-col;
-    @apply space-y-5;
+.divstatus {
+  @apply py-6;
+  @apply flex;
+  @apply flex-col;
+  @apply space-y-5;
+}
+
+.divstatusmodule {
+  @apply flex;
+  @apply flex-row;
+  @apply space-x-5;
+  @apply items-center;
+}
+
+.divstatuslineup {
+  @apply flex;
+  @apply flex-col;
+}
+
+.divstatustitle {
+  @apply font-semibold;
+  @apply text-base;
+  @apply text-supergray;
+}
+
+.divstatusdesc {
+  @apply font-normal;
+  @apply text-sm;
+  @apply text-supergray/80;
+  @apply leading-snug;
+}
+
+.contenerdesc {
+  @apply font-normal;
+  @apply text-base;
+  @apply text-supergray/90;
+  @apply leading-snug;
+  @apply line-clamp-4; 
+}
+
+.contenerequipementgrid {
+  @apply grid;
+  @apply grid-cols-2;
+  @apply w-2/3;
+  @apply gap-5
+}
+
+.contenerequipementdiv {
+  @apply flex;
+  @apply flex-row;
+  @apply justify-start;
+  @apply items-center;
+  @apply space-x-5
+}
+
+.contenerequipementtitle {
+  @apply text-left;
+  @apply text-base;
+  @apply font-normal;
+  @apply text-supergray;
+  @apply leading-snug;
 }
 
 }
@@ -180,4 +201,8 @@ body {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.shadowbox {
+  box-shadow: 0px 6px 16px rgb(0 0 0 / 12%) !important;
 }

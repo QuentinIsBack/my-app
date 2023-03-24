@@ -30,6 +30,7 @@ function App() {
         navigate(`/${id}/floor`)
     }
     const clickNext = () => {
+        HostDataServices.update(id as string, { title: title })
         navigate(`/${id}/description`)
     } 
 

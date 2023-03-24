@@ -20,6 +20,7 @@ function App() {
         navigate(`/${id}/structure`)
     }
     const clickNext = () => {
+        HostDataServices.update(id as string, { privacy: selected })
         navigate(`/${id}/property`)
     }
 

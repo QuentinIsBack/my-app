@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IButton } from "../../../components/footer/footer-begin";
-import { Begin } from "../../../components/pagebuilder/begin";
-import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
-import { UserContext } from "../../../contexts/UserContext";
-import CustomDataServices, { IStructure } from "../../../services/CustomData.services";
+import { IButton } from "../../components/footer/footer-begin";
+import { Begin } from "../../components/pagebuilder/begin";
+import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
+import { UserContext } from "../../contexts/UserContext";
+import CustomDataServices, { IStructure } from "../../services/CustomData.services";
 import { orderBy } from "firebase/firestore";
-import { ChooseButton } from "../../../components/button/ChooseButton";
-import HostDataServices from "../../../services/HostData.services";
-import { HostBuilder } from "../../../constructor/Host.constructor";
-import HostDatas from "../../../data/Host.data";
+import { ChooseButton } from "../../components/button/ChooseButton";
+import HostDataServices from "../../services/HostData.services";
+import { HostBuilder } from "../../constructor/Host.constructor";
+import HostDatas from "../../data/Host.data";
 
 type TypeSelected = {
     title: string,

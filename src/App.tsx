@@ -10,16 +10,17 @@ import AgencySettings from './pages/agency/settings'
 import AgencyCalendar from './pages/agency/calendar'
 
 import HostNew from './pages/new'
-import HostOverview from './pages/host/begin/overview'
-import HostAbout from './pages/host/begin/about-your-place'
-import HostStructure from './pages/host/begin/structure'
-import HostPrivacy from './pages/host/begin/privacy'
-import HostProperty from './pages/host/begin/property'
-import HostFloor from './pages/host/begin/floor'
-import HostTitle from './pages/host/begin/title'
-import HostDescription from './pages/host/begin/description'
+import HostOverview from './pages/begin/overview'
+import HostAbout from './pages/begin/about-your-place'
+import HostStructure from './pages/begin/structure'
+import HostPrivacy from './pages/begin/privacy'
+import HostProperty from './pages/begin/property'
+import HostFloor from './pages/begin/floor'
+import HostTitle from './pages/begin/title'
+import HostDescription from './pages/begin/description'
 
 import BecomeAHost from './pages/become-a-host'
+import Host from './pages/host/host'
 import BecomeAHostStructure from './pages/become-a-host/structure'
 import BecomeAHostPrivacy from './pages/become-a-host/privacy'
 import BecomeAHostProperty from './pages/become-a-host/property'
@@ -52,15 +53,16 @@ function App() {
                 {/*<Route path="/:id/title" element={<HostTitle />} />*/}
                 {/*<Route path="/:id/description" element={<HostDescription />} />*/}
 
-              <Route path="/become-a-host" element={<BecomeAHost />} />
-              <Route path="/:id/structure" element={<BecomeAHostStructure />} />
-              <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
-              <Route path="/:id/property" element={<BecomeAHostProperty />} />
-              <Route path="/:id/floor" element={<BecomeAHostFloor />} />
-              <Route path="/:id/title" element={<BecomeAHostTitle />} />
-              <Route path="/:id/description" element={<BecomeAHostDescription />} />
-              <Route path="/:id/price" element={<BecomeAHostPrice />} />
-              <Route path="/:id/location" element={<BecomeAHostLocation />} />
+                <Route path="/:id" element={<Host />} />
+                <Route path="/become-a-host" element={<BecomeAHost />} />
+                <Route path="/:id/structure" element={<BecomeAHostStructure />} />
+                <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
+                <Route path="/:id/property" element={<BecomeAHostProperty />} />
+                <Route path="/:id/floor" element={<BecomeAHostFloor />} />
+                <Route path="/:id/title" element={<BecomeAHostTitle />} />
+                <Route path="/:id/description" element={<BecomeAHostDescription />} />
+                <Route path="/:id/price" element={<BecomeAHostPrice />} />
+                <Route path="/:id/location" element={<BecomeAHostLocation />} />
 
 
               </Route>

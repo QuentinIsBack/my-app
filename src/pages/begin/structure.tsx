@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IButton } from "../../../components/footer/footer-begin";
-import { Begin } from "../../../components/pagebuilder/begin";
-import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
+import { IButton } from "../../components/footer/footer-begin";
+import { Begin } from "../../components/pagebuilder/begin";
+import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
-import PrivacyUtils from '../../../utils/Privacy.utils.json'
-import HostDataServices from "../../../services/HostData.services";
-import { ChooseButtonNew } from "../../../components/button/ChooseButtonNew";
-import { HostBuilder } from "../../../constructor/Host.constructor";
-import HostDatas from "../../../data/Host.data";
+import StructureUtils from '../../utils/Structure.utils.json'
+import HostDataServices from "../../services/HostData.services";
+import { ChooseButtonNew } from "../../components/button/ChooseButtonNew";
+import { HostBuilder } from "../../constructor/Host.constructor";
+import HostDatas from "../../data/Host.data";
 
 function App() {
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ function App() {
             await HostDataServices.get(id as string).then((e)=> {
                 const newHost = HostBuilder(e.data())
                 setHost(newHost);
-                setSelected(newHost.getPrivacyType())
+                setSelected(newHost.getStructure())
             })
             setShow(true)
         }
@@ -31,8 +31,8 @@ function App() {
     }, [])
 
     const submit = () => { 
-        HostDataServices.update(id as string, { privacy: selected })
-        navigate(`/${id}/property`)
+        HostDataServices.update(id as string, { structure: selected })
+        navigate(`/${id}/privacy`)
     }
 
     return (
@@ -42,8 +42,8 @@ function App() {
                     <>
                         <div className="flex flex-col justify-center items-center h-full w-full py-20 overflow-scroll">
                             <div className="w-30rem flex flex-col space-y-8">
-                                <div className="font-semibold text-2xl text-supergray">Quel type de logement sera à la disposition des locataires ?</div>
-                                <ChooseButtonNew list={PrivacyUtils} selected={selected} setSelected={setSelected} />
+                                <div className="font-semibold text-2xl text-supergray">Quel type de logement allez-vous proposer ?</div>
+                                <ChooseButtonNew list={StructureUtils} selected={selected} setSelected={setSelected} />
                             </div>
                         </div>
                     </>

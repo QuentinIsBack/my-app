@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IButton } from "../../../components/footer/footer-begin";
-import { Begin } from "../../../components/pagebuilder/begin";
-import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
+import { IButton } from "../../components/footer/footer-begin";
+import { Begin } from "../../components/pagebuilder/begin";
+import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
-import PropertyUtils from '../../../utils/Property.utils.json'
-import HostDataServices from "../../../services/HostData.services";
-import { ChooseButtonNew } from "../../../components/button/ChooseButtonNew";
-import { HostBuilder } from "../../../constructor/Host.constructor";
-import HostDatas from "../../../data/Host.data";
-import { FloatingInput, themes } from "../../../components/input/FloatingInput";
-import { Incrementor } from "../../../components/incrementor/incrementor";
-import { BigInput } from "../../../components/input/BigInput";
-import { DEPSelector } from "../../../components/selector/DEPSelector";
-import { GESSelector } from "../../../components/selector/GESSelector";
-import Icon from "../../../components/icon/icons";
-import { HolderInput } from "../../../components/input/HolderInput";
+import PropertyUtils from '../../utils/Property.utils.json'
+import HostDataServices from "../../services/HostData.services";
+import { ChooseButtonNew } from "../../components/button/ChooseButtonNew";
+import { HostBuilder } from "../../constructor/Host.constructor";
+import HostDatas from "../../data/Host.data";
+import { FloatingInput, themes } from "../../components/input/FloatingInput";
+import { Incrementor } from "../../components/incrementor/incrementor";
+import { BigInput } from "../../components/input/BigInput";
+import { DEPSelector } from "../../components/selector/DEPSelector";
+import { GESSelector } from "../../components/selector/GESSelector";
+import Icon from "../../components/icon/icons";
+import { HolderInput } from "../../components/input/HolderInput";
 
 function App() {
     const navigate = useNavigate();

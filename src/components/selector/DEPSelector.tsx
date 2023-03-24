@@ -18,3 +18,7 @@ export const DEPSelector = ({defaultValue, onChange}:Type) => {
         </div>                    
     )
 }
+
+DEPSelector.defaultProps = {
+    onChange: undefined
+}

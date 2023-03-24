@@ -20,6 +20,7 @@ function App() {
         navigate("/become-a-host")
     }
     const clickNext = () => {
+        HostDataServices.update(id as string, { structure: selected })
         navigate(`/${id}/privacy`)
     }
 

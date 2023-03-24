@@ -18,11 +18,11 @@ function App() {
     const navigate = useNavigate();
     const { id } = useParams();
  
-    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
 
     const handleChange = ({ currentTarget }: any) => {
         if (currentTarget.value.length <= 500) {
-            setTitle(currentTarget.value);
+            setDescription(currentTarget.value);
         }
     };
 
@@ -30,6 +30,7 @@ function App() {
         navigate(`/${id}/title`)
     }
     const clickNext = () => {
+        HostDataServices.update(id as string, { description: description })
         navigate(`/${id}/price`)
     } 
 
@@ -50,8 +51,8 @@ function App() {
                                     <div className="font-light text-sm text-gray-600">La description de votre annonce doit mettre en valeur ce qui fait la particularité de votre logement.</div>
                                 </div>
                                 <div className="flex flex-col">
-                                    <textarea onChange={handleChange} className="animation duration-200 p-4 border-none rounded-xl focus:outline-none ring-gray-400 ring-1 focus:ring-2 focus:ring-black focus:outline-transparent w-full font-medium text-3xl text-gray-800 h-40" value={title}></textarea>
-                                    <div className={`font-bold text-sm ${title.length >= 500 ? "text-red-500" : "text-gray-500"} pt-2`}>{title.length}/500</div>
+                                    <textarea onChange={handleChange} className="animation duration-200 p-4 border-none rounded-xl focus:outline-none ring-gray-400 ring-1 focus:ring-2 focus:ring-black focus:outline-transparent w-full font-medium text-3xl text-gray-800 h-40" value={description}></textarea>
+                                    <div className={`font-bold text-sm ${description.length >= 500 ? "text-red-500" : "text-gray-500"} pt-2`}>{description.length}/500</div>
                                 </div>
                             </div>
                         </div>

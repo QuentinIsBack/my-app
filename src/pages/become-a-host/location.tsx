@@ -5,6 +5,7 @@ import MapGL, {Layer, MapRef, Marker, Source} from 'react-map-gl';
 import { BecomeBuilder } from "../../components/pagebuilder/becomeahost";
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 import Icon from "../../components/icon/icons";
+import HostDataServices from "../../services/HostData.services";
 
 function App() {
     const [show, setShow] = useState(true);
@@ -15,6 +16,7 @@ function App() {
         navigate(`/${id}/price`)
     }
     const clickNext = () => {
+        HostDataServices.update(id as string, { location: selected.suggestion.center })
         //navigate(`/${id}/description`)
     } 
 
@@ -33,41 +35,40 @@ function App() {
     }, []);
 
 
-
     const geojson = {
         type: 'FeatureCollection',
         features: [
           {type: 'Feature', geometry: {type: 'Point', coordinates: selected && selected.suggestion.center}}
         ]
-      };
-  
-      const geojson2 = {
-        type: 'FeatureCollection',
-        features: [
-          {type: 'Feature', geometry: {type: 'Point', coordinates: selected && selected.suggestion.center}}
-        ]
-      };
-  
-  
-      const layerStyle = {
-        id: 'point1',
-        type: 'circle',
-        paint: {
-          'circle-radius': 25,
-          'circle-color': '#F08080'
-        }
-      };
-  
-      const layerStyle2 = {
-        id: 'point2',
-        type: 'circle',
-        paint: {
-          'circle-radius': 100,
-          'circle-color': '#F08080',
-          'circle-opacity': 0.3
-  
-        },
-      };
+    };
+
+    const geojson2 = {
+    type: 'FeatureCollection',
+    features: [
+        {type: 'Feature', geometry: {type: 'Point', coordinates: selected && selected.suggestion.center}}
+    ]
+    };
+
+    const layerStyle = {
+    id: 'point1',
+    type: 'circle',
+    paint: {
+        'circle-radius': 25,
+        'circle-color': '#F08080'
+    }
+    };
+
+    const layerStyle2 = {
+    id: 'point2',
+    type: 'circle',
+    paint: {
+        'circle-radius': 100,
+        'circle-color': '#F08080',
+        'circle-opacity': 0.3
+
+    },
+    };
+
     return (
         <PageBuilder show={true} title={"À présent, fixez votre prix"} >
             <>

@@ -2,7 +2,7 @@ import Icon from "../icon/icons"
 
 type Type = {
     title: string
-    value: string
+    value: string | number | any
     icon: string
 }
 export const InfoButton = ({ title, value, icon }: Type) => {
@@ -12,12 +12,12 @@ export const InfoButton = ({ title, value, icon }: Type) => {
                 <div className='flex flex-col'>
                     <Icon name={icon} size={30} />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col space-y-0.5 w-full">
                     <div className="text-sm font-normal text-supergray">
                         {title}
                     </div>
                     <div className="text-base font-semibold text-supergray">
-                        {value.toString()}
+                        {value}
                     </div>
                 </div>
             </div>
