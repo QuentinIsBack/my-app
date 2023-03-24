@@ -9,16 +9,19 @@ export const HostBuilderNew = (data: any, id: string) => {
         data.property,
         data.privacy,
         data.price,
-        data.rooms,
+        data.taxes,
+        /*data.rooms,
         data.bedrooms,
         data.bathroom,
-        data.surface,
+        data.surface,*/
         data.agency,
         data.amenities,
-        data.ges,
+        data.assets,
+        /*data.ges,
         data.dpe,
-        data.floor,
+        data.floor,*/
         data.location,
-        data.date
+        data.date,
+        data.basic
     );
 }

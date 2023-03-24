@@ -36,11 +36,11 @@ export const GetGeoInfo = (value: any) => {
 
 export const GetGeoInfoByCoord = async (value: number[]) => {
     try {
-        const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/${value[0]},${value[1]}.json?access_token=sk.eyJ1IjoicXVlbnRpbnQiLCJhIjoiY2xkbnVpYXdwMGx5bDQxbjAycWRwZHRsNSJ9.5HBkylnszqE9SpwbZIEvKg&types=address&limit=1`;
+        const endpoint = `http://api.mapbox.com/geocoding/v5/mapbox.places/${value[0]},${value[1]}.json?access_token=sk.eyJ1IjoicXVlbnRpbnQiLCJhIjoiY2xkbnVpYXdwMGx5bDQxbjAycWRwZHRsNSJ9.5HBkylnszqE9SpwbZIEvKg&limit=1`;
         const response = await fetch(endpoint);
         const results = await response.json();
 
-        //console.log(results?.features[0].context)
+        console.log(results?.features[0])
         return results?.features[0].context
     } catch (error) {
         console.log("Error fetching data, ", error);

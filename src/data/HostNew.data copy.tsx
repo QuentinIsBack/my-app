@@ -10,45 +10,42 @@ interface IAssets {
     vod: string
 }
 
-interface IBasic {
-    rooms: number;
-    bedrooms: number;
-    bathroom: number;
-    surface: number;
-    floor: number;
+interface IAboutHost {
+    rooms: number | undefined;
+    bedrooms: number | undefined;
+    bathroom: number | undefined;
+    surface: number | undefined;
+    floor: number | undefined
 
-    ges: string;
-    dpe: string;
+    ges: string | undefined
+    dpe: string | undefined
 }
 
-
 export default class HostNewDatas {  
+
     title: string;
     description: string | undefined;
-
     id: string | undefined;
     structure: string | undefined;
     property: string | undefined;
     privacy: string | undefined;
     price: number;
     taxes: number;
-    /*rooms: number | undefined;
+    rooms: number | undefined;
     bedrooms: number | undefined;
     bathroom: number | undefined;
-    surface: number | undefined;*/
+    surface: number | undefined;
     agency: string | undefined
     amenities: string[] | undefined
     assets: IAssets | undefined
-    /*ges: string | undefined
+    ges: string | undefined
     dpe: string | undefined
-    floor: number | undefined*/
+    floor: number | undefined
     location: number[] | undefined
     date: Timestamp | undefined
-
-    basic: IBasic | undefined
     
     constructor( 
-        title?: string,
+        title?: string, 
         description?: string, 
         id?: string, 
         structure?: string, 
@@ -56,21 +53,20 @@ export default class HostNewDatas {
         privacy?: string, 
         price?: number, 
         taxes?: number, 
-        /*rooms?: number, 
+        rooms?: number, 
         bedrooms?: number, 
         bathroom?: number,
-        surface?: number,*/
+        surface?: number,
         agency?: string, 
         amenities?: string[], 
         assets?: IAssets, 
-        /*ges?: string, 
+        ges?: string, 
         dpe?: string, 
-        floor?: number, */
+        floor?: number, 
         location?: number[], 
-        date?: Timestamp,
-        basic?: IBasic
+        date?: Timestamp
         ){
-        this.title = title ?? '';
+        this.title = title ?? "";
         this.description = description;
         this.id = id;
         this.structure = structure;
@@ -78,19 +74,18 @@ export default class HostNewDatas {
         this.privacy = privacy;
         this.price = price ?? 0;
         this.taxes = taxes ?? 0;
-        /*this.rooms = rooms;
+        this.rooms = rooms;
         this.bedrooms = bedrooms;
         this.bathroom = bathroom;
-        this.surface = surface;*/
+        this.surface = surface;
         this.agency = agency;
         this.amenities = amenities;
         this.assets = assets;
-        /*this.ges = ges;
+        this.ges = ges;
         this.dpe = dpe;
-        this.floor = floor;*/
+        this.floor = floor;
         this.location = location;
         this.date = date;
-        this.basic = basic;
     }
 
 }
