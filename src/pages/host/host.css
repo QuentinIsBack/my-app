@@ -1,0 +1,208 @@
+@tailwind base;
+
+@layer base {
+    .core {
+        @apply absolute;
+        @apply w-full;
+        @apply my-20;
+        @apply max-w-xl;
+        @apply left-1/2;
+        @apply -translate-x-1/2;
+
+        @apply grid;
+        @apply grid-cols-7;
+        @apply gap-5;
+
+    }
+
+    .corecontener {
+        @apply col-span-7;
+        @apply xl:col-span-5;
+        @apply 2xl:col-span-5;
+        @apply 3xl:col-span-5;
+        @apply 4xl:col-span-5;
+        @apply w-full;
+        @apply h-full;
+    }
+
+    .contenerhostimg {
+        @apply grid;
+        @apply grid-rows-2;
+        @apply grid-flow-col;
+        @apply gap-4;
+        @apply w-full;
+        @apply h-96;
+    }
+
+    .imgbig {
+        @apply shadow-xl; 
+        @apply row-span-3; 
+        @apply col-span-2; 
+        @apply w-full; 
+        @apply bg-purple-100; 
+        @apply rounded-l-3xl; 
+        @apply bg-center; 
+        @apply bg-cover;
+    }
+
+    .imgmedtop {
+        @apply shadow-xl; 
+        @apply col-span-1;
+        @apply bg-red-100;
+        @apply rounded-tr-3xl;
+        @apply bg-center;
+        @apply bg-cover;
+    }
+
+    .imgmedbot {
+        @apply shadow-xl; 
+        @apply row-span-2; 
+        @apply col-span-1; 
+        @apply bg-blue-100; 
+        @apply rounded-br-3xl; 
+        @apply bg-center; 
+        @apply bg-cover;
+    }
+
+    .bodycontener>span {
+        position: relative;
+    }
+    .bodycontener>span:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        @apply border-t;
+        @apply w-full;
+    }
+
+    .dot-separator-6>span {
+        position: relative;
+    }
+    .dot-separator-6>span:not(:last-child)::after {
+        content: '·';
+        color: black;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .bodytitle {
+        @apply py-6;
+        @apply flex;
+        @apply flex-col;
+        @apply justify-center;
+        @apply items-start;
+    }
+
+    .bodytitlename {
+        @apply text-2xl;
+        @apply text-supergray;
+        @apply font-semibold;
+    }
+
+    .bodytitledesc {
+        @apply flex;
+        @apply flex-row;
+        @apply text-base;
+        @apply text-supergray;
+        @apply font-normal;
+    }
+    
+    .hostcontenerdesc {
+        @apply text-supergray;
+        @apply font-normal;
+        @apply space-y-6
+    }
+
+    .hostcontenerinfo {
+        @apply grid;
+        @apply grid-cols-3;
+        @apply w-4/5;
+        @apply gap-4;
+    }
+
+    .hostmap {
+        @apply relative;
+        @apply w-full;
+        @apply h-20rem;
+        @apply overflow-hidden;
+        @apply rounded-xl;
+    }
+
+    .hostloccontener {
+        @apply pt-3;
+    }
+
+    .hostlocname {
+        @apply text-base;
+        @apply text-supergray;
+        @apply font-semibold;
+    }
+
+    .hostlocdesc {
+        @apply pt-1;
+        @apply text-base;
+        @apply text-supergray;
+        @apply font-normal;
+    }
+
+    .loc-separator>span {
+        position: relative;
+    }
+    .loc-separator>span:not(:last-child)::after {
+        content: ',';
+        color: black;
+        padding-right: 6px;
+    }
+
+    .modalcontener {
+        @apply col-span-2;
+        @apply w-full;
+        @apply h-full;
+        @apply hidden;
+        @apply xl:block;
+        @apply 2xl:block;
+        @apply 3xl:block;
+        @apply 4xl:block;
+    }
+
+    .modalform {
+        box-shadow: 0px 6px 16px rgb(0 0 0 / 12%) !important;
+        @apply rounded-3xl;
+        @apply sticky;
+        @apply top-20;
+        @apply overflow-hidden;
+        @apply p-6;
+        @apply h-fit;
+    }
+
+    .modaltitle {
+        @apply flex;
+        @apply flex-col;
+        @apply justify-center;
+        @apply items-start;
+    }
+
+    .modaltitlename {
+        @apply text-2xl;
+        @apply text-supergray;
+        @apply font-semibold;
+    }
+
+    .modaltitledesc {
+        @apply flex;
+        @apply flex-row;
+        @apply text-sm;
+        @apply text-supergray;
+        @apply font-normal;
+    }
+
+    .modalcont>div {
+        position: relative;
+    }
+    .modalcont>div:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        @apply border-t;
+        @apply w-full;
+    }
+
+}
