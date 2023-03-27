@@ -4,11 +4,12 @@
     .hostcontener {
         @apply py-6;
         @apply w-full;
-        @apply space-y-6;
+        /*@apply space-y-6;*/
     }
     .contenertitle{
         @apply font-semibold;
         @apply text-xl;
         @apply text-supergray;
+        @apply pb-6
     }
 }

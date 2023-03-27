@@ -3,5 +3,60 @@
         "id": "L3GRwpVX1ycIOkJ3l8Fj",
         "icon": "IoWifi",
         "title": "Wifi"
+    },
+    "XAYwoVhZY6VrpvqXwAkQ": {
+        "id": "XAYwoVhZY6VrpvqXwAkQ",
+        "icon": "FaSwimmingPool",
+        "title": "Piscine"
+    },
+    "h8y2PASqP4ogCxo5x6xY": {
+        "id": "h8y2PASqP4ogCxo5x6xY",
+        "icon": "MdHotTub",
+        "title": "Jacuzzi"
+    },
+    "": {
+        "id": "",
+        "icon": "GiLightningDissipation",
+        "title": "Patio"
+    },
+    "": {
+        "id": "",
+        "icon": "GiBarbecue",
+        "title": "Barbecue"
+    },
+    "": {
+        "id": "",
+        "icon": "GiFlamer",
+        "title": "Brasero"
+    },
+    "": {
+        "id": "",
+        "icon": "RiBilliardsLine",
+        "title": "Billard"
+    },
+    "": {
+        "id": "",
+        "icon": "GiChimney",
+        "title": "Cheminée"
+    },
+    "": {
+        "id": "",
+        "icon": "BsTree",
+        "title": "Espace repas en plain air"
+    },
+    "": {
+        "id": "",
+        "icon": "IoIosFitness",
+        "title": "Appareils de fitness"
+    },
+    "": {
+        "id": "",
+        "icon": "",
+        "title": ""
+    },
+    "": {
+        "id": "",
+        "icon": "",
+        "title": ""
     }
 }

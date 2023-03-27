@@ -29,13 +29,12 @@
         @apply grid;
         @apply grid-rows-2;
         @apply grid-flow-col;
-        @apply gap-4;
+        @apply gap-3;
         @apply w-full;
         @apply h-96;
     }
 
     .imgbig {
-        @apply shadow-xl; 
         @apply row-span-3; 
         @apply col-span-2; 
         @apply w-full; 
@@ -46,7 +45,6 @@
     }
 
     .imgmedtop {
-        @apply shadow-xl; 
         @apply col-span-1;
         @apply bg-red-100;
         @apply rounded-tr-3xl;
@@ -55,7 +53,6 @@
     }
 
     .imgmedbot {
-        @apply shadow-xl; 
         @apply row-span-2; 
         @apply col-span-1; 
         @apply bg-blue-100; 
@@ -79,6 +76,16 @@
     }
     .dot-separator-6>span:not(:last-child)::after {
         content: '·';
+        color: black;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .sep-title>span {
+        position: relative;
+    }
+    .sep-title>span:not(:last-child)::after {
+        content: '-';
         color: black;
         padding-right: 6px;
         padding-left: 6px;
@@ -109,7 +116,11 @@
     .hostcontenerdesc {
         @apply text-supergray;
         @apply font-normal;
-        @apply space-y-6
+        @apply space-y-6;
+    }
+
+    .hostdesccontener {
+        @apply pt-6;
     }
 
     .hostcontenerinfo {
@@ -125,10 +136,6 @@
         @apply h-20rem;
         @apply overflow-hidden;
         @apply rounded-xl;
-    }
-
-    .hostloccontener {
-        @apply pt-3;
     }
 
     .hostlocname {

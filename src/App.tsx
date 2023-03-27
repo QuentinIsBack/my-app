@@ -53,7 +53,6 @@ function App() {
                 {/*<Route path="/:id/title" element={<HostTitle />} />*/}
                 {/*<Route path="/:id/description" element={<HostDescription />} />*/}
 
-                <Route path="/:id" element={<Host />} />
                 <Route path="/become-a-host" element={<BecomeAHost />} />
                 <Route path="/:id/structure" element={<BecomeAHostStructure />} />
                 <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
@@ -64,9 +63,9 @@ function App() {
                 <Route path="/:id/price" element={<BecomeAHostPrice />} />
                 <Route path="/:id/location" element={<BecomeAHostLocation />} />
 
-
               </Route>
 
+              <Route path="/:id" element={<Host />} />
 
               
             </Route>
