@@ -21,8 +21,8 @@ function App() {
     const [rooms, setRooms] = useState(2)
     const [bedrooms, setBedrooms] = useState(1)
     const [bathroom, setBathroom] = useState(1)
-    const [space, setSpace] = useState(28)
-    const [stage, setStage] = useState(1)
+    const [surface, setSurface] = useState(28)
+    const [floor, setFloor] = useState(1)
     const [dpe, setDpe] = useState("d")
     const [ges, setGes] = useState("d")
 
@@ -30,6 +30,15 @@ function App() {
         navigate(`/${id}/property`)
     }
     const clickNext = () => {
+        HostDataServices.update(id as string, { 
+            "basic.rooms": rooms,
+            "basic.bedrooms": bedrooms,
+            "basic.bathroom": bathroom,
+            "basic.surface": surface,
+            "basic.floor": floor,
+            "basic.dpe": dpe,
+            "basic.ges": ges
+        })
         navigate(`/${id}/title`)
     } 
 
@@ -58,11 +67,11 @@ function App() {
                                 <div className="grid grid-cols-2 gap-10 justify-between h-full">
                                     <div className="flex flex-col space-y-4">
                                         <div className="font-semibold text-xl text-supergray">Surface habitable</div>
-                                        <HolderInput id={""} type={"number"} defaultValue={space} onChange={(e)=>{setSpace(e as number)}} placeholder={"m²"} theme={themes.default} />
+                                        <HolderInput id={""} type={"number"} defaultValue={surface} onChange={(e)=>{setSurface(e as number)}} placeholder={"m²"} theme={themes.default} />
                                     </div>
                                     <div className="flex flex-col space-y-4">
                                         <div className="font-semibold text-xl text-supergray">Étage du logement</div>
-                                        <HolderInput id={""} type={""} defaultValue={stage} onChange={(e) => { setStage(e as number) }} theme={themes.default} />
+                                        <HolderInput id={""} type={""} defaultValue={floor} onChange={(e) => { setFloor(e as number) }} theme={themes.default} />
                                     </div>
                                 </div>
 

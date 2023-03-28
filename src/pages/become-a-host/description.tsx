@@ -30,7 +30,7 @@ function App() {
         navigate(`/${id}/title`)
     }
     const clickNext = () => {
-        HostDataServices.update(id as string, { description: description })
+        HostDataServices.update(id as string, { "description": description })
         navigate(`/${id}/price`)
     } 
 

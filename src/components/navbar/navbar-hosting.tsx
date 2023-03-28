@@ -60,18 +60,11 @@ export const NavBar = ({ padding }: CompType) => {
                     </div>
                 </div>
                 <div className='navright flex flex-row space-x-2'>
-                    <button onClick={()=>navigate("/agency/")} className="h-full">
-                            <div className='duration-150 inline-flex items-center text-superblue outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
-                                Mode Locataire
-                            </div>
-                        </button>
-                    {UserData.getAgency() &&
-                        <button onClick={()=>navigate("/agency/")} className="h-full">
-                            <div className='duration-150 inline-flex items-center text-superblue outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
-                                Mode Agence
-                            </div>
-                        </button>
-                    }
+                    <button onClick={()=>navigate("/")} className="h-full">
+                        <div className='duration-150 inline-flex items-center text-red-500 outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
+                            Sortir du mode locataire
+                        </div>
+                    </button>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0}>
                             <button className="h-full">

@@ -186,7 +186,7 @@ function App() {
 
                                     {/* A Savoir du l'annonce */}
                                     <span>
-                                        <HostContener name="Où se situe ce logement">
+                                        <HostContener name="À savoir">
                                             <>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3 4xl:grid-cols-3 gap-5">
                                                     
@@ -227,14 +227,6 @@ function App() {
                                                             Santé et sécurité
                                                         </div>
                                                         <div className='flex flex-col space-y-1.5 text-supergray'>
-                                                            <div className='flex flex-row space-x-3 items-center'>
-                                                                <div className='self-start pt-1'>
-                                                                    <Icon name={"GoClock"} size={18} />
-                                                                </div>
-                                                                <div>
-                                                                    Les consignes d'HubNest en matière de distanciation physique et d'autres consignes liées au Covid-19 s'appliquent.
-                                                                </div>
-                                                            </div>
                                                             <div className='flex flex-row space-x-3 items-center'>
                                                                 <div className='self-start pt-1'>
                                                                     <Icon name={"GoClock"} size={18} />

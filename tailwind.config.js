@@ -83,8 +83,9 @@ module.exports = {
         'dropdown': 'rgba(0, 0, 0, 0.18) 0px 8px 28px 0px',
       },
       colors: {
-        'supergray': '#242424',
+        'supergray': '#222222',
         'superblue': '#2292a4',
+        'superpurple': '#8963BA',
         'superred': '#FB4B4E'
       },
       screens: {

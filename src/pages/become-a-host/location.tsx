@@ -16,7 +16,7 @@ function App() {
         navigate(`/${id}/price`)
     }
     const clickNext = () => {
-        HostDataServices.update(id as string, { location: selected.suggestion.center })
+        HostDataServices.update(id as string, { "basic.location": selected.suggestion.center })
         //navigate(`/${id}/description`)
     } 
 

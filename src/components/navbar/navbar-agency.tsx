@@ -1,7 +1,7 @@
 import LOGO from '../../assets/logoagencie.svg';
 import './navbar.css'
 import { IoChevronDown } from 'react-icons/io5'
-import { NavButton } from '../button/navbutton';
+import { IThemeNavButton, NavButton } from '../button/navbutton';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -22,14 +22,14 @@ export const NavBar = ({ padding }: CompType) => {
                         <img width={25} alt={'logo'} src={LOGO} />
                         <div>Espace Agence</div>
                     </button>
-                </div>
+                </div> 
                 <div className='navcenter hidden xs:hidden sm:hidden md:block lg:block xl:block 2xl:block 3xl:block 4xl:block'>
                     <div className='flex flex-row space-x-2'>
 
-                        <NavButton title={"Aujourd'hui"} to={"/agency/"} />
-                        <NavButton title={"Messages"} to={"/agency/messages/"} />
-                        <NavButton title={"Informations"} to={"/agency/reservations/"} />
-                        <NavButton title={"Calendrier"} to={"/agency/calendar/"} />
+                        <NavButton title={"Aujourd'hui"} to={"/agency/"} theme={IThemeNavButton.agency} />
+                        <NavButton title={"Messages"} to={"/agency/messages/"} theme={IThemeNavButton.agency} />
+                        <NavButton title={"Informations"} to={"/agency/reservations/"} theme={IThemeNavButton.agency} />
+                        <NavButton title={"Calendrier"} to={"/agency/calendar/"} theme={IThemeNavButton.agency} />
 
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0}>

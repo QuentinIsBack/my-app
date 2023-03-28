@@ -12,12 +12,8 @@ import AgencyCalendar from './pages/agency/calendar'
 import HostNew from './pages/new'
 import HostOverview from './pages/begin/overview'
 import HostAbout from './pages/begin/about-your-place'
-import HostStructure from './pages/begin/structure'
-import HostPrivacy from './pages/begin/privacy'
-import HostProperty from './pages/begin/property'
-import HostFloor from './pages/begin/floor'
-import HostTitle from './pages/begin/title'
-import HostDescription from './pages/begin/description'
+
+import BoardIndex from './pages/hosting/index'
 
 import BecomeAHost from './pages/become-a-host'
 import Host from './pages/host/host'
@@ -36,6 +32,11 @@ function App() {
       <Routes>
           <Route path="/" element={<Index />} />
             <Route element={<AuthenticatedRoute />}>
+
+
+              <Route path="/hosting" element={<BoardIndex />} />
+
+
 
               <Route element={<AgencyRoute />}>
                 <Route path="/agency" element={<AgencyIndex />} />
