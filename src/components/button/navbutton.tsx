@@ -8,7 +8,7 @@ type ComponentType = {
 }
 
 export const IThemeNavButton = {
-    hosting: "text-[#8963BA]",
+    hosting: "text-supergray",
     agency: "text-superblue"
 }
 

@@ -28,7 +28,7 @@ export const NavBar = ({ padding }: CompType) => {
                 <div className='navleft'>
                     <button className='flex flex-row items-center text-lg font-semibold text-superred tracking-wider space-x-5'>
                         <img width={25} alt={'logo'} src={LOGOWHITE} />
-                        <div>Espace Locataire</div>
+                        <div>HubNest</div>
                     </button>
                 </div>
                 <div className='navcenter hidden xs:hidden sm:hidden md:block lg:block xl:block 2xl:block 3xl:block 4xl:block'>
@@ -60,11 +60,6 @@ export const NavBar = ({ padding }: CompType) => {
                     </div>
                 </div>
                 <div className='navright flex flex-row space-x-2'>
-                    <button onClick={()=>navigate("/agency/")} className="h-full">
-                            <div className='duration-150 inline-flex items-center text-superblue outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
-                                Mode Locataire
-                            </div>
-                        </button>
                     {UserData.getAgency() &&
                         <button onClick={()=>navigate("/agency/")} className="h-full">
                             <div className='duration-150 inline-flex items-center text-superblue outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>

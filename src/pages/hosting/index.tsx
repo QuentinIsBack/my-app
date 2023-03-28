@@ -1,6 +1,6 @@
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 
-import { NavBar } from '../../components/navbar/navbar-hosting'
+import { NavBar } from '../../components/navbar/navbar-home'
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TipsButton } from "../../components/button/tipsbutton";
@@ -14,9 +14,16 @@ function App() {
         <PageBuilder title="Mon Espace Agence" show={true} navbar={<NavBar />} footer={undefined} >
             <>
                 <div className='bg-gradient-to-r from-indigo-800 to-pink-600 h-18rem py-16 px-60 space-y-6 w-full'>
-                    <div className='text-4xl font-semibold text-white text-left'>
-                        Bonjour {UserData.getFirstname()}
+                    <div className="flex flex-row justify-between items-center">
+                        <div className='text-4xl font-semibold text-white text-left'>
+                            Bonjour {UserData.getFirstname()}
+                        </div>
+                        <button className="flex flex-row items-center space-x-2 ring-1 ring-black bg-white hover:bg-gray-100 text-sm font-medium text-black px-4 py-1.5 rounded-md">
+                            <div>Mon dossier locataire</div>
+                            <div><Icon name="AiOutlineFileAdd" size={18} /></div>
+                        </button>
                     </div>
+                    
                     <div className='flex space-x-5'>
                         <TipsButton iconN={"AiFillFolder"}>
                             <>Avant de candidater à des logements, pensez à complété votre dossier locataire.</>

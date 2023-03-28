@@ -53,8 +53,23 @@ function App() {
 
                 <div className="px-60 py-10 space-y-6">
                     <div className="flex flex-row justify-between items-center">
-                        <div className="flex flex-col space-y-2">
+                        <div className="flex flex-col space-y-2 w-full">
                             <div className="font-semibold text-2xl text-supergray text-left">Nous sommes là pour vous aider</div>
+                            <div className="grid grid-cols-2 gap-4 w-full">
+                                <div className="flex flex-row ring-2 ring-gray-100 hover:ring-black duration-150 rounded-lg px-4 py-3 hover:bg-gray-100 space-x-4 w-full">
+                                    <div className="flex items-start">
+                                        <Icon name="IoBriefcaseOutline" size={30} />
+                                    </div>
+                                    <div className="flex flex-col justify-between">
+                                        <div className="font-medium text-lg test-supergray text-left">
+                                            Bienvenue sur HubNEst
+                                        </div>
+                                        <div className="font-normal text-base test-supergray/90 text-left">
+                                            Bienvenue sur HubNEst
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

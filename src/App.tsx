@@ -13,7 +13,8 @@ import HostNew from './pages/new'
 import HostOverview from './pages/begin/overview'
 import HostAbout from './pages/begin/about-your-place'
 
-import BoardIndex from './pages/hosting/index'
+import HostingIndex from './pages/hosting/index'
+import HostingFolder from './pages/hosting/folder'
 
 import BecomeAHost from './pages/become-a-host'
 import Host from './pages/host/host'
@@ -34,7 +35,8 @@ function App() {
             <Route element={<AuthenticatedRoute />}>
 
 
-              <Route path="/hosting" element={<BoardIndex />} />
+            <Route path="/hosting" element={<HostingIndex />} />
+            <Route path="/hosting/folder" element={<HostingFolder />} />
 
 
 
