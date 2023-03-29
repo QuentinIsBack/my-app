@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AgencyDataServices from "../services/AgencyData.services";
 import HostDataServices from "../services/HostData.services";
 import HostDatas from "./Host.data";
-import UserDatas from "./User.data";
+import NewUser from "./NewUser.data";
 
 interface IPerms {
     basic: any[],
@@ -19,7 +19,7 @@ export default class AgencyDatas {
     title: string | undefined;
     description: any | undefined;
 
-    members: UserDatas[] | undefined;
+    members: NewUser[] | undefined;
     owner: any | undefined;
 
     permissions!: IPerms;

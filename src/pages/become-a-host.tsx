@@ -16,7 +16,7 @@ function App() {
         <PageBuilder show={true} title={"Annonces"} >
             <>
                 <BecomeBuilder
-                    information={`Bon retour ${UserData.getFirstname()},`}
+                    information={`Bon retour ${UserData.firstname},`}
                     clickBack={undefined}
                     clickNext={undefined}
                     show={show}

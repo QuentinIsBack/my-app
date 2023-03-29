@@ -42,7 +42,7 @@ function App() {
                    <div className="animate-showin h-full w-full flex flex-col justify-center items-center m-auto">
 
                       <div className="w-38rem max-w-38rem">
-                         <div className="text-4xl font-semibold text-supergray">Bon retour, {UserData.getFirstname()}</div>
+                         <div className="text-4xl font-semibold text-supergray">Bon retour, {UserData.firstname}</div>
                          <div className="pt-8 space-y-20">
                             {AgencyData.getHosts()?.length > 0 && <div className="flex flex-col">
                                <div className="text-xl font-semibold text-supergray">Terminer une annonce</div>

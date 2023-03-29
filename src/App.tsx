@@ -31,47 +31,42 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Index />} />
-            <Route element={<AuthenticatedRoute />}>
+        <Route path="/" element={<Index />} />
+        <Route element={<AuthenticatedRoute />}>
 
+          <Route path="/:id" element={<Host />} />
 
             <Route path="/hosting" element={<HostingIndex />} />
             <Route path="/hosting/folder" element={<HostingFolder />} />
 
+          <Route element={<AgencyRoute />}>
+            <Route path="/agency" element={<AgencyIndex />} />
+            <Route path="/agency/team" element={<AgencyTeam />} />
+            <Route path="/agency/settings" element={<AgencySettings />} />
+            <Route path="/agency/calendar" element={<AgencyCalendar />} />
 
+            <Route path="/new" element={<HostNew />} />
+            <Route path="/:id/overview" element={<HostOverview />} />
+            <Route path="/:id/about-your-place" element={<HostAbout />} />
+            {/*<Route path="/:id/structure" element={<HostStructure />} />*/}
+            {/*<Route path="/:id/privacy" element={<HostPrivacy />} />*/}
+            {/*<Route path="/:id/property" element={<HostProperty />} />*/}
+            {/*<Route path="/:id/floor" element={<HostFloor />} />*/}
+            {/*<Route path="/:id/title" element={<HostTitle />} />*/}
+            {/*<Route path="/:id/description" element={<HostDescription />} />*/}
 
-              <Route element={<AgencyRoute />}>
-                <Route path="/agency" element={<AgencyIndex />} />
-                <Route path="/agency/team" element={<AgencyTeam />} />
-                <Route path="/agency/settings" element={<AgencySettings />} />
-                <Route path="/agency/calendar" element={<AgencyCalendar />} />
+            <Route path="/become-a-host" element={<BecomeAHost />} />
+            <Route path="/:id/structure" element={<BecomeAHostStructure />} />
+            <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
+            <Route path="/:id/property" element={<BecomeAHostProperty />} />
+            <Route path="/:id/floor" element={<BecomeAHostFloor />} />
+            <Route path="/:id/title" element={<BecomeAHostTitle />} />
+            <Route path="/:id/description" element={<BecomeAHostDescription />} />
+            <Route path="/:id/price" element={<BecomeAHostPrice />} />
+            <Route path="/:id/location" element={<BecomeAHostLocation />} />
 
-                <Route path="/new" element={<HostNew />} />
-                <Route path="/:id/overview" element={<HostOverview />} />
-                <Route path="/:id/about-your-place" element={<HostAbout />} />
-                {/*<Route path="/:id/structure" element={<HostStructure />} />*/}
-                {/*<Route path="/:id/privacy" element={<HostPrivacy />} />*/}
-                {/*<Route path="/:id/property" element={<HostProperty />} />*/}
-                {/*<Route path="/:id/floor" element={<HostFloor />} />*/}
-                {/*<Route path="/:id/title" element={<HostTitle />} />*/}
-                {/*<Route path="/:id/description" element={<HostDescription />} />*/}
-
-                <Route path="/become-a-host" element={<BecomeAHost />} />
-                <Route path="/:id/structure" element={<BecomeAHostStructure />} />
-                <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
-                <Route path="/:id/property" element={<BecomeAHostProperty />} />
-                <Route path="/:id/floor" element={<BecomeAHostFloor />} />
-                <Route path="/:id/title" element={<BecomeAHostTitle />} />
-                <Route path="/:id/description" element={<BecomeAHostDescription />} />
-                <Route path="/:id/price" element={<BecomeAHostPrice />} />
-                <Route path="/:id/location" element={<BecomeAHostLocation />} />
-
-              </Route>
-
-              <Route path="/:id" element={<Host />} />
-
-              
-            </Route>
+          </Route>          
+        </Route>
       </Routes>
     </BrowserRouter>
   );

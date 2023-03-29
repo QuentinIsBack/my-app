@@ -10,9 +10,9 @@ import React, {
 // Import Authentificated
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, UserCredential } from "firebase/auth"
 import { auth, db } from "../firebase.config"
-import UserDataServices from "../services/UserData.services";
-import UserDatas from "../data/User.data";
 import { doc, onSnapshot } from "firebase/firestore";
+import { NewBuilder } from "../constructor/NewUser.constructor";
+import NewUser from "../data/NewUser.data";
 
 interface signin {
     email: string, 
@@ -22,7 +22,7 @@ type UsersId = {
     currentUser: undefined;
     setCurrentUser?: Dispatch<SetStateAction<object>>;
 
-    UserData: UserDatas;
+    UserData: NewUser;
     setUserData?: Dispatch<SetStateAction<any>>;
 
     signIn: any;
@@ -32,12 +32,10 @@ type UsersId = {
 export const UserContext = createContext<UsersId>({} as UsersId);
 
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
-    //const [user, setUser] = useState(Object);
-
     const signUp = (email: string, pwd: string) => createUserWithEmailAndPassword(auth, email, pwd)
     const signIn = (email: string, pwd: string) => signInWithEmailAndPassword(auth, email, pwd)
 
-    const [UserData, setUserData] = useState(new UserDatas());
+    const [UserData, setUserData] = useState(new NewUser());
     const [currentUser, setCurrentUser] = useState(Object);
     const [loadingData, setLoadingData] = useState(true);
 
@@ -46,17 +44,8 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
             setCurrentUser(currentUser)
             if (currentUser) {
                 onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
-
-                    const newData = new UserDatas();
-
-                    newData.setUID(doc.data()?.uid)
-                    newData.setFirstname(doc.data()?.firstname)
-                    newData.setLastname(doc.data()?.lastname)
-                    newData.setEmail(doc.data()?.email)
-                    newData.setAgency(doc.data()?.agency)
-
+                    const newData = NewBuilder(doc.data(), doc.id)
                     setUserData(newData)
-
                     setLoadingData(false)
                 })
             } else {

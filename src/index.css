@@ -120,6 +120,7 @@ body {
     @apply hover:ring-supergray ;
     @apply duration-150 ;
     @apply overflow-hidden;
+    @apply focus:outline-none
   }
 
 

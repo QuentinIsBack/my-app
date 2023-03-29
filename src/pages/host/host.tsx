@@ -44,7 +44,7 @@ function App() {
     const [test, setTest] = useState();
 
 
-    useEffect(() => {
+    useEffect(() => { 
         const fetchData = async () => {
             await HostDataServices.get(id as string).then(async (e) => {
                 const newBuilder = NewBuilder(e.data(), e.id)
@@ -307,7 +307,7 @@ function App() {
                                     {/* Conditions de l'annonce */}
                                     {host.basic.conditions.length > 0 &&<div>
                                         <div className="modalconditioncont">
-                                            <div className='modalconditionname'>{UserData.getFirstname()} : candidature admissible</div>
+                                            <div className='modalconditionname'>{UserData.firstname} : candidature admissible</div>
                                             <div className="modalcondition">
                                                 {Object.values(ConditionsUtils).map((m)=>{
                                                     if(host.basic.conditions.includes(m.id)) {

@@ -9,11 +9,12 @@ import React, {
     useEffect
 } from "react";
 import { useNavigate } from "react-router-dom";
+import { NewBuilder } from "../constructor/NewUser.constructor";
 // Import Authentificated
 
 import AgencyDatas from "../data/Agency.data";
 import HostDatas from "../data/Host.data";
-import UserDatas from "../data/User.data";
+import NewUser from "../data/NewUser.data";
 
 import { db } from "../firebase.config";
 import AgencyDataServices from "../services/AgencyData.services";
@@ -35,14 +36,14 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
     const { currentUser, UserData } = useContext(UserContext)
 
     useEffect(() => {
-        if (UserData.getAgency()) {
+        if (UserData.agency) {
 
 
             const fetchData = async () => {
 
                 try {
 
-                    onSnapshot(doc(db, "agencies", UserData.getAgency()), async (docR) => {
+                    onSnapshot(doc(db, "agencies", UserData.agency as string), async (docR) => {
 
                         const newData = new AgencyDatas();
 
@@ -54,15 +55,9 @@ export const AgencyContextProvider = ({ children }: { children: ReactNode }) => 
                         // Get tous les utilisateurs
                         await UserDataServices.getAll(where("agency", "==", docR.id))
                             .then((querySnapshot) => {
-                                const tableau: UserDatas[] = []
+                                const tableau: NewUser[] = []
                                 querySnapshot.docs.map(async (doc) => {
-                                    const newData = new UserDatas();
-                                    newData.setUID(doc.data()?.uid)
-                                    newData.setFirstname(doc.data()?.firstname)
-                                    newData.setLastname(doc.data()?.lastname)
-                                    newData.setEmail(doc.data()?.email)
-                                    newData.setAgency(doc.data()?.agency)
-
+                                    const newData = NewBuilder(doc.data(), doc.id)
                                     tableau.push(newData)
                                 })
                                 newData.setMembers(tableau)

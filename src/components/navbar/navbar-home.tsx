@@ -60,7 +60,7 @@ export const NavBar = ({ padding }: CompType) => {
                     </div>
                 </div>
                 <div className='navright flex flex-row space-x-2'>
-                    {UserData.getAgency() &&
+                    {UserData.agency &&
                         <button onClick={()=>navigate("/agency/")} className="h-full">
                             <div className='duration-150 inline-flex items-center text-superblue outline outline-1 outline-transparent rounded-2xl py-2 px-4 text-sm font-medium hover:bg-gray-100'>
                                 Mode Agence

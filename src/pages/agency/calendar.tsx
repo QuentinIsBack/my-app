@@ -1,23 +1,8 @@
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
-
 import { NavBar } from '../../components/navbar/navbar-agency'
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
-import { UserContext } from "../../contexts/UserContext";
-import { TipsButton } from "../../components/button/tipsbutton";
-import { AgencyContext } from "../../contexts/AgencyContext";
-import UserDataServices from "../../services/UserData.services";
-import { where } from "firebase/firestore";
-import UserDatas from "../../data/User.data";
-
+import { useState } from "react";
 import moment from "moment";
 import 'moment/locale/fr'  // without this line it didn't work
-import {
-   getDayOfMonth,
-   getMonthDayYear,
-   getMonth,
-   getYear,
-   getSpecificDate,
- } from '../../utils/moment-utils';
 
 function App() {
    const [selectDate, setSelectDate] = useState(moment());

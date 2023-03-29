@@ -16,7 +16,7 @@ function App() {
             <>
                 <div className='bg-gradient-to-r from-indigo-800 to-pink-600 h-18rem py-16 px-60 space-y-6 w-full'>
                     <div className='text-4xl font-semibold text-white text-left'>
-                        Bonjour {UserData.getFirstname()}
+                        Bonjour {UserData.firstname}
                     </div>
                     <div className='flex space-x-5'>
                         <TipsButton iconN={"AiFillFolder"}>

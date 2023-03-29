@@ -1,14 +1,8 @@
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
-
 import { NavBar } from '../../components/navbar/navbar-agency'
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
-import { TipsButton } from "../../components/button/tipsbutton";
 import { AgencyContext } from "../../contexts/AgencyContext";
-import UserDataServices from "../../services/UserData.services";
-import { where } from "firebase/firestore";
-import UserDatas from "../../data/User.data";
-
 
 function App() {
     const { UserData } = useContext(UserContext)
@@ -103,24 +97,24 @@ function App() {
                                                 <div className="h-full flex flex-col items-start justify-between">
                                                     <div className="font-semibold text-supergray/80 text-lg items-center flex flex-row space-x-2">
                                                         <div>
-                                                            {os.getFirstname()+ " " + os.getLastname()}
+                                                            {os.firstname+ " " + os.lastname}
                                                         </div>
-                                                        {os.getUID() == UserData.getUID() && <div className="text-sm text-supergray/50">(Vous)</div>}
+                                                        {os.uuid == UserData.uuid && <div className="text-sm text-supergray/50">(Vous)</div>}
                                                     </div>
                                                     <div className="font-medium text-supergray/60 text-sm">
-                                                        {AgencyData.getOwner() == os.getUID() && <span className="text-[#2292a4]">Gérant</span>}
+                                                        {AgencyData.getOwner() == os.uuid && <span className="text-[#2292a4]">Gérant</span>}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="col-span-8 h-full border-b">
                                             <div className="h-4.5rem grid grid-cols-6 divide-x">
-                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().basic?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
-                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().ads?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
-                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().guest?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
-                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().price?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
-                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().finance?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
-                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().team?.includes(os.getUID())} type="checkbox" className="checkbox" /></div>
+                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().basic?.includes(os.uuid)} type="checkbox" className="checkbox" /></div>
+                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().ads?.includes(os.uuid)} type="checkbox" className="checkbox" /></div>
+                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().guest?.includes(os.uuid)} type="checkbox" className="checkbox" /></div>
+                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().price?.includes(os.uuid)} type="checkbox" className="checkbox" /></div>
+                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().finance?.includes(os.uuid)} type="checkbox" className="checkbox" /></div>
+                                                <div className="flex items-center justify-center"><input checked={AgencyData.getPermissions().team?.includes(os.uuid)} type="checkbox" className="checkbox" /></div>
                                             </div>
                                         </div>
                                     </>

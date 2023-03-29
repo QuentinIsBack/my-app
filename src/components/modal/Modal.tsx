@@ -36,3 +36,7 @@ export const Modal = ({ show, close, size, children }: PageType) => {
     </>
   )
 }
+
+Modal.defaultProps = {
+  size: undefined
+}
