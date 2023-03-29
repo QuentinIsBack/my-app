@@ -1,6 +1,8 @@
 :root {
     --top--become: 5rem;
     --bottom--become: 5rem;
+    --burger--top: 4.5rem;
+    --burger--folder: 16rem;
 }
 
 .bg-color-gradient-bnb {

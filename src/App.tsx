@@ -14,7 +14,7 @@ import HostOverview from './pages/begin/overview'
 import HostAbout from './pages/begin/about-your-place'
 
 import HostingIndex from './pages/hosting/index'
-import HostingFolder from './pages/hosting/folder'
+import HostingFolder from './pages/hosting/folder/administratif'
 
 import BecomeAHost from './pages/become-a-host'
 import Host from './pages/host/host'
@@ -36,8 +36,8 @@ function App() {
 
           <Route path="/:id" element={<Host />} />
 
-            <Route path="/hosting" element={<HostingIndex />} />
-            <Route path="/hosting/folder" element={<HostingFolder />} />
+          <Route path="/hosting" element={<HostingIndex />} />
+          <Route path="/hosting/folder" element={<HostingFolder />} />
 
           <Route element={<AgencyRoute />}>
             <Route path="/agency" element={<AgencyIndex />} />

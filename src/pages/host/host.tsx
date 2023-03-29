@@ -3,9 +3,7 @@ import { json, useParams } from "react-router-dom";
 import { PageBuilder } from "../../components/pagebuilder/pagebuilder";
 import { NavBar } from "../../components/navbar/navbar-home";
 import './host.css'
-import HostNewDatas from "../../data/HostNew.data";
 import HostDataServices from "../../services/HostData.services";
-import { HostBuilderNew } from "../../constructor/HostNew.constructor";
 import { LongBar } from "../../components/bar/longbar";
 import { LongBarItem } from "../../components/bar/longbaritem";
 import { HostContener } from "../../components/contener/HostContener";

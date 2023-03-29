@@ -4,7 +4,6 @@ import { NavBar } from '../../components/navbar/navbar-home'
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TipsButton } from "../../components/button/tipsbutton";
-import { AgencyContext } from "../../contexts/AgencyContext";
 import Icon from "../../components/icon/icons";
 import { FolderModal } from "../../modals/FolderModal";
 

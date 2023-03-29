@@ -37,6 +37,7 @@ export const NavBar = ({ padding }: CompType) => {
                         <NavButton title={"Mon logement"} to={"/hosting/"} theme={IThemeNavButton.hosting} />
                         <NavButton title={"Messages"} to={"/hosting/messages"} theme={IThemeNavButton.hosting} />
                         <NavButton title={"Calendrier"} to={"/hosting/calendar"} theme={IThemeNavButton.hosting} />
+                        <NavButton title={"Candidature"} to={"/hosting/folder"} theme={IThemeNavButton.hosting} />
                         <NavButton title={"Informations"} to={"/hosting/info"} theme={IThemeNavButton.hosting} />
 
                         <div className="dropdown dropdown-end">
