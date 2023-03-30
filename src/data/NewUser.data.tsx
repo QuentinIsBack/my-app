@@ -1,21 +1,30 @@
+import { initFolder } from "../constructor/NewUser.constructor";
+
 export default class NewUser {
 
     uuid: string;
     firstname: string;
     lastname: string;
     email: string;
-    folder: [] | undefined;
+    folder: IFolder;
 
     agency: string | undefined;
 
     constructor();
-    constructor(uuid: string, firstname: string, lastname: string, email: string, folder: [], agency: string);
-    constructor(uuid?: string, firstname?: string, lastname?: string, email?: string, folder?: [], agency?: string) {
+    constructor(uuid: string, firstname: string, lastname: string, email: string, folder: IFolder, agency: string);
+    constructor(uuid?: string, firstname?: string, lastname?: string, email?: string, folder?: IFolder, agency?: string) {
         this.uuid = uuid ?? "";
         this.firstname = firstname ?? "";
         this.lastname = lastname ?? "";
         this.email = email ?? "";
-        this.folder = folder ?? undefined;
+        this.folder = folder ??initFolder();
         this.agency = agency ?? undefined
     }
+}
+
+export interface IFolder {
+    essentials: IEssentials;
+}
+export interface IEssentials {
+    administratif: string;
 }

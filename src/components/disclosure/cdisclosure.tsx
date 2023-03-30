@@ -5,16 +5,18 @@ import Icon from "../icon/icons";
 type PageType = {
     title: string
     locked: boolean
+    defaultOpen: boolean
     children: JSX.Element
 }
 export const CDisclosure = ({ 
     title,
     locked,
+    defaultOpen,
     children
 }: PageType) => {
     return (
         <>
-            <Disclosure>
+            <Disclosure defaultOpen={defaultOpen}>
                 {({ open }) => (
                     <>
                         <Disclosure.Button className={`flex justify-between w-full items-center rounded-full bg-transparent px-3 py-2 text-left text-sm font-medium text-supergray/60 ${locked ? 'hover:bg-gray-200/75' : 'cursor-not-allowed'} focus:outline-none`}>
@@ -37,4 +39,8 @@ export const CDisclosure = ({
             </Disclosure>
         </>
     )
+}
+
+CDisclosure.defaultProps = {
+    defaultOpen: false
 }

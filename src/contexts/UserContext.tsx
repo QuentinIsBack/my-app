@@ -45,6 +45,7 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
             if (currentUser) {
                 onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
                     const newData = NewBuilder(doc.data(), doc.id)
+                    console.log(newData)
                     setUserData(newData)
                     setLoadingData(false)
                 })

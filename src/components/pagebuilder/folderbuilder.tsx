@@ -1,18 +1,24 @@
-import { useState } from "react";
+import { MouseEventHandler, useContext, useState } from "react";
 import LOGO from '../../assets/logoagencie.svg';
 import { CDisclosure } from "../disclosure/cdisclosure";
 import { CDisclosureItem } from "../disclosure/cdisclosureitem";
 import { NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
 
 type PageType = {
     title: string,
-    children: JSX.Element
+    children: JSX.Element,
+    back: MouseEventHandler<HTMLButtonElement>,
+    next: MouseEventHandler<HTMLButtonElement>
 }
 export const FolderBuilder = ({ 
     title,
-    children
+    children,
+    back,
+    next
 }: PageType) => {
     const [burger, setBurger] = useState(true);
+    const { UserData } = useContext(UserContext)
     const navigate = useNavigate();
 
     return (
@@ -29,9 +35,9 @@ export const FolderBuilder = ({
                             <div className="font-semibold text-supergray text-2xl leading-none">Proposez votre candidature</div>
                         </div>
                         <div className="px-4 space-y-2">
-                            <CDisclosure title="Votre situation" locked={true}>
+                            <CDisclosure title="Essentiels" defaultOpen={window.location.pathname.includes("administratif")||window.location.pathname.includes("identity")} locked={true}>
                                 <>
-                                    <CDisclosureItem to={'/hosting/folder/administratif/'}>
+                                    <CDisclosureItem to={'/hosting/folder/administratif/'} locked={UserData.folder.essentials.administratif !== ""}>
                                         <>
                                             Administratif
                                         </>
@@ -41,14 +47,9 @@ export const FolderBuilder = ({
                                             Identité
                                         </>
                                     </CDisclosureItem>
-                                    <CDisclosureItem to={'/'}>
-                                        <>
-                                            Informations essentielles
-                                        </>
-                                    </CDisclosureItem>
                                 </>
                             </CDisclosure>
-                            <CDisclosure title="Professionnel" locked={false}>
+                            <CDisclosure title="Votre situation" locked={UserData.folder.essentials.administratif !== ""}>
                                 <>
                                     <CDisclosureItem to={'/'}>
                                         <>
@@ -86,18 +87,23 @@ export const FolderBuilder = ({
                         </div>
                     </div>
                     <div className="absolute h-[var(--burger--bottom)] bottom-0 right-0 left-0 overflow-hidden">
-                        <div className="absolute left-10 top-1/2 -translate-y-1/2">
-                            <button className="rounded-lg ring-1 ring-supergray px-4 py-1.5 text-supergray font-semibold text-sm hover:bg-gray-100 duration-150">Retour</button>
-                        </div>
+                        {back!==undefined&&<div className="absolute left-10 top-1/2 -translate-y-1/2">
+                            <button onClick={back} className="rounded-lg ring-1 ring-supergray px-4 py-1.5 text-supergray font-semibold text-sm hover:bg-gray-100 duration-150">Retour</button>
+                        </div>}
                         <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
                             <div className="text-supergray/60 font-medium text-xs">13 éléments à envoyer</div>
                         </div>
-                        <div className="absolute right-10 top-1/2 -translate-y-1/2">
-                            <button className="rounded-lg ring-1 ring-supergray bg-supergray px-4 py-1.5 text-white font-semibold text-sm hover:bg-black duration-150">Suivant</button>
-                        </div>
+                        {next!==undefined&&<div className="absolute right-10 top-1/2 -translate-y-1/2">
+                            <button onClick={next} className="rounded-lg ring-1 ring-supergray bg-supergray px-4 py-1.5 text-white font-semibold text-sm hover:bg-black duration-150">Suivant</button>
+                        </div>}
                     </div>
                 </div>
             </div>
         </>
     )
+}
+
+FolderBuilder.defaultProps = {
+    next: undefined,
+    back: undefined,
 }

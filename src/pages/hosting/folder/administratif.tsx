@@ -1,18 +1,28 @@
 import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
 import { FolderBuilder } from "../../../components/pagebuilder/folderbuilder";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ChooseButtonNew } from "../../../components/button/ChooseButtonNew";
 import SituationFolder from '../../../utils/folder/Situation.folder.json'
+import UserDataServices from "../../../services/UserData.services";
+import { UserContext } from "../../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function App() {
     const [title, setTitle] = useState("Administratif")
+    const { UserData } = useContext(UserContext)
+    const navigate = useNavigate();
 
-    const [selected, setSelected] = useState<string | undefined>()
+    const [selected, setSelected] = useState<string | undefined>(UserData.folder.essentials.administratif)
+
+    const clickNext = () => {
+        UserDataServices.update(UserData.uuid as string, { "folder.essentials.administratif": selected })
+        navigate(`/hosting/folder/identity/`)
+    }
 
     return (
         <PageBuilder title="Mon Espace Agence" show={true} footer={undefined} >
             <>
-                <FolderBuilder title={title}>
+                <FolderBuilder next={clickNext} title={title}>
                     <>
                         <div className="flex flex-col items-center justify-start h-full w-full animate-showin">
                             <div className="w-[30rem] py-[1rem] space-y-10">
