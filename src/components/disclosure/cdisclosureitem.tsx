@@ -17,7 +17,7 @@ export const CDisclosureItem = ({
         <>
             <div className="w-full pl-[1.25rem]">
                 <Disclosure.Panel>
-                    <NavLink to={to} className={({ isActive }) => isActive ? `w-full justify-between px-3 py-2 text-sm font-normal text-supergray flex ring-2 ring-black items-center rounded-full bg-transparent text-left hover:bg-gray-200/75 focus:outline-none` : `w-full px-3 py-2 text-sm font-normal text-supergray flex justify-between items-center rounded-full bg-transparent text-left hover:bg-gray-200/75 focus:outline-none`}>
+                    <NavLink to={to} className={({ isActive }) => isActive ? `w-full justify-between px-3 py-2 text-sm font-normal text-supergray flex ring-2 ring-black items-center rounded-2xl bg-transparent text-left hover:bg-gray-200/75 focus:outline-none` : `w-full px-3 py-2 text-sm font-normal text-supergray flex justify-between items-center rounded-2xl bg-transparent text-left hover:bg-gray-200/75 focus:outline-none`}>
                         <div>
                         {children}
                         </div>

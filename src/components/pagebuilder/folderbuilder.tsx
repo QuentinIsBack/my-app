@@ -26,49 +26,79 @@ export const FolderBuilder = ({
             <div className="w-full h-full">
                 {/* NavBar */}
                 <div className="absolute bg-gray-100/75 w-[var(--burger--folder)] h-full">
-                    <div className="flex flex-row justify-between px-6 h-[var(--burger--top)] border-b">
-                        <img width={25} alt={'logo'} src={LOGO} />
-                        <button onClick={()=>navigate('/hosting')} className="font-semibold text-supergray text-sm underline">Enregistrer et quitter</button>
-                    </div>
-                    <div className="space-y-6">
-                        <div className="pt-6 px-6">
-                            <div className="font-semibold text-supergray text-2xl leading-none">Proposez votre candidature</div>
+                    <div className="flex flex-col justify-between h-full">
+                        <div>
+                            <div className="flex flex-row justify-between px-6 h-[var(--burger--top)] border-b">
+                                <img width={25} alt={'logo'} src={LOGO} />
+                                <button onClick={()=>navigate('/hosting')} className="font-semibold text-supergray text-sm underline">Enregistrer et quitter</button>
+                            </div>
+                            <div className="space-y-6">
+                                <div className="pt-6 px-6">
+                                    <div className="font-semibold text-supergray text-2xl leading-none">Proposez votre candidature</div>
+                                </div>
+                                <div className="px-4 space-y-2">
+                                    <CDisclosure title="Mon dossier" defaultOpen={window.location.pathname.includes("administratif")||window.location.pathname.includes("identity")} locked={true}>
+                                        <>
+                                            <CDisclosureItem to={'/hosting/folder/administratif/'} locked={UserData.folder.essentials.administratif !== ""}>
+                                                <>
+                                                    Justificatif d'identité
+                                                </>
+                                            </CDisclosureItem>
+                                            <CDisclosureItem to={'/hosting/folder/identity/'}>
+                                                <>
+                                                    Attestation de domicile
+                                                </>
+                                            </CDisclosureItem>
+                                        </>
+                                    </CDisclosure>
+                                    <CDisclosure title="Ma situation" locked={UserData.folder.essentials.administratif !== ""}>
+                                        <>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                    Situation Professionnelle
+                                                </>
+                                            </CDisclosureItem>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                    Ressources
+                                                </>
+                                            </CDisclosureItem>
+                                        </>
+                                    </CDisclosure>
+                                    <CDisclosure title="Mes garants" locked={UserData.folder.essentials.administratif !== ""}>
+                                        <>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                    Justificatif d'identité
+                                                </>
+                                            </CDisclosureItem>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                    Attestation de domicile
+                                                </>
+                                            </CDisclosureItem>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                    Situation Professionnelle
+                                                </>
+                                            </CDisclosureItem>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                Ressources
+                                                </>
+                                            </CDisclosureItem>
+                                        </>
+                                    </CDisclosure>
+                                </div>
+                            </div>
                         </div>
-                        <div className="px-4 space-y-2">
-                            <CDisclosure title="Essentiels" defaultOpen={window.location.pathname.includes("administratif")||window.location.pathname.includes("identity")} locked={true}>
-                                <>
-                                    <CDisclosureItem to={'/hosting/folder/administratif/'} locked={UserData.folder.essentials.administratif !== ""}>
-                                        <>
-                                            Administratif
-                                        </>
-                                    </CDisclosureItem>
-                                    <CDisclosureItem to={'/hosting/folder/identity/'}>
-                                        <>
-                                            Identité
-                                        </>
-                                    </CDisclosureItem>
-                                </>
-                            </CDisclosure>
-                            <CDisclosure title="Votre situation" locked={UserData.folder.essentials.administratif !== ""}>
-                                <>
-                                    <CDisclosureItem to={'/'}>
-                                        <>
-                                            Type d'activité
-                                        </>
-                                    </CDisclosureItem>
-                                </>
-                            </CDisclosure>
-                            <CDisclosure title="Vos garants" locked={false}>
-                                <>
-                                    <CDisclosureItem to={'/'}>
-                                        <>
-                                            Informations essentielles
-                                        </>
-                                    </CDisclosureItem>
-                                </>
-                            </CDisclosure>
+                        <div>
+                            <div className="text-superred font-medium text-sm text-center py-6">
+                                Supprimer le dossier
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
                 {/* Infos */}
                 <div className={`absolute h-full left-[var(--burger--folder)]  right-0`}>
