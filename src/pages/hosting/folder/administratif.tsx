@@ -4,14 +4,14 @@ import { useState } from "react";
 
 function App() {
     const [title, setTitle] = useState("Type d'activité")
-    return (  
+    return (
         <PageBuilder title="Mon Espace Agence" show={true} footer={undefined} >
             <>
                 <FolderBuilder title={title}>
                     <>
-                        <div className="bg-blue-100">
-                            <div className="h-full">
-e
+                        <div className="flex flex-col items-center justify-start h-full w-full animate-showin">
+                            <div className="w-30rem py-[2.5rem]">
+                                <div className="font-semibold text-2xl text-supergray">Comment souhaitez-vous constituer ce dossier ?</div>
                             </div>
                         </div>
                     </>
@@ -22,4 +22,3 @@ e
 }
 
 export default App;
- 
