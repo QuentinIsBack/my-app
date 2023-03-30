@@ -10,7 +10,6 @@ type Type = {
 export const ChooseButtonNew = ({ list, selected, setSelected }: Type) => {
     return (
         <>
-            <div className='space-y-4'>
                 {Object.values(list).map((o:any, i) => (
                     <button 
                         key={i}
@@ -31,7 +30,6 @@ export const ChooseButtonNew = ({ list, selected, setSelected }: Type) => {
                         </div>
                     </button>
                 ))}
-            </div>
         </>
     )
 }

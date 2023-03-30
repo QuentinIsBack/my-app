@@ -2,6 +2,7 @@ import { useState } from "react";
 import LOGO from '../../assets/logoagencie.svg';
 import { CDisclosure } from "../disclosure/cdisclosure";
 import { CDisclosureItem } from "../disclosure/cdisclosureitem";
+import { NavLink, useNavigate } from "react-router-dom";
 
 type PageType = {
     title: string,
@@ -12,13 +13,16 @@ export const FolderBuilder = ({
     children
 }: PageType) => {
     const [burger, setBurger] = useState(true);
+    const navigate = useNavigate();
+
     return (
         <>
             <div className="w-full h-full">
+                {/* NavBar */}
                 <div className="absolute bg-gray-100/75 w-[var(--burger--folder)] h-full">
                     <div className="flex flex-row justify-between px-6 h-[var(--burger--top)] border-b">
                         <img width={25} alt={'logo'} src={LOGO} />
-                        <button className="font-semibold text-supergray text-sm underline">Enregistrer et quitter</button>
+                        <button onClick={()=>navigate('/hosting')} className="font-semibold text-supergray text-sm underline">Enregistrer et quitter</button>
                     </div>
                     <div className="space-y-6">
                         <div className="pt-6 px-6">
@@ -27,12 +31,17 @@ export const FolderBuilder = ({
                         <div className="px-4 space-y-2">
                             <CDisclosure title="Votre situation" locked={true}>
                                 <>
-                                    <CDisclosureItem>
+                                    <CDisclosureItem to={'/hosting/folder/administratif/'}>
                                         <>
                                             Administratif
                                         </>
                                     </CDisclosureItem>
-                                    <CDisclosureItem>
+                                    <CDisclosureItem to={'/hosting/folder/identity/'}>
+                                        <>
+                                            Identité
+                                        </>
+                                    </CDisclosureItem>
+                                    <CDisclosureItem to={'/'}>
                                         <>
                                             Informations essentielles
                                         </>
@@ -41,7 +50,7 @@ export const FolderBuilder = ({
                             </CDisclosure>
                             <CDisclosure title="Professionnel" locked={false}>
                                 <>
-                                    <CDisclosureItem>
+                                    <CDisclosureItem to={'/'}>
                                         <>
                                             Type d'activité
                                         </>
@@ -50,7 +59,7 @@ export const FolderBuilder = ({
                             </CDisclosure>
                             <CDisclosure title="Vos garants" locked={false}>
                                 <>
-                                    <CDisclosureItem>
+                                    <CDisclosureItem to={'/'}>
                                         <>
                                             Informations essentielles
                                         </>
@@ -60,14 +69,32 @@ export const FolderBuilder = ({
                         </div>
                     </div>
                 </div>
+                {/* Infos */}
                 <div className={`absolute h-full left-[var(--burger--folder)]  right-0`}>
-                    <div className="relative w-full h-[var(--burger--top)] border-b text-supergray font-semibold text-base px-6">
+                    <div className="relative w-full h-[var(--burger--top)] text-supergray font-semibold text-base px-6">
                         <div className="absolute top-1/2 -translate-y-1/2">
                             {title}
                         </div>
                     </div>
-                    <div className="absolute top-[var(--burger--top)] bottom-0 right-0 left-0">
+                    <div className="absolute top-[var(--burger--top)] bottom-[var(--burger--bottom)] right-0 left-0 overflow-scroll">
                         {children}
+                    </div>
+                    <div className="absolute right-0 left-0 bottom-[var(--burger--bottom)] h-[1px] bg-gray-200">
+                        <div
+                            style={{ width: `25%` }}
+                            className={`h-full bg-superblue`}>
+                        </div>
+                    </div>
+                    <div className="absolute h-[var(--burger--bottom)] bottom-0 right-0 left-0 overflow-hidden">
+                        <div className="absolute left-10 top-1/2 -translate-y-1/2">
+                            <button className="rounded-lg ring-1 ring-supergray px-4 py-1.5 text-supergray font-semibold text-sm hover:bg-gray-100 duration-150">Retour</button>
+                        </div>
+                        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                            <div className="text-supergray/60 font-medium text-xs">13 éléments à envoyer</div>
+                        </div>
+                        <div className="absolute right-10 top-1/2 -translate-y-1/2">
+                            <button className="rounded-lg ring-1 ring-supergray bg-supergray px-4 py-1.5 text-white font-semibold text-sm hover:bg-black duration-150">Suivant</button>
+                        </div>
                     </div>
                 </div>
             </div>

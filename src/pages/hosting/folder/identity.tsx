@@ -16,7 +16,7 @@ function App() {
                     <>
                         <div className="flex flex-col items-center justify-start h-full w-full animate-showin">
                             <div className="w-[30rem] py-[1rem] space-y-10">
-                                <div className="font-semibold text-3xl text-supergray">Comment souhaitez-vous constituer ce dossier ?</div>
+                                <div className="font-semibold text-3xl text-supergray">Confirmons votre identité enssemble</div>
                                 <div className="grid grid-cols-2 gap-4 text-supergray font-medium text-base">
                                     <ChooseButtonNew list={SituationFolder} selected={selected} setSelected={setSelected} />
                                 </div>
