@@ -26,5 +26,6 @@ export interface IFolder {
     essentials: IEssentials;
 }
 export interface IEssentials {
-    administratif: string;
+    proof_identity: string;
+    proof_domicile: string;
 }

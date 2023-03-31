@@ -37,21 +37,21 @@ export const FolderBuilder = ({
                                     <div className="font-semibold text-supergray text-2xl leading-none">Proposez votre candidature</div>
                                 </div>
                                 <div className="px-4 space-y-2">
-                                    <CDisclosure title="Mon dossier" defaultOpen={window.location.pathname.includes("administratif")||window.location.pathname.includes("identity")} locked={true}>
+                                    <CDisclosure title="Mon dossier" defaultOpen={window.location.pathname.includes("proof-identity") || window.location.pathname.includes("proof-domicile")} locked={true}>
                                         <>
-                                            <CDisclosureItem to={'/hosting/folder/administratif/'} locked={UserData.folder.essentials.administratif !== ""}>
+                                            <CDisclosureItem to={'/hosting/folder/proof-identity/'} locked={UserData.folder.essentials.proof_identity !== ""}>
                                                 <>
                                                     Justificatif d'identité
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/hosting/folder/identity/'}>
+                                            <CDisclosureItem to={'/hosting/folder/proof-domicile/'} locked={UserData.folder.essentials.proof_domicile !== ""}>
                                                 <>
-                                                    Attestation de domicile
+                                                    Justificatif de domicile
                                                 </>
                                             </CDisclosureItem>
                                         </>
                                     </CDisclosure>
-                                    <CDisclosure title="Ma situation" locked={UserData.folder.essentials.administratif !== ""}>
+                                    <CDisclosure title="Ma situation" locked={false}>
                                         <>
                                             <CDisclosureItem to={'/'}>
                                                 <>
@@ -65,7 +65,7 @@ export const FolderBuilder = ({
                                             </CDisclosureItem>
                                         </>
                                     </CDisclosure>
-                                    <CDisclosure title="Mes garants" locked={UserData.folder.essentials.administratif !== ""}>
+                                    <CDisclosure title="Mes garants" locked={false}>
                                         <>
                                             <CDisclosureItem to={'/'}>
                                                 <>

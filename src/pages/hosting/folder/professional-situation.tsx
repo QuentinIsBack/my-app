@@ -12,7 +12,7 @@ function App() {
     const { UserData } = useContext(UserContext)
     const navigate = useNavigate();
 
-    const [selected, setSelected] = useState<string | undefined>(UserData.folder.essentials.administratif)
+    const [selected, setSelected] = useState<string | undefined>()
 
     const clickNext = () => {
         UserDataServices.update(UserData.uuid as string, { "folder.essentials.administratif": selected })

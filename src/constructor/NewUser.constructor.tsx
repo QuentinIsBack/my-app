@@ -3,13 +3,14 @@ import NewUser, { IEssentials, IFolder } from "../data/NewUser.data";
 
 export const NewBuilder = (data: any, id: string) => {
     return new NewUser(
-        data.uid ?? id,
+        id,
         data.firstname ?? "",
         data.lastname ?? "",
         data.email ?? "",
         initFolder({
             essentials: initEssentials({
-                administratif: data?.folder?.essentials?.administratif ?? ""
+                proof_identity: data?.folder?.essentials?.proof_identity ?? "",
+                proof_domicile: data?.folder?.essentials?.proof_domicile ?? ""
             }),      
         }),        
         data.agency ?? undefined,
@@ -29,7 +30,8 @@ export function initFolder(options?: Partial<IFolder>): IFolder {
 
 export function initEssentials(options?: Partial<IEssentials>): IEssentials {
     const defaults = {
-        administratif: "",
+        proof_identity: "",
+        proof_domicile: "",
     };
 
     return {
