@@ -37,7 +37,11 @@ export const FolderBuilder = ({
                                     <div className="font-semibold text-supergray text-2xl leading-none">Proposez votre candidature</div>
                                 </div>
                                 <div className="px-4 space-y-2">
-                                    <CDisclosure title="Mon dossier" defaultOpen={window.location.pathname.includes("proof-identity") || window.location.pathname.includes("proof-domicile")} locked={true}>
+                                    <CDisclosure 
+                                        title="Mon dossier" 
+                                        defaultOpen={window.location.pathname.includes("proof-identity") || window.location.pathname.includes("proof-domicile")} 
+                                        complet={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""} 
+                                        locked={true}>
                                         <>
                                             <CDisclosureItem to={'/hosting/folder/proof-identity/'} locked={UserData.folder.essentials.proof_identity !== ""}>
                                                 <>
@@ -51,9 +55,9 @@ export const FolderBuilder = ({
                                             </CDisclosureItem>
                                         </>
                                     </CDisclosure>
-                                    <CDisclosure title="Ma situation" locked={false}>
+                                    <CDisclosure title="Ma situation" defaultOpen={window.location.pathname.includes("professional-situation")} locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}>
                                         <>
-                                            <CDisclosureItem to={'/'}>
+                                            <CDisclosureItem to={'/hosting/folder/professional-situation'}>
                                                 <>
                                                     Situation Professionnelle
                                                 </>

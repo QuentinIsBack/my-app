@@ -5,12 +5,14 @@ import Icon from "../icon/icons";
 type PageType = {
     title: string
     locked: boolean
+    complet: boolean
     defaultOpen: boolean
     children: JSX.Element
 }
 export const CDisclosure = ({ 
     title,
     locked,
+    complet,
     defaultOpen,
     children
 }: PageType) => {
@@ -30,8 +32,11 @@ export const CDisclosure = ({
                                 />
                                 <span>{title}</span>
                             </div>
-                            
-                            {!(open && locked)&&<Icon className={locked ? 'fill-orange-600' : 'fill-black'} name={locked ? 'RiErrorWarningFill' : 'RiDoorLockLine'} size={18} />}
+                            {complet && !open ? 
+                                <Icon className={'fill-blue-600'} name={'AiFillCheckCircle'} size={18} />
+                            :
+                                <>{!(open && locked)&&<Icon className={locked ? 'fill-orange-600' : 'fill-black'} name={locked ? 'RiErrorWarningFill' : 'RiDoorLockLine'} size={18} />}</>
+                            }
                         </Disclosure.Button>
                         {locked && children }
                     </>
@@ -42,5 +47,6 @@ export const CDisclosure = ({
 }
 
 CDisclosure.defaultProps = {
-    defaultOpen: false
+    defaultOpen: false,
+    complet: false
 }

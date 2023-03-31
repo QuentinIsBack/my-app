@@ -76,7 +76,7 @@ function App() {
 
                                 <div className="space-y-4">
                                     <div className="text-supergray font-normal text-base">
-                                        Le propriétaire est autorisé à vérifier certaines informations sur l'identité du futur locataire. Seuls certains justificatifs sont autorisés
+                                        Le propriétaire est autorisé à vérifier certaines informations sur l'identité du futur locataire. Seuls certains justificatifs sont autorisés.
                                     </div>
                                     <div>
                                         <div className="text-supergray font-medium text-base">
@@ -101,7 +101,7 @@ function App() {
                                     <button className="w-full group newborder">
                                         <label htmlFor="file" className="h-full w-full">
                                             <div className="flex flex-col space-y-3 justify-center items-center">
-                                                {URLs !== ''&&<img src={URLs} />}
+                                                {URLs !== ''&&<img className="pb-2" src={URLs} />}
                                                 <Icon name="IoAdd" className="duration-150 stroke-supergray/50 group-hover:stroke-supergray" size={30} />
                                                 <div className="duration-150 font-medium text-supergray/50 group-hover:text-supergray text-base">{URLs === '' ? 'Ajouter un document': 'Modifier le document'}</div>
                                             </div>    
