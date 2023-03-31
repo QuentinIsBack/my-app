@@ -62,6 +62,14 @@ function App() {
                                             <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDD</button>
                                         </div>
                                     </div>
+                                    <div className="flex flex-col">
+                                        <div className="text-supergray font-semibold text-base">
+                                            Autres informations (facultatif)
+                                        </div>
+                                        <div className="pt-4">
+                                        <textarea className="placeholder:text-supergray/70 text-supergray font-normal text-base animation duration-200 px-4 py-3.5 border-none rounded-xl focus:outline-none ring-gray-200 ring-1 focus:ring-2 focus:ring-black focus:outline-transparent w-full h-32" placeholder="Ex : j'ai comme projet de changer de travail"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
