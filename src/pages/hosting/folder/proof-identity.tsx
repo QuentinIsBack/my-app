@@ -107,7 +107,7 @@ function App() {
                                             </div>    
                                         </label>
                                     </button>
-                                    <input id="file" onChange={onImageChange} className="hidden" type="file"/>
+                                    <input id="file" onChange={onImageChange} accept={'image/png'} className="hidden" type="file"/>
                                 </div>
                                 
                                 
