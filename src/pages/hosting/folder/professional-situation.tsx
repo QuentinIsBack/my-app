@@ -18,15 +18,18 @@ function App() {
     const [selected, setSelected] = useState<string | undefined>()
     const [modal, setModal] = useState(false);
 
+    const clickBack = () => {
+        navigate(`/hosting/folder/proof-domicile/`)
+    }
+
     const clickNext = () => {
-        UserDataServices.update(UserData.uuid as string, { "folder.essentials.administratif": selected })
-        navigate(`/hosting/folder/identity/`)
+        navigate(`/hosting/folder/ressources`)
     }
 
     return (
         <PageBuilder title="Mon Espace Agence" show={true} footer={undefined} >
             <>
-                <FolderBuilder next={clickNext} title={title}>
+                <FolderBuilder back={clickBack} next={clickNext} title={title}>
                     <>
                         <ProfessionalSituationModal show={modal} close={() => setModal(false)} />
                         <div className="flex flex-col items-center justify-start h-full w-full animate-showin">
@@ -60,6 +63,7 @@ function App() {
                                         <div className="pt-4 flex flex-row space-x-2">
                                             <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDI</button>
                                             <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDD</button>
+                                            <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CTT</button>
                                         </div>
                                     </div>
                                     <div className="flex flex-col">

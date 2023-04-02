@@ -17,15 +17,19 @@ export default class NewUser {
         this.firstname = firstname ?? "";
         this.lastname = lastname ?? "";
         this.email = email ?? "";
-        this.folder = folder ??initFolder();
+        this.folder = folder ?? initFolder();
         this.agency = agency ?? undefined
     }
 }
 
 export interface IFolder {
     essentials: IEssentials;
+    situation: ISituation;
 }
 export interface IEssentials {
     proof_identity: string;
     proof_domicile: string;
+}
+export interface ISituation {
+    profesionnal_situation: string;
 }

@@ -55,14 +55,14 @@ export const FolderBuilder = ({
                                             </CDisclosureItem>
                                         </>
                                     </CDisclosure>
-                                    <CDisclosure title="Ma situation" defaultOpen={window.location.pathname.includes("professional-situation")} locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}>
+                                    <CDisclosure title="Ma situation" defaultOpen={window.location.pathname.includes("professional-situation") || window.location.pathname.includes("ressources")} locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}>
                                         <>
                                             <CDisclosureItem to={'/hosting/folder/professional-situation'}>
                                                 <>
                                                     Situation Professionnelle
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/'}>
+                                            <CDisclosureItem to={'/hosting/folder/ressources'}>
                                                 <>
                                                     Ressources
                                                 </>

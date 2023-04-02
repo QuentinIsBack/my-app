@@ -16,7 +16,8 @@ import HostAbout from './pages/begin/about-your-place'
 import HostingIndex from './pages/hosting/index'
 import HostingDomicile from './pages/hosting/folder/proof-domicile'
 import HostingIdentity from './pages/hosting/folder/proof-identity'
-import HostingpProfessionalSituation from './pages/hosting/folder/professional-situation'
+import HostingProfessionalSituation from './pages/hosting/folder/professional-situation'
+import HostingRessources from './pages/hosting/folder/ressources'
 
 import BecomeAHost from './pages/become-a-host'
 import Host from './pages/host/host'
@@ -41,7 +42,8 @@ function App() {
           <Route path="/hosting" element={<HostingIndex />} />
           <Route path="/hosting/folder/proof-domicile" element={<HostingDomicile />} />
           <Route path="/hosting/folder/proof-identity" element={<HostingIdentity />} />
-          <Route path="/hosting/folder/professional-situation" element={<HostingpProfessionalSituation />} />
+          <Route path="/hosting/folder/professional-situation" element={<HostingProfessionalSituation />} />
+          <Route path="/hosting/folder/ressources" element={<HostingRessources />} />
 
           <Route element={<AgencyRoute />}>
             <Route path="/agency" element={<AgencyIndex />} />
