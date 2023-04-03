@@ -1,5 +1,5 @@
 import NewHost, { IAssets, IBasic } from "../data/NewHost.data";
-import NewUser, { IEssentials, IFolder, ISituation } from "../data/NewUser.data";
+import NewUser, { IEssentials, IFolder, IRessources,  } from "../data/NewUser.data";
 
 export const NewBuilder = (data: any, id: string) => {
     return new NewUser(
@@ -11,7 +11,11 @@ export const NewBuilder = (data: any, id: string) => {
             essentials: initEssentials({
                 proof_identity: data?.folder?.essentials?.proof_identity ?? "",
                 proof_domicile: data?.folder?.essentials?.proof_domicile ?? ""
-            }),      
+            }),    
+            ressources: initRessources({
+                situation: data?.folder?.ressources?.situation ?? "",
+                ressources: data?.folder?.ressources?.ressources ?? []  
+            }),
         }),        
         data.agency ?? undefined,
     );
@@ -20,7 +24,7 @@ export const NewBuilder = (data: any, id: string) => {
 export function initFolder(options?: Partial<IFolder>): IFolder {
     const defaults = {
         essentials: initEssentials(),
-        situation: initSituation(),
+        ressources: initRessources(),
     };
 
     return {
@@ -41,9 +45,10 @@ export function initEssentials(options?: Partial<IEssentials>): IEssentials {
     };
 }
 
-export function initSituation(options?: Partial<ISituation>): ISituation {
+export function initRessources(options?: Partial<IRessources>): IRessources {
     const defaults = {
-        profesionnal_situation: "",
+        situation: "",
+        ressources: []
     };
 
     return {

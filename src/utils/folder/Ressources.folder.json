@@ -1,0 +1,17 @@
+{
+    "vfMqDUfRyNHpYR7WdFPr": {
+        "id": "vfMqDUfRyNHpYR7WdFPr",
+        "title": "Bulletins de salaires",
+        "description": "3 derniers bulletins de salaires"
+    },
+    "tKsn3p8Lro9FyE0ogrJ4": {
+        "id": "tKsn3p8Lro9FyE0ogrJ4",
+        "title": "Attestation de simulation",
+        "description": "Attestation de simulation pour les aides au logement établie par la Caf ou par la MSA ou par le locataire"
+    },
+    "tKsn3p8Lro90oefdgrJ4": {
+        "id": "tKsn3p8Lro90oefdgrJ4",
+        "title": "Justificatif de versement",
+        "description": "Justificatif de versement des indemnités, retraites, pensions, prestations sociales et familiales et allocations perçues."
+    }
+}

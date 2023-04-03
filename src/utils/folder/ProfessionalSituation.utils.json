@@ -2,7 +2,8 @@
     "vfMqDUfRyNHpYR7WdFPr": {
         "id": "vfMqDUfRyNHpYR7WdFPr",
         "title": "Salarié",
-        "icon": "FiBook"
+        "icon": "FiBook",
+        "ressources": ["vfMqDUfRyNHpYR7WdFPr"]
     },
     "tKsn3p8Lro9FyE0ogrJ4": {
         "id": "tKsn3p8Lro9FyE0ogrJ4",

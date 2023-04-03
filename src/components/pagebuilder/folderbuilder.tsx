@@ -43,12 +43,12 @@ export const FolderBuilder = ({
                                         complet={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""} 
                                         locked={true}>
                                         <>
-                                            <CDisclosureItem to={'/hosting/folder/proof-identity/'} locked={UserData.folder.essentials.proof_identity !== ""}>
+                                            <CDisclosureItem to={'/hosting/folder/proof-identity/'} complet={UserData.folder.essentials.proof_identity !== ""}>
                                                 <>
                                                     Justificatif d'identité
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/hosting/folder/proof-domicile/'} locked={UserData.folder.essentials.proof_domicile !== ""}>
+                                            <CDisclosureItem to={'/hosting/folder/proof-domicile/'} complet={UserData.folder.essentials.proof_domicile !== ""}>
                                                 <>
                                                     Justificatif de domicile
                                                 </>
@@ -57,18 +57,18 @@ export const FolderBuilder = ({
                                     </CDisclosure>
                                     <CDisclosure title="Ma situation" defaultOpen={window.location.pathname.includes("professional-situation") || window.location.pathname.includes("ressources")} locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}>
                                         <>
-                                            <CDisclosureItem to={'/hosting/folder/professional-situation'}>
+                                            <CDisclosureItem to={'/hosting/folder/professional-situation'} complet={UserData.folder.ressources.situation !== ""}>
                                                 <>
                                                     Situation Professionnelle
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/hosting/folder/ressources'}>
+                                            <CDisclosureItem to={'/hosting/folder/ressources'} >
                                                 <>
                                                     Ressources
                                                 </>
                                             </CDisclosureItem>
                                         </>
-                                    </CDisclosure>
+                                    </CDisclosure> 
                                     <CDisclosure title="Mes garants" locked={false}>
                                         <>
                                             <CDisclosureItem to={'/'}>

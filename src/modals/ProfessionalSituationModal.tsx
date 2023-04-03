@@ -4,7 +4,9 @@ import { Modal } from "../components/modal/Modal"
 
 import ProfessionalSituation from '../utils/folder/ProfessionalSituation.utils.json'
 import { ChooseButtonNew } from "../components/button/ChooseButtonNew";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserDataServices from "../services/UserData.services";
+import { UserContext } from "../contexts/UserContext";
 
 type CompType = {
     show: boolean,
@@ -12,7 +14,14 @@ type CompType = {
 }
 export const ProfessionalSituationModal = ({ show, close }: CompType) => {
     const navigate = useNavigate();
-    const [selected, setSelected] = useState<string | undefined>()
+    const { UserData } = useContext(UserContext)
+    const [selected, setSelected] = useState<string | undefined>(UserData.folder.ressources.situation)
+
+    const submit = () => {
+        UserDataServices.update(UserData.uuid as string, { "folder.ressources.situation": selected })
+        close()
+    }
+
     return (
         <>
             <Modal show={show} close={close}>
@@ -27,7 +36,7 @@ export const ProfessionalSituationModal = ({ show, close }: CompType) => {
                     </div>
                     <div className='p-4 border-t flex items-center justify-between w-full'>
                         <button onClick={close} className="duration-150 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg font-medium text-supergray text-base underline">Annuler</button>
-                        <button className="duration-150 px-6 py-3 bg-supergray hover:bg-black rounded-lg font-medium text-white text-base">Enregistrer</button>
+                        <button onClick={submit} className="duration-150 px-6 py-3 bg-supergray hover:bg-black rounded-lg font-medium text-white text-base">Enregistrer</button>
                     </div>
                 </>
             </Modal>
