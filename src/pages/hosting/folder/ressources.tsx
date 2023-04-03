@@ -42,7 +42,12 @@ function App() {
                                         <div className="text-supergray/70 font-normal text-sm">
                                             Pensez à renseigner des informations réel. Vos documents seront vérifié par notre équipe afin de fournir a l'annonceur l'integrité des documents.
                                         </div>
-                                        <div className="pt-4 flex flex-row space-x-2">
+                                        <div className="pt-4 flex flex-col space-y-2">
+
+                                            <>{Object.values(SituationsList).filter(r => r.ressources.includes(UserData.folder.ressources.situation)).map(m=>{
+                                                <>{Object.values(RessourcesList).filter(ml => m.ressources.includes(ml.id)).map(mo=><>{console.log(mo)}</>)}</>
+                                            })}</>
+
                                             {UserData.folder.ressources.situation === "" && <div>Aucunes situation enregistré</div>}
                                             {UserData.folder.ressources.situation === SituationsList.vfMqDUfRyNHpYR7WdFPr.id &&
                                                 <>
@@ -55,6 +60,24 @@ function App() {
                                                         </div>
                                                         <div
                                                             data-tip="À compléter" 
+                                                            className="tooltip tooltip-left tooltip-warning"
+                                                        >
+                                                            <Icon className={'fill-orange-600'} name={'RiErrorWarningFill'} size={24} />
+                                                        </div>
+                                                    </button>
+                                                </>
+                                            }
+                                            {UserData.folder.ressources.situation === SituationsList.vfMqDUfRyNHpYR7WdFPr.id &&
+                                                <>
+                                                    <button className="flex flex-row justify-between superborder w-full p-4 rounded-lg">
+                                                        <div className="flex flex-col">
+                                                        <div className="text-left font-medium text-base text-supergray">{RessourcesList.vfMqDUfRyNHpYR7WdFPr.title}</div>
+                                                            <div className="text-left font-normal text-sm text-supergray/70">
+                                                                Aucuns clients enregistré
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            data-tip="À compléter"
                                                             className="tooltip tooltip-left tooltip-warning"
                                                         >
                                                             <Icon className={'fill-orange-600'} name={'RiErrorWarningFill'} size={24} />

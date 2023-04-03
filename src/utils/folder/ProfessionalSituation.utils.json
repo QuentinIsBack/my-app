@@ -3,31 +3,54 @@
         "id": "vfMqDUfRyNHpYR7WdFPr",
         "title": "Salarié",
         "icon": "FiBook",
-        "ressources": ["vfMqDUfRyNHpYR7WdFPr"]
+        "ressources": [
+            "vfMqDUfRyNHpYR7WdFPr", 
+            "vfMqDUfRyNHpYR7Wdfdf"
+        ]
     },
     "tKsn3p8Lro9FyE0ogrJ4": {
         "id": "tKsn3p8Lro9FyE0ogrJ4",
         "title": "Fonctionnaire",
-        "icon": "IoBriefcaseOutline"
+        "icon": "IoBriefcaseOutline",
+        "ressources": [
+            "",
+            ""
+        ]
     },
     "RUIBtvdRcKuSJ2fhmD8Q": {
         "id": "RUIBtvdRcKuSJ2fhmD8Q",
         "title": "Étudiant",
-        "icon": "IoBusinessOutline"
+        "icon": "IoBusinessOutline",
+        "ressources": [
+            "",
+            ""
+        ]
     },
     "O5GsowBvRU3dDN5hpc3d": {
         "id": "O5GsowBvRU3dDN5hpc3d",
         "title": "Indépendant",
-        "icon": "IoPersonOutline"
+        "icon": "IoPersonOutline",
+        "ressources": [
+            "",
+            ""
+        ]
     },
     "WEBUBhRv9JPyx2eK5wP8": {
         "id": "WEBUBhRv9JPyx2eK5wP8",
         "title": "Retraité",
-        "icon": "IoFootstepsOutline"
+        "icon": "IoFootstepsOutline",
+        "ressources": [
+            "",
+            ""
+        ]
     },
     "6XoqPf0ilnX87gX0EGjr": {
         "id": "6XoqPf0ilnX87gX0EGjr",
         "title": "Sans emploi",
-        "icon": "IoEyeOffOutline"
+        "icon": "IoEyeOffOutline",
+        "ressources": [
+            "",
+            ""
+        ]
     }
 }
