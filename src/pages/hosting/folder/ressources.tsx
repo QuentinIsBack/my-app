@@ -64,7 +64,7 @@ function App() {
                                                 {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
                                                     Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
                                                         <RessourceBuilder optional={false} complet={ConditionRessource(ml)} parameter={ml} />
-                                                    ))
+                                                    ))  
                                                 ))}
                                             </div>
 

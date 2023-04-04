@@ -59,6 +59,9 @@ export const ConditionRessource = (parameter:any) => {
         case "payslip": {
             return (UserData.folder.ressources.ressources.payslip.payslip1 !== ''&&UserData.folder.ressources.ressources.payslip.payslip2 !== ''&&UserData.folder.ressources.ressources.payslip.payslip3 !== '')
         }
+        default: {
+            return false
+        }
     }
 }
 

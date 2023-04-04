@@ -34,11 +34,11 @@ export const NavBar = ({ padding }: CompType) => {
                 <div className='navcenter hidden xs:hidden sm:hidden md:block lg:block xl:block 2xl:block 3xl:block 4xl:block'>
                     <div className='flex flex-row space-x-2'>
 
-                        <NavButton title={"Mon logement"} to={"/hosting/"} theme={IThemeNavButton.hosting} />
-                        <NavButton title={"Messages"} to={"/hosting/messages"} theme={IThemeNavButton.hosting} />
-                        <NavButton title={"Calendrier"} to={"/hosting/calendar"} theme={IThemeNavButton.hosting} />
+                        <NavButton title={"Aujourd'hui"} to={"/hosting/"} theme={IThemeNavButton.hosting} />
+                        <NavButton title={"Messages"} to={"/hosting/"} theme={IThemeNavButton.hosting} />
+                        <NavButton title={"Calendrier"} to={"/hosting/"} theme={IThemeNavButton.hosting} />
                         <NavButton title={"Candidature"} to={"/hosting/folder/proof-identity"} theme={IThemeNavButton.hosting} />
-                        <NavButton title={"Informations"} to={"/hosting/info"} theme={IThemeNavButton.hosting} />
+                        <NavButton title={"Informations"} to={"/hosting/"} theme={IThemeNavButton.hosting} />
 
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0}>
