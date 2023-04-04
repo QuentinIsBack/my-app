@@ -16,9 +16,9 @@ export const NewBuilder = (data: any, id: string) => {
                 situation: data?.folder?.ressources?.situation ?? "",
                 ressources: initAllRessources({
                     payslip: initPayslip({
-                        payslip1: data?.folder?.ressources?.payslip?.payslip1 ?? "",
-                        payslip2: data?.folder?.ressources?.payslip?.payslip2 ?? "",
-                        payslip3: data?.folder?.ressources?.payslip?.payslip3 ?? "",
+                        payslip1: data?.folder?.ressources?.ressources?.payslip?.payslip1 ?? "",
+                        payslip2: data?.folder?.ressources?.ressources?.payslip?.payslip2 ?? "",
+                        payslip3: data?.folder?.ressources?.ressources?.payslip?.payslip3 ?? "",
                     }),
                     salaryslips: data?.folder?.ressources?.salaryslips ?? "",
                 })

@@ -1,6 +1,6 @@
 {
-    "vfMqDUfRyNHpYR7Wdfdf": {
-        "id": "vfMqDUfRyNHpYR7Wdfdf",
+    "payslip": {
+        "id": "payslip",
         "title": "Bulletins de salaires",
         "missing": "Documents manquant",
         "edit": "Ajouter vos bulletins de salaires de préférence au forrmat PDF.",
@@ -11,7 +11,7 @@
         "title": "Contrat de travail",
         "missing": "Documents manquant",
         "edit": "Ajouter votre contrat de travail de préférence au forrmat PDF.",
-        "description": "3 derniers bulletins de salaires"
+        "description": "Contrat de travail"
     },
     "tKsn3p8Lro9FyE0ogrJ4": {
         "id": "tKsn3p8Lro9FyE0ogrJ4",

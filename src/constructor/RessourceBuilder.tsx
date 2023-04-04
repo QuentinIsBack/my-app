@@ -1,107 +1,33 @@
-import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
-import { FolderBuilder } from "../../../components/pagebuilder/folderbuilder";
-import { useContext, useEffect, useState } from "react";
-import { ChooseButtonNew } from "../../../components/button/ChooseButtonNew";
-import SituationFolder from '../../../utils/folder/ProfessionalSituation.utils.json'
-import UserDataServices from "../../../services/UserData.services";
-import { UserContext } from "../../../contexts/UserContext";
-import { useNavigate } from "react-router-dom";
-import Icon from "../../../components/icon/icons";
-import RessourcesList from "../../../utils/folder/Ressources.folder.json";
-import SituationsList from "../../../utils/folder/ProfessionalSituation.utils.json";
-import { Modal } from "../../../components/modal/Modal";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../../../firebase.config";
-import { ConditionRessource, RessourceBuilder } from "../../../constructor/RessourceBuilder";
+import { useContext, useState } from "react"
+import Icon from "../components/icon/icons"
+import { UserContext } from "../contexts/UserContext"
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
+import { storage } from "../firebase.config"
+import UserDataServices from "../services/UserData.services"
 
-function App() {
-    const [title, setTitle] = useState("Ressources")
-    const { UserData } = useContext(UserContext)
-    const navigate = useNavigate();
-
-    const [modal, setModal] = useState(false);
-    const [use, setUse] = useState(false);
-
-    const clickBack = () => {
-        navigate(`/hosting/folder/professional-situation/`)
-    }
-
-    return (
-        <PageBuilder title="Mon Espace Agence" show={true} footer={undefined} >
-            <>
-                <FolderBuilder back={clickBack} title={title}>
-                    <>
-                        <div className="flex flex-col items-center justify-start h-full w-full animate-showin">
-                            <div className="w-[30rem] py-[1rem] space-y-6">
-                                <div className="flex flex-col space-y-2">
-                                    <div className="font-semibold text-4xl text-supergray">Ressources</div>
-                                </div>
-                                <div className="space-y-4">
-                                    <div className="text-supergray font-normal text-base">
-                                        Le locataire peut fournir une copie du document original. Mais le propriétaire a le droit d'exiger la présentation de l'original. Le document doit être rédigé ou traduit en français.
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <div className="text-supergray font-semibold text-base">
-                                            Mes ressources
-                                        </div>
-                                        <div className="text-supergray/70 font-normal text-sm">
-                                            Pensez à renseigner des informations à jour. Ils seront vérifié par notre équipe afin de fournir a l'annonceur l'integrité des documents.
-                                        </div>
-                                        <div className="pt-4 flex flex-col space-y-2">
-                                        
-                                            {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
-                                                Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
-                                                    <ButtonSetting parameter={ml} optional={false}  />
-                                                ))
-                                            ))}
-                                            {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m => (
-                                                Object.values(RessourcesList).filter(fi => m.optional.includes(fi.id)).map(ml => (
-                                                    <ButtonSetting parameter={ml} optional={true} />
-                                                ))
-                                            ))}
-                                        
-                                            <div className="mt-8 pt-8 border-t border-red-500">
-                                            
-                                                    {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
-                                                        Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
-                                                            <RessourceBuilder optional={false} complet={ConditionRessource(ml)} parameter={ml} />
-                                                        ))
-                                                    ))}
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                </FolderBuilder>
-            </>
-        </PageBuilder>
-    );
-}
-export default App;
-
-
-// TESTER
 type PageType = {
-    parameter: any,
-    optional: boolean
+    complet: boolean
+    optional: boolean 
+    parameter: any
 }
-export const ButtonSetting = ({ parameter, optional }: PageType) => {
+export const RessourceBuilder = ({ 
+    complet,
+    optional,
+    parameter
+}: PageType) => {
     const [open, setOpen] = useState(false);
+
     return (
         <>
-            <button onClick={() => !open && setOpen(!open)} className={`flex flex-col duration-150 ${!open&&"active:scale-98"} p-6 bg-white rounded-xl ring-1 ring-gray-200 hover:ring-1 hover:ring-supergray overflow-hidden focus:outline-none`}>
+            <button onClick={() => !open && setOpen(!open)} className={`flex flex-col duration-150 w-full ${!open&&"active:scale-98"} p-6 bg-white rounded-xl ring-1 ring-gray-200 hover:ring-1 hover:ring-supergray overflow-hidden focus:outline-none`}>
                 <div className="flex flex-col justify-between space-y-1 w-full">
                     <div className="flex flex-row justify-between items-center">
                         <div className="text-left font-medium text-base text-supergray">{parameter.title}</div>
                         <div className="flex flex-row items-center justify-start space-x-2">
                             {!open&&<div className="text-sm text-supergray font-medium">
-                                {!optional ? "Informations manquant" : "Facultatif" }
+                                {!optional ? complet ? "Terminé" : "Informations manquant" : "Facultatif" }
                             </div>}
-                           {/* {!optional ? <RessourceBuilder /> : <Icon className={'fill-blue-500'} name={'TiWarningOutline'} size={24} />} */}
+                            {optional ? <Icon className={'fill-blue-500'} name={'TiWarningOutline'} size={24} /> : complet ?  <Icon className={'fill-blue-600'} name={'AiFillCheckCircle'} size={24} /> : <Icon className={'fill-red-600'} name={'RiErrorWarningFill'} size={24} />}
                         </div>
                     </div>
                     <div className="w-full text-left font-normal text-sm text-supergray/70">
@@ -121,11 +47,26 @@ export const ButtonSetting = ({ parameter, optional }: PageType) => {
         </>
     )
 }
+
+RessourceBuilder.defaultProps = {
+    complet: false,
+    optional: false
+}
+
+export const ConditionRessource = (parameter:any) => {
+    const { UserData } = useContext(UserContext)
+    switch(parameter.id){
+        case "payslip": {
+            return (UserData.folder.ressources.ressources.payslip.payslip1 !== ''&&UserData.folder.ressources.ressources.payslip.payslip2 !== ''&&UserData.folder.ressources.ressources.payslip.payslip3 !== '')
+        }
+    }
+}
+
 const VarGetter = (id: string) => {
 
     switch(id) {
         // Bulletins
-        case "vfMqDUfRyNHpYR7Wdfdf": {
+        case "payslip": {
             return (<Bulletins />)
         }
 
@@ -134,6 +75,69 @@ const VarGetter = (id: string) => {
             return (<Contrat />)
         }
 
+        // Simulation
+        case "tKsn3p8Lro9FyE0ogrJ4": {
+            return (
+                <>
+                    <div className="w-full flex flex-col space-y-2">
+                        <div>
+                            <div className="text-left text-supergray font-semibold text-base">Ajouter votre attestation</div>
+                            <div className="text-left text-supergray/70 font-normal text-sm">En ajoutant votre contrat vous donnez plus de chance à l'annonceur de vous choisir.</div>
+                        </div>
+                        <div className="group h-fit w-full">
+                            <div className="rounded-lg border group-hover:border-black border-gray-200 flex flex-col space-y-3 justify-center items-center p-4">
+                                <Icon name="IoAdd" className="duration-150 stroke-supergray/70 group-hover:stroke-supergray" size={20} />
+                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Ajouter un document</div>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+            break;
+        }
+
+        // Scolarité
+        case "tKsn3p8kfTRE5gfdgrJ4": {
+            return (
+                <>
+                    <div className="w-full flex flex-col space-y-2">
+                        <div>
+                            <div className="text-left text-supergray font-semibold text-base">Ajouter votre attestation</div>
+                            <div className="text-left text-supergray/70 font-normal text-sm">En ajoutant votre contrat vous donnez plus de chance à l'annonceur de vous choisir.</div>
+                        </div>
+                        <div className="group h-fit w-full">
+                            <div className="rounded-lg border group-hover:border-black border-gray-200 flex flex-col space-y-3 justify-center items-center p-4">
+                                <Icon name="IoAdd" className="duration-150 stroke-supergray/70 group-hover:stroke-supergray" size={20} />
+                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Ajouter un document</div>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+            break;
+        }
+
+        // Versement
+        case "tKsn3p8Lro90oefdgrJ4": {
+            return (
+                <>
+                    <div className="w-full flex flex-col space-y-2">
+                        <div>
+                            <div className="text-left text-supergray font-semibold text-base">Ajouter votre justificatif</div>
+                            <div className="text-left text-supergray/70 font-normal text-sm">En ajoutant votre contrat vous donnez plus de chance à l'annonceur de vous choisir.</div>
+                        </div>
+                        <div className="group h-fit w-full">
+                            <div className="rounded-lg border group-hover:border-black border-gray-200 flex flex-col space-y-3 justify-center items-center p-4">
+                                <Icon name="IoAdd" className="duration-150 stroke-supergray/70 group-hover:stroke-supergray" size={20} />
+                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Ajouter un document</div>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+            break;
+        }
+        
     }
 }
 
@@ -169,7 +173,7 @@ const Bulletins = () => {
         }
     }
 
-    const uploadfile = () => {
+    const submit = () => {
         uploadfile1()
         uploadfile2()
         uploadfile3()
@@ -245,7 +249,6 @@ const Bulletins = () => {
     }
 
 
-
     return (
         <div className="w-full flex flex-col space-y-2">
             <div>
@@ -290,7 +293,7 @@ const Bulletins = () => {
                     <input id="file3" onChange={onImageChange3} accept={'image/png'} className="hidden" type="file"/>
                 </div>
             </div>
-            <button onClick={uploadfile}>sumbmit</button>
+            <button onClick={submit}>sumbmit</button>
         </div>
     )
 }
@@ -311,5 +314,3 @@ const Contrat = () => {
         </div>
     )
 }
-
-// END TESTER
