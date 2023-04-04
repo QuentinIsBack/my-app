@@ -56,20 +56,35 @@ function App() {
                                         </button>
                                     </div>
                                     
-                                    {UserData.folder.ressources.situation === RessourcesList.vfMqDUfRyNHpYR7WdFPr.id &&
-                                    <div className="flex flex-col">
-                                        <div className="text-supergray font-semibold text-base">
-                                            Quel est votre contrat actuelle ?
+                                    {UserData.folder.ressources.situation === SituationsList.vfMqDUfRyNHfdsfsWdFPr.id &&
+                                        <div className="flex flex-col">
+                                            <div className="text-supergray font-semibold text-base">
+                                                Quel est votre contrat actuelle ?
+                                            </div>
+                                            <div className="text-supergray/70 font-normal text-sm">
+                                                Pensez à renseigner des informations réel. Vos documents seront vérifié par notre équipe afin de fournir a l'annonceur l'integrité des documents.
+                                            </div>
+                                            <div className="pt-4 flex flex-row space-x-2">
+                                                <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDI</button>
+                                                <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDD</button>
+                                                <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CTT</button>
+                                            </div>
                                         </div>
-                                        <div className="text-supergray/70 font-normal text-sm">
-                                            Pensez à renseigner des informations réel. Vos documents seront vérifié par notre équipe afin de fournir a l'annonceur l'integrité des documents.
+                                    }
+
+                                    {UserData.folder.ressources.situation === SituationsList.vfMqDUfRyNHfdsfsWdFPr.id &&
+                                        <div className="flex flex-col">
+                                            <div className="text-supergray font-semibold text-base">
+                                                Quel est votre type de contrat actuelle ?
+                                            </div>
+                                            <div className="text-supergray/70 font-normal text-sm">
+                                                Pensez à renseigner des informations réel. Vos documents seront vérifié par notre équipe afin de fournir a l'annonceur l'integrité des documents.
+                                            </div>
+                                            <div className="pt-4 flex flex-row space-x-2">
+                                                <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">Temps plein</button>
+                                                <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">Temps partiel</button>
+                                            </div>
                                         </div>
-                                        <div className="pt-4 flex flex-row space-x-2">
-                                            <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDI</button>
-                                            <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CDD</button>
-                                            <button className="duration-150 ring-1 hover:ring-2 hover:ring-black ring-gray-200 rounded-3xl hover:bg-gray-100 font-medium text-base text-supergray px-6 py-2">CTT</button>
-                                        </div>
-                                    </div>
                                     }
                                     
                                     {UserData.folder.ressources.situation !== "" &&

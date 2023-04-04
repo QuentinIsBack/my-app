@@ -1,56 +1,48 @@
 {
-    "vfMqDUfRyNHpYR7WdFPr": {
-        "id": "vfMqDUfRyNHpYR7WdFPr",
+    "vfMqDUfRyNHfdsfsWdFPr": {
+        "id": "vfMqDUfRyNHfdsfsWdFPr",
         "title": "Salarié",
         "icon": "FiBook",
         "ressources": [
-            "vfMqDUfRyNHpYR7WdFPr", 
             "vfMqDUfRyNHpYR7Wdfdf"
+        ],
+        "optional": [
+            "vfMqDUfRyNHpYR7WdFPr"
         ]
     },
     "tKsn3p8Lro9FyE0ogrJ4": {
         "id": "tKsn3p8Lro9FyE0ogrJ4",
         "title": "Fonctionnaire",
         "icon": "IoBriefcaseOutline",
-        "ressources": [
-            "",
-            ""
-        ]
+        "ressources": [""],
+        "optional": [""]
     },
     "RUIBtvdRcKuSJ2fhmD8Q": {
         "id": "RUIBtvdRcKuSJ2fhmD8Q",
         "title": "Étudiant",
         "icon": "IoBusinessOutline",
-        "ressources": [
-            "",
-            ""
-        ]
+        "ressources": ["tKsn3p8kfTRE5gfdgrJ4"],
+        "optional": [""]
     },
     "O5GsowBvRU3dDN5hpc3d": {
         "id": "O5GsowBvRU3dDN5hpc3d",
         "title": "Indépendant",
         "icon": "IoPersonOutline",
-        "ressources": [
-            "",
-            ""
-        ]
+        "ressources": [""],
+        "optional": [""]
     },
     "WEBUBhRv9JPyx2eK5wP8": {
         "id": "WEBUBhRv9JPyx2eK5wP8",
         "title": "Retraité",
         "icon": "IoFootstepsOutline",
-        "ressources": [
-            "",
-            ""
-        ]
+        "ressources": [""], 
+        "optional": ["tKsn3p8Lro90oefdgrJ4"]
     },
     "6XoqPf0ilnX87gX0EGjr": {
         "id": "6XoqPf0ilnX87gX0EGjr",
         "title": "Sans emploi",
         "icon": "IoEyeOffOutline",
-        "ressources": [
-            "",
-            ""
-        ]
+        "ressources": [""],
+        "optional": ["tKsn3p8Lro9FyE0ogrJ4"]
     }
 }

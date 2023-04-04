@@ -4,6 +4,7 @@ import { CDisclosure } from "../disclosure/cdisclosure";
 import { CDisclosureItem } from "../disclosure/cdisclosureitem";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
+import SituationsList from "../../utils/folder/ProfessionalSituation.utils.json";
 
 type PageType = {
     title: string,
@@ -62,7 +63,7 @@ export const FolderBuilder = ({
                                                     Situation Professionnelle
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/hosting/folder/ressources'} >
+                                            <CDisclosureItem to={'/hosting/folder/ressources'}>
                                                 <>
                                                     Ressources
                                                 </>

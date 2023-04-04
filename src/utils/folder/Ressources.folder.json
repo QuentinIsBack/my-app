@@ -1,22 +1,35 @@
 {
-    "vfMqDUfRyNHpYR7WdFPr": {
-        "id": "vfMqDUfRyNHpYR7WdFPr",
-        "title": "Contrat de travail",
-        "description": "3 derniers bulletins de salaires"
-    },
     "vfMqDUfRyNHpYR7Wdfdf": {
         "id": "vfMqDUfRyNHpYR7Wdfdf",
         "title": "Bulletins de salaires",
+        "missing": "Documents manquant",
+        "edit": "Ajouter vos bulletins de salaires de préférence au forrmat PDF.",
+        "description": "3 derniers bulletins de salaires"
+    },
+    "vfMqDUfRyNHpYR7WdFPr": {
+        "id": "vfMqDUfRyNHpYR7WdFPr",
+        "title": "Contrat de travail",
+        "missing": "Documents manquant",
+        "edit": "Ajouter votre contrat de travail de préférence au forrmat PDF.",
         "description": "3 derniers bulletins de salaires"
     },
     "tKsn3p8Lro9FyE0ogrJ4": {
         "id": "tKsn3p8Lro9FyE0ogrJ4",
         "title": "Attestation de simulation",
+        "missing": "Documents manquant",
+        "description": "Attestation de simulation pour les aides au logement établie par la Caf ou par la MSA ou par le locataire"
+    },
+    "tKsn3p8kfTRE5gfdgrJ4": {
+        "id": "tKsn3p8kfTRE5gfdgrJ4",
+        "title": "Attestation de scolarité",
+        "missing": "Documents manquant",
         "description": "Attestation de simulation pour les aides au logement établie par la Caf ou par la MSA ou par le locataire"
     },
     "tKsn3p8Lro90oefdgrJ4": {
         "id": "tKsn3p8Lro90oefdgrJ4",
         "title": "Justificatif de versement",
+        "missing": "Documents manquant",
+        "edit": "Ajouter vos justificatif de versement de préférence au forrmat PDF.",
         "description": "Justificatif de versement des indemnités, retraites, pensions, prestations sociales et familiales et allocations perçues."
     }
 }

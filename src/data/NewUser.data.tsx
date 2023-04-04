@@ -32,5 +32,16 @@ export interface IEssentials {
 }
 export interface IRessources {
     situation: string;
-    ressources: string[];
+    ressources: IAll;
+}
+
+export interface IAll {
+    payslip: IPayslip;
+    salaryslips: string;
+}
+
+export interface IPayslip {
+    payslip1: string;
+    payslip2: string;
+    payslip3: string;
 }
