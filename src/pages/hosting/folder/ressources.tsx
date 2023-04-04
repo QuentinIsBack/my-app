@@ -61,13 +61,11 @@ function App() {
                                             ))}
                                         
                                             <div className="mt-8 pt-8 border-t border-red-500">
-                                            
-                                                    {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
-                                                        Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
-                                                            <RessourceBuilder optional={false} complet={ConditionRessource(ml)} parameter={ml} />
-                                                        ))
-                                                    ))}
-
+                                                {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
+                                                    Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
+                                                        <RessourceBuilder optional={false} complet={ConditionRessource(ml)} parameter={ml} />
+                                                    ))
+                                                ))}
                                             </div>
 
                                         </div>
@@ -259,7 +257,7 @@ const Bulletins = () => {
                             <div className="h-full rounded-lg border group-hover:border-black border-gray-200 flex flex-col space-y-3 justify-center items-center p-4">
                                 {URLs1 !== ''&&<img className="pb-2" src={URLs1} />}
                                 <Icon name="IoAdd" className="duration-150 stroke-supergray/70 group-hover:stroke-supergray" size={20} />
-                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Fiche de paie : Janvier</div>
+                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Fiche de paie Janvier</div>
                             </div>
                         </label>
                     </button>
@@ -271,7 +269,7 @@ const Bulletins = () => {
                             <div className="h-full rounded-lg border group-hover:border-black border-gray-200 flex flex-col space-y-3 justify-center items-center p-4">
                                 {URLs2 !== ''&&<img className="pb-2" src={URLs2} />}
                                 <Icon name="IoAdd" className="duration-150 stroke-supergray/70 group-hover:stroke-supergray" size={20} />
-                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Fiche de paie : Février</div>
+                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Fiche de paie Février</div>
                             </div>
                         </label>
                     </button>
@@ -283,7 +281,7 @@ const Bulletins = () => {
                             <div className="h-full rounded-lg border group-hover:border-black border-gray-200 flex flex-col space-y-3 justify-center items-center p-4">
                                 {URLs3 !== ''&&<img className="pb-2" src={URLs3} />}
                                 <Icon name="IoAdd" className="duration-150 stroke-supergray/70 group-hover:stroke-supergray" size={20} />
-                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Fiche de paie : Mars</div>
+                                <div className="duration-150 font-medium text-supergray/70 group-hover:text-supergray text-sm">Fiche de paie Mars</div>
                             </div>
                         </label>
                     </button>
