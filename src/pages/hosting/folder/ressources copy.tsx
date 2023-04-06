@@ -1,11 +1,18 @@
 import { PageBuilder } from "../../../components/pagebuilder/pagebuilder";
 import { FolderBuilder } from "../../../components/pagebuilder/folderbuilder";
 import { useContext, useEffect, useState } from "react";
+import { ChooseButtonNew } from "../../../components/button/ChooseButtonNew";
+import SituationFolder from '../../../utils/folder/ProfessionalSituation.utils.json'
+import UserDataServices from "../../../services/UserData.services";
 import { UserContext } from "../../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import Icon from "../../../components/icon/icons";
 import RessourcesList from "../../../utils/folder/Ressources.folder.json";
 import SituationsList from "../../../utils/folder/ProfessionalSituation.utils.json";
-import { GetCondition, VarGetter } from "../../../constructor/RessourceBuilder";
+import { Modal } from "../../../components/modal/Modal";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../../firebase.config";
+import { RessourceBuilder, VarGetter } from "../../../constructor/RessourceBuilder";
 
 function App() {
     const [title, setTitle] = useState("Ressources")
@@ -41,19 +48,29 @@ function App() {
                                             Pensez à renseigner des informations à jour. Ils seront vérifié par notre équipe afin de fournir a l'annonceur l'integrité des documents.
                                         </div>
                                         <div className="pt-4 flex flex-col space-y-2">
+                                        
+                                        {/*
                                             {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
                                                 Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
-                                                    <VarGetter parameter={ml} optional={false} />
-                                                ))  
-                                            ))}
-                                            <div className="py-4">
-                                                <div className="h-[1px] w-full bg-gray-200" />
-                                            </div>
-                                            {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m => (
-                                                Object.values(RessourcesList).filter(fi => m.optional.includes(fi.id)).map(ml => (
-                                                    <VarGetter parameter={ml} optional={true} />
+                                                    <ButtonSetting parameter={ml} optional={false}  />
                                                 ))
                                             ))}
+                                            {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m => (
+                                                Object.values(RessourcesList).filter(fi => m.optional.includes(fi.id)).map(ml => (
+                                                    <ButtonSetting parameter={ml} optional={true} />
+                                                ))
+                                            ))} */}
+                                        
+                                            <div className="mt-8 pt-8 border-t border-red-500">
+                                                {Object.values(SituationsList).filter(f => UserData.folder.ressources.situation === f.id).map(m=>(
+                                                    Object.values(RessourcesList).filter(fi => m.ressources.includes(fi.id)).map(ml => (
+                                                        //<RessourceBuilder optional={false} complet={ConditionRessource(ml)} parameter={ml} />
+                                                       // VarGetter(ConditionRessource(ml), false, ml)
+                                                       <></>
+                                                    ))  
+                                                ))}
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

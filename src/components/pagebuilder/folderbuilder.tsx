@@ -5,6 +5,8 @@ import { CDisclosureItem } from "../disclosure/cdisclosureitem";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import SituationsList from "../../utils/folder/ProfessionalSituation.utils.json";
+import { GetCondition } from "../../constructor/RessourceBuilder";
+import RessourcesList from "../../utils/folder/Ressources.folder.json";
 
 type PageType = {
     title: string,
@@ -21,6 +23,9 @@ export const FolderBuilder = ({
     const [burger, setBurger] = useState(true);
     const { UserData } = useContext(UserContext)
     const navigate = useNavigate();
+
+    const complet_ressource: boolean | boolean[] = []; Object.values(SituationsList).filter(s => s.id === UserData.folder.ressources.situation).map(s => { s.ressources.map(s => { complet_ressource.push(GetCondition(s)) }) });
+
 
     return (
         <>
@@ -58,12 +63,16 @@ export const FolderBuilder = ({
                                     </CDisclosure>
                                     <CDisclosure title="Ma situation" defaultOpen={window.location.pathname.includes("professional-situation") || window.location.pathname.includes("ressources")} locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}>
                                         <>
-                                            <CDisclosureItem to={'/hosting/folder/professional-situation'} complet={UserData.folder.ressources.situation !== ""}>
+                                            <CDisclosureItem 
+                                                    to={'/hosting/folder/professional-situation'} 
+                                                    complet={UserData.folder.ressources.situation !== ""}>
                                                 <>
                                                     Situation Professionnelle
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/hosting/folder/ressources'}>
+                                            <CDisclosureItem 
+                                                    to={'/hosting/folder/ressources'} 
+                                                    complet={complet_ressource.every(ok => ok === true)}>
                                                 <>
                                                     Ressources
                                                 </>

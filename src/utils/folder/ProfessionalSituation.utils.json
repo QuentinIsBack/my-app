@@ -3,12 +3,8 @@
         "id": "vfMqDUfRyNHfdsfsWdFPr",
         "title": "Salarié",
         "icon": "FiBook",
-        "ressources": [
-            "payslip"
-        ],
-        "optional": [
-            "vfMqDUfRyNHpYR7WdFPr"
-        ]
+        "ressources": ["payslip"],
+        "optional": ["employmentcontract"]
     },
     "tKsn3p8Lro9FyE0ogrJ4": {
         "id": "tKsn3p8Lro9FyE0ogrJ4",
@@ -21,7 +17,7 @@
         "id": "RUIBtvdRcKuSJ2fhmD8Q",
         "title": "Étudiant",
         "icon": "IoBusinessOutline",
-        "ressources": ["tKsn3p8kfTRE5gfdgrJ4"],
+        "ressources": [""],
         "optional": [""]
     },
     "O5GsowBvRU3dDN5hpc3d": {
@@ -36,13 +32,13 @@
         "title": "Retraité",
         "icon": "IoFootstepsOutline",
         "ressources": [""], 
-        "optional": ["tKsn3p8Lro90oefdgrJ4"]
+        "optional": [""]
     },
     "6XoqPf0ilnX87gX0EGjr": {
         "id": "6XoqPf0ilnX87gX0EGjr",
         "title": "Sans emploi",
         "icon": "IoEyeOffOutline",
         "ressources": [""],
-        "optional": ["tKsn3p8Lro9FyE0ogrJ4"]
+        "optional": [""]
     }
 }

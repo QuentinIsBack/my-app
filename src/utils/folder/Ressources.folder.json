@@ -5,9 +5,9 @@
         "missing": "Documents manquant",
         "edit": "Ajouter vos bulletins de salaires de préférence au forrmat PDF.",
         "description": "3 derniers bulletins de salaires"
-    },
-    "vfMqDUfRyNHpYR7WdFPr": {
-        "id": "vfMqDUfRyNHpYR7WdFPr",
+    }, 
+    "employmentcontract": {
+        "id": "employmentcontract",
         "title": "Contrat de travail",
         "missing": "Documents manquant",
         "edit": "Ajouter votre contrat de travail de préférence au forrmat PDF.",
