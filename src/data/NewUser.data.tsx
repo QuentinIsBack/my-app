@@ -10,15 +10,18 @@ export default class NewUser {
 
     agency: string | undefined;
 
+    power: number;
+
     constructor();
-    constructor(uuid: string, firstname: string, lastname: string, email: string, folder: IFolder, agency: string);
-    constructor(uuid?: string, firstname?: string, lastname?: string, email?: string, folder?: IFolder, agency?: string) {
+    constructor(uuid: string, firstname: string, lastname: string, email: string, folder: IFolder, agency: string, power: number);
+    constructor(uuid?: string, firstname?: string, lastname?: string, email?: string, folder?: IFolder, agency?: string, power?: number) {
         this.uuid = uuid ?? "";
         this.firstname = firstname ?? "";
         this.lastname = lastname ?? "";
         this.email = email ?? "";
         this.folder = folder ?? initFolder();
         this.agency = agency ?? undefined
+        this.power = power ?? 0
     }
 }
 

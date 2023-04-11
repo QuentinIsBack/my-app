@@ -5,7 +5,7 @@ import { CDisclosureItem } from "../disclosure/cdisclosureitem";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import SituationsList from "../../utils/folder/ProfessionalSituation.utils.json";
-import { GetCondition } from "../../constructor/RessourceBuilder";
+import { GetCompletRessource, GetCompletSituation, GetCondition } from "../../constructor/RessourceBuilder";
 import RessourcesList from "../../utils/folder/Ressources.folder.json";
 
 type PageType = {
@@ -23,9 +23,6 @@ export const FolderBuilder = ({
     const [burger, setBurger] = useState(true);
     const { UserData } = useContext(UserContext)
     const navigate = useNavigate();
-
-    const complet_ressource: boolean | boolean[] = []; Object.values(SituationsList).filter(s => s.id === UserData.folder.ressources.situation).map(s => { s.ressources.map(s => { complet_ressource.push(GetCondition(s)) }) });
-
 
     return (
         <>
@@ -49,37 +46,46 @@ export const FolderBuilder = ({
                                         complet={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""} 
                                         locked={true}>
                                         <>
-                                            <CDisclosureItem to={'/hosting/folder/proof-identity/'} complet={UserData.folder.essentials.proof_identity !== ""}>
+                                            <CDisclosureItem 
+                                                    to={'/hosting/folder/proof-identity/'} 
+                                                    complet={UserData.folder.essentials.proof_identity !== ""}>
                                                 <>
                                                     Justificatif d'identité
                                                 </>
                                             </CDisclosureItem>
-                                            <CDisclosureItem to={'/hosting/folder/proof-domicile/'} complet={UserData.folder.essentials.proof_domicile !== ""}>
+                                            <CDisclosureItem 
+                                                    to={'/hosting/folder/proof-domicile/'} 
+                                                    complet={UserData.folder.essentials.proof_domicile !== ""}>
                                                 <>
                                                     Justificatif de domicile
                                                 </>
                                             </CDisclosureItem>
                                         </>
                                     </CDisclosure>
-                                    <CDisclosure title="Ma situation" defaultOpen={window.location.pathname.includes("professional-situation") || window.location.pathname.includes("ressources")} locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}>
+                                    <CDisclosure 
+                                            title="Ma situation"
+                                            defaultOpen={window.location.pathname.includes("professional-situation") || window.location.pathname.includes("ressources")} 
+                                            locked={UserData.folder.essentials.proof_identity !== "" && UserData.folder.essentials.proof_domicile !== ""}
+                                            complet={GetCompletRessource() && GetCompletSituation()}>  
                                         <>
                                             <CDisclosureItem 
                                                     to={'/hosting/folder/professional-situation'} 
-                                                    complet={UserData.folder.ressources.situation !== ""}>
+                                                    complet={GetCompletSituation()}
+                                                    locked={false}>
                                                 <>
                                                     Situation Professionnelle
                                                 </>
                                             </CDisclosureItem>
                                             <CDisclosureItem 
                                                     to={'/hosting/folder/ressources'} 
-                                                    complet={complet_ressource.every(ok => ok === true)}>
+                                                    complet={GetCompletRessource()}>
                                                 <>
                                                     Ressources
                                                 </>
                                             </CDisclosureItem>
                                         </>
                                     </CDisclosure> 
-                                    <CDisclosure title="Mes garants" locked={false}>
+                                    <CDisclosure title="Mes garants" locked={GetCompletRessource() && GetCompletSituation()}>
                                         <>
                                             <CDisclosureItem to={'/'}>
                                                 <>
@@ -99,6 +105,16 @@ export const FolderBuilder = ({
                                             <CDisclosureItem to={'/'}>
                                                 <>
                                                 Ressources
+                                                </>
+                                            </CDisclosureItem>
+                                        </>
+                                    </CDisclosure>
+
+                                    <CDisclosure title="Mon logement" locked={GetCompletRessource() && GetCompletSituation()}>
+                                        <>
+                                            <CDisclosureItem to={'/'}>
+                                                <>
+                                                    Justificatif d'identité
                                                 </>
                                             </CDisclosureItem>
                                         </>

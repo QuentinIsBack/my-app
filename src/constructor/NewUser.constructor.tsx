@@ -25,6 +25,7 @@ export const NewBuilder = (data: any, id: string) => {
             }),
         }),        
         data.agency ?? undefined,
+        data.power ?? 0
     );
 }
 

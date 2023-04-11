@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthenticatedRoute from './routes/AuthenticatedRoute';
 import AgencyRoute from './routes/AgencyRoute';
+import EmployeeRoute from "./routes/EmployeeRoute";
 
 import Index from './pages/index'
  
@@ -30,6 +31,8 @@ import BecomeAHostDescription from './pages/become-a-host/description'
 import BecomeAHostPrice from './pages/become-a-host/price'
 import BecomeAHostLocation from './pages/become-a-host/location'
 
+import EmployeeIndex from './pages/employee/index'
+
 function App() {
   return (
     <BrowserRouter>
@@ -54,13 +57,6 @@ function App() {
             <Route path="/new" element={<HostNew />} />
             <Route path="/:id/overview" element={<HostOverview />} />
             <Route path="/:id/about-your-place" element={<HostAbout />} />
-            {/*<Route path="/:id/structure" element={<HostStructure />} />*/}
-            {/*<Route path="/:id/privacy" element={<HostPrivacy />} />*/}
-            {/*<Route path="/:id/property" element={<HostProperty />} />*/}
-            {/*<Route path="/:id/floor" element={<HostFloor />} />*/}
-            {/*<Route path="/:id/title" element={<HostTitle />} />*/}
-            {/*<Route path="/:id/description" element={<HostDescription />} />*/}
-
             <Route path="/become-a-host" element={<BecomeAHost />} />
             <Route path="/:id/structure" element={<BecomeAHostStructure />} />
             <Route path="/:id/privacy" element={<BecomeAHostPrivacy />} />
@@ -71,7 +67,12 @@ function App() {
             <Route path="/:id/price" element={<BecomeAHostPrice />} />
             <Route path="/:id/location" element={<BecomeAHostLocation />} />
 
-          </Route>          
+          </Route>  
+
+          <Route element={<EmployeeRoute />}>
+            <Route path="/employee" element={<EmployeeIndex />} />
+          </Route>
+
         </Route>
       </Routes>
     </BrowserRouter>

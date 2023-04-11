@@ -7,6 +7,21 @@
     border-bottom: 1px solid #dfdfdf;
 }
 
+.navbar-employee {
+    display: flex;
+    align-items: center;
+    padding: var(--navbar-padding, 0.5rem);
+    min-height: 4rem;
+    background-color: white;  
+    z-index: 50;
+    width: 100%;
+}
+
+:where(.navbar > *) {
+    display: inline-flex;
+    align-items: center;
+}
+
 .navbarbig {
     display: flex;
     align-items: center;

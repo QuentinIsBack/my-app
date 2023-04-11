@@ -6,6 +6,7 @@ import { storage } from "../firebase.config"
 import UserDataServices from "../services/UserData.services"
 import { Payslip } from "./ressources/Payslip"
 import { EmploymentContract } from "./ressources/EmploymentContract"
+import SituationsList from "../utils/folder/ProfessionalSituation.utils.json";
 
 type PageType = {
     complet: boolean
@@ -98,4 +99,18 @@ export const GetCondition = (parameter:any) => {
         }
     }
 }
+
+
+export const GetCompletRessource = () => {
+    const { UserData } = useContext(UserContext)
+    const complet_ressource: boolean | boolean[] = []; Object.values(SituationsList).filter(s => s.id === UserData.folder.ressources.situation).map(s => { s.ressources.map(s => { complet_ressource.push(GetCondition(s)) }) });
+    return complet_ressource.every(ok=>ok===true)
+}
+
+export const GetCompletSituation = () => {
+    const { UserData } = useContext(UserContext)
+    return UserData.folder.ressources.situation !== ""
+}
+
+
 
